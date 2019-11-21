@@ -1,18 +1,21 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
+import TextArea, { InputForm } from '../components/InputForm';
 import HeaderIconTextButtonExample, {TopNav} from '../components/TopNav';
+
+
 export default function LinksScreen() {
 
   return (
-    <HeaderIconTextButtonExample style={styles.container}>
+
+    <TextArea style={styles.container}>
       {/**
        * Go ahead and delete ExpoLinksView and replace it with your content;
        * we just wanted to provide you with some helpful links.
        */}
       <ExpoLinksView />
-    </HeaderIconTextButtonExample>
-
+    </TextArea>
   );
 }
 
