@@ -5,14 +5,20 @@ import TextArea, { InputForm } from '../components/InputForm';
 import Slider from '../components/slider';
 import { Container } from 'native-base';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: 15,
+    backgroundColor: '#fff',
+  },
+});
 
 export default function LinksScreen() {
   return (
     // <Content>
 
       <Container>
-        <TextArea style={styles.container}>
-        </TextArea>
+        <TextArea style={styles.container} />
         <Slider />
       </Container>
     // </Content>
@@ -24,11 +30,3 @@ export default function LinksScreen() {
 LinksScreen.navigationOptions = {
   title: 'Links',
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: 15,
-    backgroundColor: '#fff',
-  },
-});

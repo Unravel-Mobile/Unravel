@@ -2,15 +2,24 @@
 
 import React, { Component } from 'react'
 import { Text, View, StyleSheet } from 'react-native';
-var Slider = require('react-native-slider');
+import Slider from 'react-native-slider';
 
+
+var styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginLeft: 10,
+        marginRight: 10,
+        alignItems: 'stretch',
+        justifyContent: 'center'
+    }
+});
 
 export default class slider extends Component {
-    getInitialState() {
-        return {
-            value: 0.2
-        }
+    state={
+        value: 0.2
     }
+    
     render() {
         return (
             <View style={styles.container}>
@@ -21,14 +30,4 @@ export default class slider extends Component {
             </View>
         );
     }
-}
-
-var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginLeft: 10,
-        marginRight: 10,
-        alignItems: 'stretch',
-        // justifyContent: 'center',
-    },
-});
+};
