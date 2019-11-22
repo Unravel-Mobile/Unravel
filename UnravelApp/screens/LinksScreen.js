@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
 import TextArea, { InputForm } from '../components/InputForm';
-import Slider from '../components/slider';
+import Slider from '../components/Slider';
 import { Container } from 'native-base';
 import HeaderIconTextButtonExample, {TopNav} from '../components/TopNav';
 import QuestionHeader from '../components/Questions/Question';
@@ -20,7 +20,7 @@ export default function LinksScreen() {
     // <Content>
 
       <Container>
-        <QuestionHeader/>
+        <QuestionHeader qIndex={1} />
         <TextArea style={styles.container} />
         <Slider />
 

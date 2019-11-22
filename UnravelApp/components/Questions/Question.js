@@ -4,11 +4,12 @@ import questions from "./questions.json";
 
 export default class QuestionHeader extends Component {
   render() {
+      const index = this.props.qIndex;
     return (
 
         <Card>
             <Text>Question:</Text>
-            <Text> {questions[1].q} </Text>
+            <Text> {questions[index].q} </Text>
         </Card>
 
     );
