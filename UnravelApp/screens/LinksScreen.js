@@ -5,7 +5,7 @@ import TextArea, { InputForm } from '../components/InputForm';
 import Slider from '../components/slider';
 import { Container } from 'native-base';
 import HeaderIconTextButtonExample, {TopNav} from '../components/TopNav';
-
+import QuestionHeader from '../components/Questions/Question';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,8 +20,11 @@ export default function LinksScreen() {
     // <Content>
 
       <Container>
+        <QuestionHeader/>
         <TextArea style={styles.container} />
         <Slider />
+
+        
       </Container>
     // </Content>
 
