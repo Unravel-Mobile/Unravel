@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
 });
 
 
+
 export default class LinksScreen extends React.Component {
   static navigationOptions = {
     header: null
@@ -25,7 +26,7 @@ export default class LinksScreen extends React.Component {
     this.props.navigation.navigate(screen)
   }
 
-  export default function LinksScreen() {
+  render() {
     return (
       // <Content>
 
@@ -34,7 +35,6 @@ export default class LinksScreen extends React.Component {
           
           <QuestionHeader qIndex={1} />
           <TextArea style={styles.container} />
-          <Slider />
 
           
         </Container>
