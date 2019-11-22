@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Container, Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
-export default class HeaderIconTextButtonExample extends Component {
-  render() {
+import { Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
+
+export default HeaderIconTextButtonExample = (props) =>  {
     return (
-      <Container>
         <Header>
           <Left>
-            <Button transparent>
+            <Button transparent onPress={() => props.navigate(props.previous)}>
               <Icon name='arrow-back' />
               <Text>Back</Text>
             </Button>
@@ -15,13 +14,11 @@ export default class HeaderIconTextButtonExample extends Component {
             <Title>Header</Title>
           </Body>
           <Right>
-            <Button transparent>
+          <Button transparent onPress={() => props.navigate(props.next)}>
               <Text>Next</Text>
               <Icon name='arrow-forward' />
             </Button>
           </Right>
         </Header>
-      </Container>
     );
-  }
 }

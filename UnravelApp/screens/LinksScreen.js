@@ -4,7 +4,7 @@ import { ExpoLinksView } from '@expo/samples';
 import TextArea, { InputForm } from '../components/InputForm';
 import Slider from '../components/slider';
 import { Container } from 'native-base';
-import HeaderIconTextButtonExample, {TopNav} from '../components/TopNav';
+import Header from '../components/TopNav';
 
 
 const styles = StyleSheet.create({
@@ -15,18 +15,28 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function LinksScreen() {
-  return (
-    // <Content>
+export default class LinksScreen extends React.Component {
+  static navigationOptions = {
+    header: null
+  }
 
+  navigate = (screen) => {
+    this.props.navigation.navigate(screen)
+  }
+
+  render() {
+    return (
+  
       <Container>
-        <TextArea style={styles.container} />
-        <Slider />
-      </Container>
-    // </Content>
-
-
-  );
+        <Header navigate={this.navigate} previous= 'Home' next='Settings'/>
+          <TextArea style={styles.container} />
+          <Slider />
+        </Container>
+  
+  
+    );
+  }
+  
 };
 
 LinksScreen.navigationOptions = {
