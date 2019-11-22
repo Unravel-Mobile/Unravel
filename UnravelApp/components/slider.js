@@ -17,7 +17,7 @@ var styles = StyleSheet.create({
 
 export default class slider extends Component {
     state={
-        value: 0.2
+        value: 5.0
     }
     
     render() {
@@ -25,7 +25,11 @@ export default class slider extends Component {
             <View style={styles.container}>
                 <Slider
                     value={this.state.value}
-                    onValueChange={(value) => this.setState({ value })} />
+                    onValueChange={(value) => this.setState({ value })}
+                    minimumValue={0}
+                    maximumValue={10}
+                    step={0.5}
+                />
                 <Text>Value: {this.state.value}</Text>
             </View>
         );
