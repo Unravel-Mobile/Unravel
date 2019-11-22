@@ -15,6 +15,7 @@ var styles = StyleSheet.create({
     }
 });
 
+// lowercase is the name we are exporting
 export default class slider extends Component {
     state={
         value: 5.0
