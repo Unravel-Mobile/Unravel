@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import LearnScreen from '../screens/LearnScreen';
+import ReviewScreen from '../screens/ReviewScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
@@ -71,12 +72,34 @@ LearnStack.navigationOptions = {
 
 LearnStack.path = '';
 
+// Review option in the navbar at the bottom
+const ReviewStack = createStackNavigator(
+  {
+    Review: ReviewScreen,
+  },
+  config
+);
+
+ReviewStack.navigationOptions = {
+  tabBarLabel: 'Review',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+  ),
+};
+
+ReviewStack.path = '';
+
+
+
+// Contains all the navigation tabs
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
   LearnStack,
+  ReviewStack
 });
 
 tabNavigator.path = '';
+
 
 export default tabNavigator;
