@@ -40,7 +40,9 @@ export default class HomeScreen extends Component {
         var uid = user.uid;
         // ...
         console.log(user)
+        
         // TODO: Make an api call and POST the user unique id
+        // axios.post('api heroku link', { userId: uid })
       } else {
         // User is signed out.
         // ...
