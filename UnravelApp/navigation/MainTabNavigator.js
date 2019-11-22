@@ -5,13 +5,14 @@ import { createStackNavigator, createBottomTabNavigator } from 'react-navigation
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import LearnScreen from '../screens/LearnScreen';
 
 const config = Platform.select({
   web: { headerMode: 'screen' },
   default: {},
 });
 
+// Home option in the navbar at the bottom
 const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
@@ -35,6 +36,8 @@ HomeStack.navigationOptions = {
 
 HomeStack.path = '';
 
+
+// Links option in the navbar at the bottom
 const LinksStack = createStackNavigator(
   {
     Links: LinksScreen,
@@ -51,26 +54,27 @@ LinksStack.navigationOptions = {
 
 LinksStack.path = '';
 
-const SettingsStack = createStackNavigator(
+// Learn option in the navbar at the bottom
+const LearnStack = createStackNavigator(
   {
-    Settings: SettingsScreen,
+    Learn: LearnScreen,
   },
   config
 );
 
-SettingsStack.navigationOptions = {
-  tabBarLabel: 'Settings',
+LearnStack.navigationOptions = {
+  tabBarLabel: 'Learn',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
   ),
 };
 
-SettingsStack.path = '';
+LearnStack.path = '';
 
 const tabNavigator = createBottomTabNavigator({
   HomeStack,
   LinksStack,
-  SettingsStack,
+  LearnStack,
 });
 
 tabNavigator.path = '';
