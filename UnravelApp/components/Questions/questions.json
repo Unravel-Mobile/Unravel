@@ -1,0 +1,14 @@
+[
+    {
+        "q": "How was your day?",
+        "type": "type1"
+    }, 
+    {
+        "q": "How did that make you feel?" ,
+        "type": "type2"
+    },
+    {
+        "q": "What did you do?",
+        "type": "type3"
+    }
+]
