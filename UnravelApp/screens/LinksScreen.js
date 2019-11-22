@@ -4,6 +4,8 @@ import { ExpoLinksView } from '@expo/samples';
 import TextArea, { InputForm } from '../components/InputForm';
 import Slider from '../components/slider';
 import { Container } from 'native-base';
+import HeaderIconTextButtonExample, {TopNav} from '../components/TopNav';
+
 
 const styles = StyleSheet.create({
   container: {
