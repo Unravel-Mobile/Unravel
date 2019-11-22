@@ -21,38 +21,27 @@ export default class LinksScreen extends React.Component {
     header: null
   }
 
-
-export default function LinksScreen() {
-  return (
-    // <Content>
-
-      <Container>
-        <QuestionHeader qIndex={1} />
-        <TextArea style={styles.container} />
-        <Slider />
-
-        
-      </Container>
-    // </Content>
-
-
   navigate = (screen) => {
     this.props.navigation.navigate(screen)
   }
 
-  render() {
+  export default function LinksScreen() {
     return (
-  
-      <Container>
-        <Header navigate={this.navigate} previous= 'Home' next='Settings'/>
+      // <Content>
+
+        <Container>
+          <Header navigate={this.navigate} previous= 'Home' next='Settings'/>
+          
+          <QuestionHeader qIndex={1} />
           <TextArea style={styles.container} />
           <Slider />
+
+          
         </Container>
-  
-  
-    );
-  }
-  
+      // </Content>
+
+    )
+  };
 };
 
 LinksScreen.navigationOptions = {
