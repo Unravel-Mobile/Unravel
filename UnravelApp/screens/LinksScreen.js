@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import TextArea, { InputForm } from '../components/InputForm';
-import Slider from '../components/Slider';
+// import Slider from '../components/Slider';
 import { Container } from 'native-base';
 import Header from '../components/TopNav';
 import QuestionHeader from '../components/Questions/Question';
@@ -29,11 +29,11 @@ export default class LinksScreen extends React.Component {
     // <Content>
 
       <Container>
-        <Header navigate={this.navigate} previous= 'Home' next='Settings'/>
+        <Header navigate={this.navigate} previous= 'Home' next='Learn'/>
 
         <QuestionHeader qIndex={1} />
         <TextArea style={styles.container} />
-        <Slider />
+        {/* <Slider /> */}
 
         
       </Container>
