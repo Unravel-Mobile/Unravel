@@ -1,22 +1,11 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { ExpoLinksView } from '@expo/samples';
+import TextArea, { InputForm } from '../components/InputForm';
+import Slider from '../components/slider';
+import { Container } from 'native-base';
+import HeaderIconTextButtonExample, {TopNav} from '../components/TopNav';
 
-export default function LinksScreen() {
-  return (
-    <ScrollView style={styles.container}>
-      {/**
-       * Go ahead and delete ExpoLinksView and replace it with your content;
-       * we just wanted to provide you with some helpful links.
-       */}
-      <ExpoLinksView />
-    </ScrollView>
-  );
-}
-
-LinksScreen.navigationOptions = {
-  title: 'Links',
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -25,3 +14,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+export default function LinksScreen() {
+  return (
+    // <Content>
+
+      <Container>
+        <TextArea style={styles.container} />
+        <Slider />
+      </Container>
+    // </Content>
+
+
+  );
+};
+
+LinksScreen.navigationOptions = {
+  title: 'Links',
+};
