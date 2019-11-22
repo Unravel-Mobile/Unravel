@@ -66,7 +66,7 @@ const LearnStack = createStackNavigator(
 LearnStack.navigationOptions = {
   tabBarLabel: 'Learn',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-book' : 'md-book'} />
   ),
 };
 
