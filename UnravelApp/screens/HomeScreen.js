@@ -47,7 +47,12 @@ export default class HomeScreen extends Component {
 
   render() {
     return (
-      <HomePage />
+      // Links here ties with Links key in MaintTabNavitor.js line 50
+      <HomePage
+        links='Links'
+        learn='Learn'
+        review='Review'
+        navigate={this.props.navigation.navigate} />
     );
   }
 };
