@@ -1,8 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
-import { ExpoLinksView } from '@expo/samples';
 import TextArea, { InputForm } from '../components/InputForm';
-import Slider from '../components/Slider';
+// import Slider from '../components/Slider';
 import { Container } from 'native-base';
 import Header from '../components/TopNav';
 import QuestionHeader from '../components/Questions/Question';
@@ -27,22 +26,23 @@ export default class LinksScreen extends React.Component {
   }
 
   render() {
-    return (
-      // <Content>
+  return (
+    // <Content>
 
-        <Container>
-          <Header navigate={this.navigate} previous= 'Home' next='Settings'/>
-          
-          <QuestionHeader qIndex={1} />
-          <TextArea style={styles.container} />
+      <Container>
+        <Header navigate={this.navigate} previous= 'Home' next='Learn'/>
 
-          
-        </Container>
-      // </Content>
+        <QuestionHeader qIndex={1} />
+        <TextArea style={styles.container} />
+        {/* <Slider /> */}
 
-    )
+        
+      </Container>
+    // </Content>
+  )
   };
 };
+
 
 LinksScreen.navigationOptions = {
   title: 'Links',
