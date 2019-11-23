@@ -33,7 +33,8 @@ export default class LinksScreen extends React.Component {
 
         <QuestionHeader qIndex={1} />
         <TextArea style={styles.container} />
-        {/* <Slider /> */}
+        {/* <Slider />  */}
+        <WordSelect01 />
 
         
       </Container>

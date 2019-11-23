@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container } from 'native-base';
+import { Container, Content } from 'native-base';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the Top navbar
 import Header from '../../components/TopNav';
 // importing slider
 import Slider from '../../components/slider';
+
+import WordSelect01 from '../../components/WordSelect01';
 
 export default class Q3Screen extends React.Component {
 
@@ -25,6 +27,9 @@ export default class Q3Screen extends React.Component {
         <QuestionHeader qIndex={2} /> 
 
         <Slider/>
+
+          <WordSelect01 />
+  
 
     </Container>
 
