@@ -11,11 +11,11 @@ export default HeaderIconTextButtonExample = (props) =>  {
             </Button>
           </Left>
           <Body>
-            <Title>Header</Title>
+            {/* <Title>Header</Title> */}
           </Body>
           <Right>
           <Button transparent onPress={() => props.navigate(props.next)}>
-              <Text>Next</Text>
+              {/* <Text>Next</Text> */}
               <Icon name='arrow-forward' />
             </Button>
           </Right>
