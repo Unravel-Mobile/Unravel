@@ -11,7 +11,12 @@ import LearnScreen from '../screens/LearnScreen';
 import ReviewScreen from '../screens/ReviewScreen';
 
 const config = Platform.select({
-  web: { headerMode: 'screen' },
+  web: { 
+    headerMode: 'none',
+    navigationOptions: {
+      headershown: false,
+    }
+  },
   default: {},
 });
 
@@ -43,7 +48,7 @@ HomeStack.path = '';
 // Create Log option in the navbar at the bottom
 const LogStack = createStackNavigator(
   {
-    Log: Q1Screen,
+    Log1: Q1Screen,
     Log2: Q2Screen,
     Log3: Q3Screen
   },
