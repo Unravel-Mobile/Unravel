@@ -47,9 +47,9 @@ export default class HomeScreen extends Component {
 
   render() {
     return (
-      // Links here ties with Links key in MaintTabNavitor.js line 50
+      // Links here ties with Links key in MainTabNavitor.js line 50
       <HomePage
-        links='Links'
+        log='Log1'
         learn='Learn'
         review='Review'
         navigate={this.props.navigation.navigate} />
