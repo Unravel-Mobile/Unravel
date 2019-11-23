@@ -1,12 +1,24 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import React from 'react';
+import { Container, Content, Text } from 'native-base';
+import QuestionHeader from '../components/Questions/Question';
 
-export default class LearnScreen extends Component {
-    render() {
-        return (
-            <View>
-                <Text> Unravelling Thoughts </Text>
-            </View>
-        )
-    }
-}
+export default function LearnScreen() {
+    /**
+     * Go ahead and delete ExpoConfigView and replace it with your content;
+     * we just wanted to give you a quick view of your config.
+     */
+    return (
+        <Container>
+            <Content>
+                <Text>Unravelling Thoughts</Text>
+                <Text> Journey to the Curiosity of Self</Text>
+            </Content>
+
+        </Container>
+
+    );
+};
+
+LearnScreen.navigationOptions = {
+    title: 'Learn',
+};
