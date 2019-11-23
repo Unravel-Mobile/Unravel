@@ -1,4 +1,8 @@
-[
+[   
+    {
+        "q": "What do you want to call this log?",
+        "type": "title"
+    },
     {
         "q": "How was your day?",
         "type": "type1"
