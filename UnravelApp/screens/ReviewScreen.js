@@ -1,6 +1,8 @@
 import React from 'react';
 import { Container, Header, Content, Card, CardItem, Text, Body } from "native-base";
 import QuestionHeader from '../components/Questions/Question';
+import SubmitButton from '../components/SubmitButton';
+
 
 export default function ReviewScreen() {
   /**

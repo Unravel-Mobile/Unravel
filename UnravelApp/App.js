@@ -49,10 +49,10 @@ async function loadResourcesAsync() {
 
   }
   catch (err) {
-    console.log("\n===================")
-    console.log("error loading fonts")
-    console.log(err);
-    console.log("\n===================")
+    // console.log("\n===================")
+    // console.log("error loading fonts")
+    // console.log(err);
+    // console.log("\n===================")
 
   }
 }
