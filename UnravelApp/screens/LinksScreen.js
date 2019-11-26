@@ -5,6 +5,7 @@ import TextArea, { InputForm } from '../components/InputForm';
 import { Container } from 'native-base';
 import Header from '../components/TopNav';
 import QuestionHeader from '../components/Questions/Question';
+import WordSelect01 from '../components/WordSelect01/WordSelect01'
 
 const styles = StyleSheet.create({
   container: {
@@ -29,13 +30,15 @@ export default class LinksScreen extends React.Component {
   return (
     // <Content>
 
+
       <Container>
         <Header navigate={this.navigate} previous= 'Home' next='Learn'/>
 
         <QuestionHeader qIndex={1} />
         <TextArea style={styles.container} />
         {/* <Slider /> */}
-
+    
+  
         
       </Container>
     // </Content>

@@ -3,6 +3,7 @@ import { Container } from 'native-base';
 import QuestionHeader from '../components/Questions/Question';
 import SubmitButton from '../components/SubmitButton';
 
+
 export default function ReviewScreen() {
   /**
    * Go ahead and delete ExpoConfigView and replace it with your content;
@@ -11,7 +12,7 @@ export default function ReviewScreen() {
   return (
     <Container>
       <QuestionHeader qIndex={2} /> 
-      <SubmitButton />
+
 
     </Container>
 
