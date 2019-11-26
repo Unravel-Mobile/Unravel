@@ -50,7 +50,8 @@ export default class Q3Screen extends React.Component {
         <QuestionHeader qIndex={2} /> 
 
         <Slider/>
-          <WordSelect01 />
+        
+        <WordSelect01 />
 
         <QuestionHeader qIndex={3} />
         {/* Word Select Version 1 */}
