@@ -7,7 +7,7 @@ import TextArea from '../../components/InputForm';
 // importing the Top navbar
 import Header from '../../components/TopNav';
 
-export default class Q2Screen extends React.Component {
+export default class Q4Screen extends React.Component {
 
   static navigationOptions = {
     header: null
@@ -20,19 +20,19 @@ export default class Q2Screen extends React.Component {
   render () {
   return (
     <Container>
-      <Header navigate={this.navigate} previous= 'Log1' next='Log3'/>
+      <Header navigate={this.navigate} previous= 'Log3' next='Log5'/>
 
-      <QuestionHeader qIndex={1} /> 
+      <QuestionHeader qIndex={4 } /> 
 
-      <TextArea> Describe the situation </TextArea>
-
+      <TextArea> Explain how this made you feel </TextArea>
       {/* Text2Speech */}
+
     </Container>
 
     );
   };
 };
 
-Q2Screen.navigationOptions = {
-  title: 'Question 1',
+Q4Screen.navigationOptions = {
+  title: 'Question 3',
 };

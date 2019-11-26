@@ -2,12 +2,12 @@ import React from 'react';
 import { Container } from 'native-base';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
-// importing the input text area
-import TextArea from '../../components/InputForm';
 // importing the Top navbar
 import Header from '../../components/TopNav';
+// importing slider
+import Slider from '../../components/slider';
 
-export default class Q2Screen extends React.Component {
+export default class Q6Screen extends React.Component {
 
   static navigationOptions = {
     header: null
@@ -20,19 +20,22 @@ export default class Q2Screen extends React.Component {
   render () {
   return (
     <Container>
-      <Header navigate={this.navigate} previous= 'Log1' next='Log3'/>
+        <Header navigate={this.navigate} previous= 'Log5' next='Log7'/>
 
-      <QuestionHeader qIndex={1} /> 
+        <QuestionHeader qIndex={2} /> 
 
-      <TextArea> Describe the situation </TextArea>
+        <Slider/>
 
-      {/* Text2Speech */}
+        <QuestionHeader qIndex={3} /> 
+        {/* Word Select Version 2 */}
+        {/* Word Select Version 3 */}
+
     </Container>
 
     );
   };
 };
 
-Q2Screen.navigationOptions = {
-  title: 'Question 1',
+Q6Screen.navigationOptions = {
+  title: 'Question 5',
 };

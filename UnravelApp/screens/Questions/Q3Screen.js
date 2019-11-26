@@ -20,11 +20,14 @@ export default class Q3Screen extends React.Component {
   render () {
   return (
     <Container>
-        <Header navigate={this.navigate} previous= 'Log2' next='Review'/>
+        <Header navigate={this.navigate} previous= 'Log2' next='Log3'/>
 
         <QuestionHeader qIndex={2} /> 
 
         <Slider/>
+
+        <QuestionHeader qIndex={3} />
+        {/* Word Select Version 1 */}
 
     </Container>
 
