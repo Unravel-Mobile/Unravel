@@ -22,7 +22,7 @@ export default class Q2Screen extends React.Component {
     this.props.navigation.navigate(screen, {
       q1answers: this.state.Q1,
       q2answers: this.state.Q2
-     })
+    })
   }
   onChangeText = event => {
     // Caputuring the input text

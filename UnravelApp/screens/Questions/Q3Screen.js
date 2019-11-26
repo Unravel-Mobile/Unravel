@@ -1,7 +1,5 @@
 import React from 'react';
-import { Container } from 'native-base';
-import { Text, View, Body, Content } from 'react-native'
-import { Col, Row, Grid } from "react-native-easy-grid"
+import { Container, Content } from 'native-base';
 
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
@@ -9,10 +7,8 @@ import QuestionHeader from '../../components/Questions/Question';
 import Header from '../../components/TopNav';
 // importing slider
 import Slider from '../../components/slider';
-import WordSelect01 from '../../components/WordSelect01/WordSelect01'
-import Words01 from "../../components/WordSelect01/Words01"
-import Words02 from "../../components/WordSelect01/Words02"
-import Words03 from "../../components/WordSelect01/Words03"
+import WordSelect01 from '../../components/WordSelect01/WordSelect01';
+
 
 export default class Q3Screen extends React.Component {
 
@@ -45,17 +41,17 @@ export default class Q3Screen extends React.Component {
   render () {
   return (
     <Container>
+      <Content>
         <Header navigate={this.navigate} previous= 'Log2' next='Log4'/>
 
         <QuestionHeader qIndex={2} /> 
 
         <Slider/>
         
+        <QuestionHeader qIndex={3} />
         <WordSelect01 />
 
-        <QuestionHeader qIndex={3} />
-        {/* Word Select Version 1 */}
-
+      </Content>
     </Container>
 
     );
