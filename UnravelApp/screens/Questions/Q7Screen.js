@@ -5,6 +5,7 @@ import QuestionHeader from '../../components/Questions/Question';
 // importing the Top navbar
 import Header from '../../components/TopNav';
 
+
 export default class Q7Screen extends React.Component {
 
   static navigationOptions = {
@@ -23,7 +24,8 @@ export default class Q7Screen extends React.Component {
       <QuestionHeader qIndex={6} /> 
 
         {/* Adding picture */}
-        <Button>Submit</Button>
+        {/* Submit button */}
+        
 
     </Container>
 
