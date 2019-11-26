@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'native-base';
 import QuestionHeader from '../components/Questions/Question';
+import SubmitButton from '../components/SubmitButton';
 
 
 export default function ReviewScreen() {
@@ -11,7 +12,7 @@ export default function ReviewScreen() {
   return (
     <Container>
       <QuestionHeader qIndex={2} /> 
-   
+
 
     </Container>
 
