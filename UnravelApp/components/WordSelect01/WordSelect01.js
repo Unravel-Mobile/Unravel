@@ -24,13 +24,19 @@ export default class WordSelect01 extends Component {
                     ))}
                 </Col>
                 <Col>
+    
                     {Words02.map(words02 => (
+                        <Button transparent>
                         <Text>{words02.col2}</Text>
+                        </Button>
                     ))}
                 </Col>
                 <Col>
+                
                     {Words03.map(words03 => (
+                        <Button transparent>
                         <Text>{words03.col3}</Text>
+                        </Button>
                     ))}
                 </Col>
             </Grid>
