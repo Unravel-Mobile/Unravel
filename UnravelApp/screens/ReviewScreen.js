@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'native-base';
 import QuestionHeader from '../components/Questions/Question';
 
+
 export default function ReviewScreen() {
   /**
    * Go ahead and delete ExpoConfigView and replace it with your content;
@@ -10,6 +11,7 @@ export default function ReviewScreen() {
   return (
     <Container>
       <QuestionHeader qIndex={2} /> 
+   
 
     </Container>
 

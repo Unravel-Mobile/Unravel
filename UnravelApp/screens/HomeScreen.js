@@ -24,7 +24,7 @@ export default class HomeScreen extends Component {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(error);
+      // console.log(error);
     });
 
     await firebase.auth().onAuthStateChanged(function (user) {
