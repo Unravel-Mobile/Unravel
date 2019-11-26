@@ -3,7 +3,7 @@ import { Container } from 'native-base';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area
-import TextArea from '../../components/InputForm';
+import InputForm from '../../components/InputForm';
 // importing the Top navbar
 import Header from '../../components/TopNav';
 
@@ -13,9 +13,33 @@ export default class Q2Screen extends React.Component {
     header: null
   }
 
-  navigate = (screen) => {
-    this.props.navigation.navigate(screen)
+  state = {
+    Q1: this.props.navigation.state.params.q1answers,
+    Q2: ""
   }
+
+  navigate = (screen) => {
+    this.props.navigation.navigate(screen, {
+      q1answers: this.state.Q1,
+      q2answers: this.state.Q2
+     })
+  }
+  onChangeText = event => {
+    // Caputuring the input text
+    let value = event;
+
+    // Using State to store current textarea
+    this.setState({
+      Q2: value
+    });
+
+    this.props.navigation.setParams({q2answers: this.state.Q2});
+    console.log(this.props.navigation.getParam("q2anwers", "no param"))
+    console.log("Q2screen");
+    console.log(this.state)
+    console.log(this.props.navigation.state.params.q1answers);
+  }
+
 
   render () {
   return (
@@ -24,7 +48,11 @@ export default class Q2Screen extends React.Component {
 
       <QuestionHeader qIndex={1} /> 
 
-      <TextArea> Describe the situation </TextArea>
+      <InputForm
+          name="Q2"
+          value={this.state.Q2}
+          onChangeText={this.onChangeText}
+      />
 
       {/* Text2Speech */}
     </Container>

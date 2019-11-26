@@ -9,13 +9,31 @@ import Slider from '../../components/slider';
 
 export default class Q3Screen extends React.Component {
 
-  static navigationOptions = {
-    header: null
+  state = {
+    Q1: this.props.navigation.state.params.q1answers,
+    Q2: this.props.navigation.state.params.q2answers,
+    Q3: ""
   }
 
   navigate = (screen) => {
-    this.props.navigation.navigate(screen)
+    this.props.navigation.navigate(screen, {
+      q3answers: this.state.Q3 })
   }
+  onChangeText = event => {
+    // Caputuring the input text
+    let value = event;
+
+    // Using State to store current textarea
+    this.setState({
+      Q3: value
+    });
+    console.log("Q3screen");
+
+    console.log(this.props.navigation.state.params.q1answers);
+    console.log(this.props.navigation.state.params.q2answers);
+
+  }
+
 
   render () {
   return (

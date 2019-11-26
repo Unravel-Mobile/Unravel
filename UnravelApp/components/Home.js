@@ -25,14 +25,14 @@ export default HomePage = (props) => {
 
     return (
         <Container style={{ backgroundColor: '#B2EBF2', }}>
-            <View style={{ flex:1, width: '75%', alignSelf: 'center',}}>
+            <View style={{ flex:1, width: 75, alignSelf: 'center',}}>
                 <Image resizeMode='contain' source={require('../assets/images/unravel01.png')} style={{ width: '100%' }} />
             </View>
             <Body >
-                <Text style={{ fontFamily: 'Helvetica Neue', fontSize: "50%", marginBottom: 10, }}>
+                <Text style={{ fontFamily: 'Helvetica Neue', fontSize: 50, marginBottom: 10, }}>
                     UNRAVEL
                 </Text>
-                <Text style={{ fontSize: "20em", fontWeight: 'bold', marginBottom: 15, }}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 15, }}>
                     Break down thoughts. Find clarity.
                 </Text>
                 <Button style={{ marginBottom: 20, height: 50 }} bordered dark onPress={() => props.navigate(props.log)}>
