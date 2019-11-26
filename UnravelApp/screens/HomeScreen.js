@@ -33,16 +33,19 @@ export default class HomeScreen extends Component {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         // ...
-        console.log(user)
+        // console.log('HomeScreen user line36 ', user)
+        console.log('userId - > ', userId);
+
 
         // TODO: Make an api call and POST the user unique id
-        // axios.post('api heroku link', { userId: uid })
+        axios.post('https://unravel-api.herokuapp.com/', { userId: uid })
       } else {
         // User is signed out.
         // ...
       }
       // ...
     });
+    console.log('HomeScreen userId -- > ', userId)
   }
 
   render() {
