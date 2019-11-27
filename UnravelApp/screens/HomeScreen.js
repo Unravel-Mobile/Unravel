@@ -38,7 +38,7 @@ export default class HomeScreen extends Component {
 
 
         // TODO: Make an api call and POST the user unique id
-        axios.post('https://unravel-api.herokuapp.com/', { userId: uid })
+        axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
       } else {
         // User is signed out.
         // ...

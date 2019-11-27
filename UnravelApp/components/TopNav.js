@@ -1,21 +1,20 @@
-import React, { Component } from 'react';
-import { Header, Left, Body, Right, Button, Icon, Title, Text } from 'native-base';
+import React from 'react';
+import { Header, Left, Right, Button, Icon, Text } from 'native-base';
 
-export default HeaderIconTextButtonExample = (props) =>  {
+
+export default TopNavBar = (props) =>  {
     return (
-        <Header>
+      <Header>
           <Left>
             <Button transparent onPress={() => props.navigate(props.previous)}>
               <Icon name='arrow-back' />
               <Text>Back</Text>
             </Button>
           </Left>
-          <Body>
-            {/* <Title>Header</Title> */}
-          </Body>
+
           <Right>
           <Button transparent onPress={() => props.navigate(props.next)}>
-              {/* <Text>Next</Text> */}
+              <Text>Next</Text>
               <Icon name='arrow-forward' />
             </Button>
           </Right>
