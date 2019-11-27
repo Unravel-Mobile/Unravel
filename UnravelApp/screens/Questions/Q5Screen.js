@@ -7,60 +7,54 @@ import InputForm from '../../components/InputForm';
 // importing the Top navbar
 import Header from '../../components/TopNav';
 
-export default class Q2Screen extends React.Component {
+export default class Q5Screen extends React.Component {
 
   static navigationOptions = {
     header: null
   }
-
   state = {
-    Q1: this.props.navigation.state.params.q1answers,
-    Q2: ""
+    Q5:""
   }
 
   navigate = (screen) => {
     this.props.navigation.navigate(screen, {
-      q1answers: this.state.Q1,
-      q2answers: this.state.Q2
-    })
+      q5answers: this.state.Q5 })
   }
+
   onChangeText = event => {
     // Caputuring the input text
     let value = event;
 
     // Using State to store current textarea
     this.setState({
-      Q2: value
+      Q5: value
     });
-
-    this.props.navigation.setParams({q2answers: this.state.Q2});
-    console.log(this.props.navigation.getParam("q2anwers", "no param"))
-    console.log("Q2screen");
-    console.log(this.state)
-    console.log(this.props.navigation.state.params.q1answers);
+    console.log("Q5screen");
+    console.log(this.props.navigation.state.params.q3answers);
+    console.log(this.props.navigation.state.params.q4answers);
   }
-
 
   render () {
   return (
     <Container>
-      <Header navigate={this.navigate} previous= 'Log1' next='Log3'/>
+      <Header navigate={this.navigate} previous= 'Log4' next='Log6'/>
 
-      <QuestionHeader qIndex={1} /> 
+      <QuestionHeader qIndex={5} /> 
 
       <InputForm
-          name="Q2"
-          value={this.state.Q2}
+          name="Q4"
+          value={this.state.Q4}
           onChangeText={this.onChangeText}
       />
 
       {/* Text2Speech */}
+
     </Container>
 
     );
   };
 };
 
-Q2Screen.navigationOptions = {
-  title: 'Question 1',
+Q5Screen.navigationOptions = {
+  title: 'Question 4',
 };

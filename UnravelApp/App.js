@@ -45,7 +45,7 @@ async function loadResourcesAsync() {
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf')
       }),
     ]);
-    this.setState({ fontLoaded: true });
+    // this.setState({ fontLoaded: true });
 
   }
   catch (err) {
