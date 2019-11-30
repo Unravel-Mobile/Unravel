@@ -6,6 +6,9 @@ import Words01 from "./Words01"
 import Words02 from "./Words02"
 import Words03 from "./Words03"
 
+import Styles from '../Style/Style';
+
+
 export default class WordSelect01 extends Component {
     state = {
         Words01,
@@ -15,27 +18,27 @@ export default class WordSelect01 extends Component {
 
     render() {
         return (
-            <Grid>
+            <Grid style={Styles.threeCols}>
                 <Col>
                     {Words01.map(words01 => (
-                        <Button transparent>
-                        <Text>{words01.col1}</Text>
+                        <Button transparent style={Styles.wordButtons}>
+                        <Text style={Styles.buttonText}>{words01.col1}</Text>
                         </Button>
                     ))}
                 </Col>
                 <Col>
     
                     {Words02.map(words02 => (
-                        <Button transparent>
-                        <Text>{words02.col2}</Text>
+                        <Button transparent style={Styles.wordButtons}>
+                        <Text style={Styles.buttonText}>{words02.col2}</Text>
                         </Button>
                     ))}
                 </Col>
                 <Col>
                 
                     {Words03.map(words03 => (
-                        <Button transparent>
-                        <Text>{words03.col3}</Text>
+                        <Button transparent style={Styles.wordButtons}>
+                        <Text style={Styles.buttonText}>{words03.col3}</Text>
                         </Button>
                     ))}
                 </Col>

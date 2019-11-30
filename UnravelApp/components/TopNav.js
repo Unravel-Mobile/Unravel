@@ -1,21 +1,24 @@
 import React from 'react';
 import { Header, Left, Right, Button, Icon, Text } from 'native-base';
+import Styles from '../components/Style/Style';
+
 
 
 export default TopNavBar = (props) =>  {
     return (
-      <Header>
+      <Header style={Styles.headNav}>
           <Left>
             <Button transparent onPress={() => props.navigate(props.previous)}>
-              <Icon name='arrow-back' />
-              <Text>Back</Text>
+              <Icon style={Styles.arrows} name='arrow-back' />
+              <Text style={Styles.arrows}>Back</Text>
             </Button>
-          </Left>
+        </Left>
+        <Text style={Styles.headTitle}>Adding an Entry</Text>
 
           <Right>
           <Button transparent onPress={() => props.navigate(props.next)}>
-              <Text>Next</Text>
-              <Icon name='arrow-forward' />
+              <Text style={Styles.arrows}>Next</Text>
+              <Icon style={Styles.arrows} name='arrow-forward' />
             </Button>
           </Right>
         </Header>

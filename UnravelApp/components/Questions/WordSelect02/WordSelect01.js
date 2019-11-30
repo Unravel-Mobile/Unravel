@@ -6,6 +6,13 @@ import Words01 from "./Words01"
 import Words02 from "./Words02"
 import Words03 from "./Words03"
 
+import Styles from '../../Style/Style';
+
+// THIS FILE IS INSIDE WordSelect02 FOLDER
+// I TRIED TO ADD STYLE TO THIS FILE (LINE 34) BUT IT LOOKS LIKE IS NOT BEING USED  11/27/19  mc
+// LETS KEEP AN EYE ON THIS ONE
+
+
 export default class WordSelect01 extends Component {
     state = {
         Words01,
@@ -24,7 +31,7 @@ export default class WordSelect01 extends Component {
 
     render() {
         return (
-            <Grid>
+            <Grid style={Styles.threeCols}>
                 <Col>
                     {Words01.map((words01, i) => (
                         <Button
