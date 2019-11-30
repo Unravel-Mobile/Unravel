@@ -5,6 +5,7 @@ import { Col, Row, Grid } from "react-native-easy-grid"
 import Words01 from "./Words01"
 import Words02 from "./Words02"
 import Words03 from "./Words03"
+import Styles from '../Style/Style';
 
 
 export default class WordSelect01 extends Component {
@@ -24,7 +25,7 @@ export default class WordSelect01 extends Component {
 
     render() {
         return (
-            <Grid>
+            <Grid style={Styles.threeCols}>
                 <Col>
                     {Words01.map((words01, i) => (
                         <Button
@@ -32,29 +33,35 @@ export default class WordSelect01 extends Component {
                             onPress={()=>this.selectWord(words01.col1)}
                             value={words01.col1}
                             transparent
+                            style={Styles.wordButtons}
                         >
                             <Text
-                            key={i+"TEXT"}
+                              key={i+"TEXT"}
+                              style={Styles.buttonText}
                             >
                             {words01.col1}</Text>
                         </Button>
                     ))}
                 </Col>
+
                 <Col>
-                {Words02.map((words02, i) => (
+                 {Words02.map((words02, i) => (
                     <Button
                         key={i}
                         onPress={()=>this.selectWord(words02.col2)}
                             value={words02.col2}
                         transparent
+                        style={Styles.wordButtons}
                     >
                             <Text
-                            key={i+"TEXT"}
+                                 key={i+"TEXT"}
+                                 style={Styles.buttonText}
                             >
                             {words02.col2}</Text>
                         </Button>
                     ))}
                 </Col>
+
                 <Col>
                 {Words03.map((words03, i) => (
                     <Button
@@ -62,11 +69,14 @@ export default class WordSelect01 extends Component {
                             onPress={()=>this.selectWord(words03.col3)}
                             value={words03.col3}
                         transparent
+                        style={Styles.wordButtons}
                     >
                             <Text
                                 key={i+"TEXT"}
+                                style={Styles.buttonText}
                                 >
                                 {words03.col3}</Text>
+
                         </Button>
                     ))}
                 </Col>

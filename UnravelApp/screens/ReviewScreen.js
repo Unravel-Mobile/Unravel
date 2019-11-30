@@ -3,6 +3,9 @@ import { Container, Header, Content, Card, CardItem, Text, Body } from "native-b
 import QuestionHeader from '../components/Questions/Question';
 import SubmitButton from '../components/SubmitButton';
 
+import Styles from '../components/Style/Style';
+
+
 
 export default function ReviewScreen() {
   /**
@@ -12,13 +15,13 @@ export default function ReviewScreen() {
   return (
     <Container>
       <Content padder>
-          <Card>
-            <CardItem header>
-              <Text>Title of the situation</Text>
+        <Card>
+            <CardItem style={Styles.headNav}>
+              <Text style={Styles.questionNo}>Title of the situation</Text>
             </CardItem>
-            <CardItem button onPress={() => alert("Will relocate to individual Log")}>
+            <CardItem style={Styles.reviewSubHead} button onPress={() => alert("Will relocate to individual Log")}>
               <Body>
-                <Text>
+                <Text style={Styles.questionTxt}>
                   Review this situation
                 </Text>
               </Body>
