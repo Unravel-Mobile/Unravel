@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Content } from 'native-base';
+import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
@@ -20,7 +21,10 @@ export default class Q3Screen extends React.Component {
 
   navigate = (screen) => {
     this.props.navigation.navigate(screen, {
-      q3answers: this.state.Q3 })
+      q1answers: this.state.Q1,
+      q2answers: this.state.Q2,
+      q3answers: this.state.Q3 
+    })
   }
   onChangeText = event => {
     // Caputuring the input text
@@ -31,7 +35,7 @@ export default class Q3Screen extends React.Component {
       Q3: value
     });
     console.log("Q3screen");
-
+    console.log(this.state);
     console.log(this.props.navigation.state.params.q1answers);
     console.log(this.props.navigation.state.params.q2answers);
 
@@ -46,7 +50,9 @@ export default class Q3Screen extends React.Component {
 
         <QuestionHeader qIndex={2} /> 
 
-        <Slider/>
+        <Slider
+          onSlidingComplete={this.onChangeText}
+        />
         
         <QuestionHeader qIndex={3} />
         <WordSelect01 />
