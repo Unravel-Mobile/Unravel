@@ -26,13 +26,13 @@ export default class Q3Screen extends React.Component {
       q3answers: this.state.Q3 
     })
   }
-  onChangeText = event => {
+  sliderValue = event => {
     // Caputuring the input text
     let value = event;
 
     // Using State to store current textarea
     this.setState({
-      Q3: value
+      Q3: {value}
     });
     console.log("Q3screen");
     console.log(this.state);
@@ -51,7 +51,7 @@ export default class Q3Screen extends React.Component {
         <QuestionHeader qIndex={2} /> 
 
         <Slider
-          onSlidingComplete={this.onChangeText}
+          onValueChange={this.sliderValue}
         />
         
         <QuestionHeader qIndex={3} />

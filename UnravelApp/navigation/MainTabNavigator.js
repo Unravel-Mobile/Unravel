@@ -66,7 +66,7 @@ const LogStack = createStackNavigator(
 LogStack.navigationOptions = {
   tabBarLabel: 'Log',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'form'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
   ),
 };
 
@@ -102,7 +102,7 @@ const ReviewStack = createStackNavigator(
 ReviewStack.navigationOptions = {
   tabBarLabel: 'Review',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'bars'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
   ),
 };
 
