@@ -1,11 +1,14 @@
 import React from 'react';
-import { Container } from 'native-base';
+import { Container, Icon } from 'native-base';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area
 import InputForm from '../../components/InputForm';
 // importing the Top navbar
 import Header from '../../components/TopNav';
+
+import Styles from '../../components/Style/Style';
+
 
 export default class Q2Screen extends React.Component {
 
@@ -33,7 +36,7 @@ export default class Q2Screen extends React.Component {
       Q2: value
     });
 
-    this.props.navigation.setParams({q2answers: this.state.Q2});
+    this.props.navigation.setParams({ q2answers: this.state.Q2 });
     console.log(this.props.navigation.getParam("q2anwers", "no param"))
     console.log("Q2screen");
     console.log(this.state)
@@ -41,21 +44,21 @@ export default class Q2Screen extends React.Component {
   }
 
 
-  render () {
-  return (
-    <Container>
-      <Header navigate={this.navigate} previous= 'Log1' next='Log3'/>
+  render() {
+    return (
+      <Container>
+        <Header navigate={this.navigate} previous='Log1' next='Log3' />
 
-      <QuestionHeader qIndex={1} /> 
+        <QuestionHeader qIndex={1} />
 
-      <InputForm
-          name="Q2"
-          value={this.state.Q2}
-          onChangeText={this.onChangeText}
-      />
+          <InputForm
+            name="Q2"
+            value={this.state.Q2}
+            onChangeText={this.onChangeText}
+          />
 
-      {/* Text2Speech */}
-    </Container>
+        <Icon style={Styles.microphone} name='mic-off' />
+      </Container>
 
     );
   };
