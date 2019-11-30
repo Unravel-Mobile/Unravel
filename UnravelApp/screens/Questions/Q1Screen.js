@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'native-base';
+import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area

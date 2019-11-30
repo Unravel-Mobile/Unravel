@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from 'native-base';
+import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area
@@ -16,12 +17,14 @@ export default class Q4Screen extends React.Component {
   state = {
     Q1: this.props.navigation.state.params.q1answers,
     Q2: this.props.navigation.state.params.q2answers,
-    Q3: "",
+    Q3: this.props.navigation.state.params.q3answers,
     Q4: ""
   }
 
   navigate = (screen) => {
     this.props.navigation.navigate(screen, {
+      q1answers: this.state.Q1,
+      q2answers: this.state.Q2,
       q3answers: this.state.Q3,
       q4answers: this.state.Q4
     })
@@ -35,13 +38,11 @@ export default class Q4Screen extends React.Component {
       Q4: value
     });
 
-    // this.props.navigation.state.setParam('Q2 answer', {
-    //   Q2Answer: this.state.Q2
-    // })
     console.log("Q4screen");
-    console.log(this.state)
+    console.log(this.state);
+    console.log(this.props.navigation.state.params.q1answers);
     console.log(this.props.navigation.state.params.q2answers);
-    // console.log(this.props.navigation.state.params.q2answers);
+
   }
 
   render () {
