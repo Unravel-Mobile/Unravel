@@ -4,6 +4,7 @@ import { Container, Button } from 'native-base';
 import QuestionHeader from '../../components/Questions/Question';
 // importing the Top navbar
 import Header from '../../components/TopNav';
+import SubmitButton from '../../components/SubmitButton';
 
 
 export default class Q7Screen extends React.Component {
@@ -23,8 +24,10 @@ export default class Q7Screen extends React.Component {
 
       <QuestionHeader qIndex={6} /> 
 
-        {/* Adding picture */}
-        {/* Submit button */}
+      {/* Adding picture */}
+      
+      {/* Submit button */}
+      <SubmitButton />
         
 
     </Container>
