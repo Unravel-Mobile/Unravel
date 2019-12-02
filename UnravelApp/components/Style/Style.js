@@ -121,6 +121,38 @@ export default StyleSheet.create({
         fontSize: RFPercentage(4),
         fontWeight: 'bold',
         backgroundColor: '#d3f0f2',
-    }
+    },
+//The Start of the Learn page (static text). 
+    learnImg: {
+        width: '100%',
+        height: '20%',
+        marginBottom: '1%'
+        // resizeMode: 'contain'
+    },
 
-});
+
+    h1: {
+        fontSize: RFPercentage(4),
+        fontWeight: 'bold',
+        textAlign: 'center',
+        color: '#475e60',
+        },
+
+    h2: {
+            fontSize: RFPercentage(3),
+            color: '#597579',
+            textAlign: 'left',
+    
+        },
+        
+    Text: {
+            fontSize: RFPercentage(2),
+            paddingHorizontal: '5%'
+        
+    },
+
+    },
+    
+
+
+);
