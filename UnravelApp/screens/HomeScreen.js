@@ -34,7 +34,7 @@ export default class HomeScreen extends Component {
         var uid = user.uid;
         // ...
         // console.log('HomeScreen user line36 ', user)
-        console.log('userId - > ', userId);
+        //console.log('userId - > ', userId);
 
 
         // TODO: Make an api call and POST the user unique id
