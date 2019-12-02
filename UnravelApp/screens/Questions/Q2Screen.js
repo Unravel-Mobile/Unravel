@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Icon } from 'native-base';
+import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area
@@ -36,10 +37,12 @@ export default class Q2Screen extends React.Component {
       Q2: value
     });
 
-    this.props.navigation.setParams({ q2answers: this.state.Q2 });
-    console.log(this.props.navigation.getParam("q2anwers", "no param"))
+    this.props.navigation.setParams({q2answers: this.state.Q2});
+
     console.log("Q2screen");
-    console.log(this.state)
+    // prints the object
+    console.log(this.state);
+    // references the answer
     console.log(this.props.navigation.state.params.q1answers);
   }
 
