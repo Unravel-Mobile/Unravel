@@ -11,7 +11,7 @@ import { Content } from "native-base";
 export default StyleSheet.create({
 
     mainBody: {
-        backgroundColor: '#B2EBF2'
+        backgroundColor: '#B2EBF2',
     },
 
     logo: {
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     },
 
     headerOne: {
-        color: 'red',
+        // color: 'red',
         fontFamily: 'Arial',
         fontSize: RFValue(60),
         textAlign: 'center',
@@ -36,7 +36,7 @@ export default StyleSheet.create({
     },
 
     headerTwo: {
-        color: 'blue',
+        // color: 'blue',
         fontSize: RFValue(20),
         fontWeight: 'bold',
         textAlign: 'center',
@@ -51,13 +51,15 @@ export default StyleSheet.create({
 
     text: {
         fontWeight: 'bold',
-        fontSize: RFValue(20),
+        fontSize: RFPercentage(3),
+        // fontSize: RFValue(20),
         textAlign: 'center',
         marginBottom: '1%'
     },
 
     headNav: {
-        backgroundColor: '#B2EBF2'
+        backgroundColor: '#B2EBF2',
+        justifyContent: 'center'
     },
 
     headTitle: {
@@ -117,10 +119,29 @@ export default StyleSheet.create({
         color: 'red'
     },
 
-    reviewSubHead: {
+    thoughtImg: {
+        margin: '2%',
+        flex: 1,
+        alignSelf: 'center',
+    },
+
+    reviewHead: {
+        backgroundColor: '#B2EBF2',
         fontSize: RFPercentage(4),
         fontWeight: 'bold',
+        // color:'red'
+    },
+
+    reviewSubHead: {
+        justifyContent: 'center',
+        fontSize: RFPercentage(3),
+        fontWeight: 'bold',
         backgroundColor: '#d3f0f2',
-    }
+        // color: 'blue'
+    },
+
+    thoughtTxt: {
+        fontSize: RFPercentage(3),
+    },
 
 });
