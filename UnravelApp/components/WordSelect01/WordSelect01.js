@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, Body, Content } from 'react-native'
+import { Text, View, Body, Content, Style } from 'react-native'
 import { Button } from 'native-base'
 import { Col, Row, Grid } from "react-native-easy-grid"
 import Words01 from "./Words01"
@@ -19,6 +19,12 @@ export default class WordSelect01 extends Component {
     //selectWord is a function (made up)
     selectWord = (word) => {
         this.state.wordArray.push(word);
+        // return 
+             
+            //press changes color, not pressed is default
+            //
+        
+        
         //ternary operator (true/false)
         //press is true or false
         //if true, change color
@@ -26,10 +32,16 @@ export default class WordSelect01 extends Component {
         console.log(this.state.wordArray);
     };
 
+    // change color of button when user presses the button
+    // changeButtonColor = (word) => {
+    //     this.state.selectWord.changeColor(onclick);
+    //     onclick = { false: transparent }
+        
+    // };
+    // //when user clicks on button, the highlighted color stays; when user clicks button again, it un-highlights
+    // onHoldButton = (wordArray) => this.selectWord;
+    //     this.state.selectWord.
 
-// this is for unselecting a word in the wordSelect
-// unselectWord = 
-// function: change the appearance of the buttons onPress (this might be part of the selectWord function, need more research)
 
     render() {
         return (
@@ -42,6 +54,7 @@ export default class WordSelect01 extends Component {
                             value={words01.col1}
                             //pressed={ false }
                             //info={ pressed ? transparent : blue }
+                            transparent
                             style={Styles.wordButtons}
                         >
                             <Text
@@ -100,6 +113,9 @@ Words01.map(words01 => {
     console.log(typeof words01.col1);
 })
 
+
+//  buttonStaysHighlighted = onpress(selectWord);
+//  deselectButton = onpress(word);
 
 
 
