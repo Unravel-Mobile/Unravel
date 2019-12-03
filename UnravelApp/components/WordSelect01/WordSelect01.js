@@ -15,10 +15,12 @@ export default class WordSelect01 extends Component {
         Words03,
         wordArray:[]
     };
+
     selectWord = (word) => {
         this.state.wordArray.push(word);
         console.log(this.state.wordArray);
     };
+    
 // this is for unselecting a word in the wordSelect
 // unselectWord = 
 // function: change the appearance of the buttons onPress (this might be part of the selectWord function, need more research)
@@ -84,13 +86,3 @@ export default class WordSelect01 extends Component {
         )
     };
 }
-console.log(Words01);
-Words01.map(words01 => {
-    console.log("========================================")
-    console.log("SHIT")
-    console.log(typeof words01.col1);
-})
-
-
-
-

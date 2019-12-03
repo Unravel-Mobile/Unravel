@@ -19,7 +19,8 @@ export default class Q5Screen extends React.Component {
     Q2: this.props.navigation.state.params.q2answers,
     Q3: this.props.navigation.state.params.q3answers,
     Q4: this.props.navigation.state.params.q4answers,
-    Q5: ""
+    Q5: this.props.navigation.state.params.q5answers,
+    Q6: ""
   }
 
   navigate = (screen) => {
@@ -28,7 +29,8 @@ export default class Q5Screen extends React.Component {
       q2answers: this.state.Q2,
       q3answers: this.state.Q3,
       q4answers: this.state.Q4,
-      q5answers: this.state.Q5
+      q5answers: this.state.Q5,
+      q6answers: this.state.Q6
     })
   }
   
@@ -38,13 +40,11 @@ export default class Q5Screen extends React.Component {
 
     // Using State to store current textarea
     this.setState({
-      Q5: value
+      Q6: value
     });
 
     console.log("Q5screen");
     console.log(this.state);
-    console.log(this.props.navigation.state.params.q1answers);
-    console.log(this.props.navigation.state.params.q2answers);
   }
 
   render () {
@@ -55,8 +55,8 @@ export default class Q5Screen extends React.Component {
       <QuestionHeader qIndex={5} /> 
 
       <InputForm
-          name="Q5"
-          value={this.state.Q5}
+          name="Q6"
+          value={this.state.Q6}
           onChangeText={this.onChangeText}
       />
 

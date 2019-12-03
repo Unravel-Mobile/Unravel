@@ -21,7 +21,8 @@ export default class Q6Screen extends React.Component {
     Q3: this.props.navigation.state.params.q3answers,
     Q4: this.props.navigation.state.params.q4answers,
     Q5: this.props.navigation.state.params.q5answers,
-    Q6: ""
+    Q6: this.props.navigation.state.params.q6answers,
+    Q7: 5
   }
 
   navigate = (screen) => {
@@ -31,23 +32,17 @@ export default class Q6Screen extends React.Component {
       q3answers: this.state.Q3,
       q4answers: this.state.Q4,
       q5answers: this.state.Q5,
-      q6answers: this.state.Q6
+      q6answers: this.state.Q6,
+      q7answers: this.state.Q7
     })
   }
   
-  onChangeText = event => {
-    // Caputuring the input text
-    let value = event;
-
-    // Using State to store current textarea
+  // slider value change fcn 
+  onValueChange = val => {
+    //When the slider value changes, state (q7) is updated to match
     this.setState({
-      Q6: value
+      Q7: val
     });
-
-    console.log("Q6screen");
-    console.log(this.state);
-    console.log(this.props.navigation.state.params.q1answers);
-    console.log(this.props.navigation.state.params.q2answers);
   }
 
   render () {
@@ -57,7 +52,12 @@ export default class Q6Screen extends React.Component {
 
         <QuestionHeader qIndex={2} /> 
 
-        <Slider/>
+        <Slider
+          // initial value of the slider
+          value = {this.state.Q7}
+          // passes value on change
+          onValueChange={ value => this.onValueChange(value)}
+        />
 
         <QuestionHeader qIndex={3} /> 
         {/* Word Select Version 2 */}

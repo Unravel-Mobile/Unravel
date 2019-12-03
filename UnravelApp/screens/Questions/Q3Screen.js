@@ -16,17 +16,20 @@ export default class Q3Screen extends React.Component {
   state = {
     Q1: this.props.navigation.state.params.q1answers,
     Q2: this.props.navigation.state.params.q2answers,
-    Q3: 5
+    Q3: 5,
+    Q4: []
   }
 
   navigate = (screen) => {
     this.props.navigation.navigate(screen, {
       q1answers: this.state.Q1,
       q2answers: this.state.Q2,
-      q3answers: this.state.Q3 
+      q3answers: this.state.Q3,
+      q4answers: this.state.Q4
     })
   }
   
+  // slider value change fcn 
   onValueChange = val => {
     //When the slider value changes, state (q3) is updated to match
     this.setState({
