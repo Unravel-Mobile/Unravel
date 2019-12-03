@@ -18,25 +18,25 @@ var styles = StyleSheet.create({
 
 // lowercase is the name we are exporting
 export default class slider extends Component {
-    state={
-        value: 5.0
-    }
+
 
     render() {
         return (
             <View style={styles.container}>
                 <Slider
-                    value={this.state.value}
-                    onValueChange={(value) => this.setState({ value })}
+                    value= {this.props.value}
+                    onValueChange={this.props.onValueChange}
                     minimumValue={0}
                     maximumValue={10}
                     step={0.5}
                     minimumTrackTintColor={'lightgray'}
                     maximumTrackTintColor={'darkgray'}
                     thumbTintColor={'#B2EBF2'}
-                    // thumbTouchSize={width: 40, height: 40}
+                    
                 />
-                <Text>Value: {this.state.value}</Text>
+                <Text>Value: 
+                {this.props.value}
+                </Text>
             </View>
         );
     }

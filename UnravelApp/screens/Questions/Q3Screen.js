@@ -16,7 +16,8 @@ export default class Q3Screen extends React.Component {
   state = {
     Q1: this.props.navigation.state.params.q1answers,
     Q2: this.props.navigation.state.params.q2answers,
-    Q3: ""
+    Q3: 5,
+    value: 1
   }
 
   navigate = (screen) => {
@@ -26,18 +27,15 @@ export default class Q3Screen extends React.Component {
       q3answers: this.state.Q3 
     })
   }
-  sliderValue = event => {
-    // Caputuring the input text
-    let value = event;
-
+  
+  changeValue = val => {
+    console.log("LALALALALALA")
+    console.log("on value change:", val)
     // Using State to store current textarea
     this.setState({
-      Q3: {value}
+      Q3: val
     });
-    console.log("Q3screen");
-    console.log(this.state);
-    console.log(this.props.navigation.state.params.q1answers);
-    console.log(this.props.navigation.state.params.q2answers);
+    console.log("value change state:", this.state.Q3)
 
   }
 
@@ -51,7 +49,8 @@ export default class Q3Screen extends React.Component {
         <QuestionHeader qIndex={2} /> 
 
         <Slider
-          onValueChange={this.sliderValue}
+          value = {this.state.Q3}
+          onValueChange={ value => console.log(value)}
         />
         
         <QuestionHeader qIndex={3} />
