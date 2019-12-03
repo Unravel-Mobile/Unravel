@@ -15,10 +15,18 @@ export default class WordSelect01 extends Component {
         Words03,
         wordArray:[]
     };
+    
+    //selectWord is a function (made up)
     selectWord = (word) => {
         this.state.wordArray.push(word);
+        //ternary operator (true/false)
+        //press is true or false
+        //if true, change color
+        //if false, keep transparent
         console.log(this.state.wordArray);
     };
+
+
 // this is for unselecting a word in the wordSelect
 // unselectWord = 
 // function: change the appearance of the buttons onPress (this might be part of the selectWord function, need more research)
@@ -32,7 +40,8 @@ export default class WordSelect01 extends Component {
                             key={i}
                             onPress={()=>this.selectWord(words01.col1)}
                             value={words01.col1}
-                            transparent
+                            //pressed={ false }
+                            //info={ pressed ? transparent : blue }
                             style={Styles.wordButtons}
                         >
                             <Text
@@ -50,7 +59,7 @@ export default class WordSelect01 extends Component {
                         key={i}
                         onPress={()=>this.selectWord(words02.col2)}
                             value={words02.col2}
-                        transparent
+                        info
                         style={Styles.wordButtons}
                     >
                             <Text
@@ -68,7 +77,7 @@ export default class WordSelect01 extends Component {
                         key={i}
                             onPress={()=>this.selectWord(words03.col3)}
                             value={words03.col3}
-                        transparent
+                        info
                         style={Styles.wordButtons}
                     >
                             <Text
