@@ -11,7 +11,7 @@ import Slider from '../../components/slider';
 import WordSelect01 from '../../components/WordSelect01/WordSelect01';
 
 
-import WordSelect01 from '../../components/WordSelect01';
+//import WordSelect01 from '../../components/WordSelect01';
 
 export default class Q3Screen extends React.Component {
 
