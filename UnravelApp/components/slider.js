@@ -34,9 +34,7 @@ export default class slider extends Component {
                     thumbTintColor={'#B2EBF2'}
                     
                 />
-                <Text>Value: 
-                {this.props.value}
-                </Text>
+                <Text>Value: {this.props.value} </Text>
             </View>
         );
     }

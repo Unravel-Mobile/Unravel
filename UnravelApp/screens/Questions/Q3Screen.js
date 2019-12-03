@@ -16,8 +16,7 @@ export default class Q3Screen extends React.Component {
   state = {
     Q1: this.props.navigation.state.params.q1answers,
     Q2: this.props.navigation.state.params.q2answers,
-    Q3: 5,
-    value: 1
+    Q3: 5
   }
 
   navigate = (screen) => {
@@ -28,15 +27,11 @@ export default class Q3Screen extends React.Component {
     })
   }
   
-  changeValue = val => {
-    console.log("LALALALALALA")
-    console.log("on value change:", val)
-    // Using State to store current textarea
+  onValueChange = val => {
+    //When the slider value changes, state (q3) is updated to match
     this.setState({
       Q3: val
     });
-    console.log("value change state:", this.state.Q3)
-
   }
 
 
@@ -49,8 +44,10 @@ export default class Q3Screen extends React.Component {
         <QuestionHeader qIndex={2} /> 
 
         <Slider
+          // initial value of the slider
           value = {this.state.Q3}
-          onValueChange={ value => console.log(value)}
+          // passes value on change
+          onValueChange={ value => this.onValueChange(value)}
         />
         
         <QuestionHeader qIndex={3} />
