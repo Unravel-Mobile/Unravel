@@ -21,7 +21,7 @@ export default class slider extends Component {
     state={
         value: 5.0
     }
-    
+
     render() {
         return (
             <View style={styles.container}>

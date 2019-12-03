@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container } from 'native-base';
+import { NavigationInjectedProps, withNavigation} from 'react-navigation';
+
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area
@@ -13,14 +15,23 @@ export default class Q5Screen extends React.Component {
     header: null
   }
   state = {
-    Q5:""
+    Q1: this.props.navigation.state.params.q1answers,
+    Q2: this.props.navigation.state.params.q2answers,
+    Q3: this.props.navigation.state.params.q3answers,
+    Q4: this.props.navigation.state.params.q4answers,
+    Q5: ""
   }
 
   navigate = (screen) => {
     this.props.navigation.navigate(screen, {
-      q5answers: this.state.Q5 })
+      q1answers: this.state.Q1,
+      q2answers: this.state.Q2,
+      q3answers: this.state.Q3,
+      q4answers: this.state.Q4,
+      q5answers: this.state.Q5
+    })
   }
-
+  
   onChangeText = event => {
     // Caputuring the input text
     let value = event;
@@ -29,9 +40,11 @@ export default class Q5Screen extends React.Component {
     this.setState({
       Q5: value
     });
+
     console.log("Q5screen");
-    console.log(this.props.navigation.state.params.q3answers);
-    console.log(this.props.navigation.state.params.q4answers);
+    console.log(this.state);
+    console.log(this.props.navigation.state.params.q1answers);
+    console.log(this.props.navigation.state.params.q2answers);
   }
 
   render () {
@@ -42,8 +55,8 @@ export default class Q5Screen extends React.Component {
       <QuestionHeader qIndex={5} /> 
 
       <InputForm
-          name="Q4"
-          value={this.state.Q4}
+          name="Q5"
+          value={this.state.Q5}
           onChangeText={this.onChangeText}
       />
 
