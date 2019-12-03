@@ -24,7 +24,7 @@ export default class HomeScreen extends Component {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      console.log(error);
+      // console.log(error);
     });
 
     await firebase.auth().onAuthStateChanged(function (user) {
@@ -33,23 +33,26 @@ export default class HomeScreen extends Component {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         // ...
-        console.log(user)
+        // console.log('HomeScreen user line36 ', user)
+        //console.log('userId - > ', userId);
+
 
         // TODO: Make an api call and POST the user unique id
-        // axios.post('api heroku link', { userId: uid })
+        axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
       } else {
         // User is signed out.
         // ...
       }
       // ...
     });
+    console.log('HomeScreen userId -- > ', userId)
   }
 
   render() {
     return (
-      // Links here ties with Links key in MaintTabNavitor.js line 50
+      // Links here ties with Links key in MainTabNavitor.js line 50
       <HomePage
-        links='Links'
+        log='Log1'
         learn='Learn'
         review='Review'
         navigate={this.props.navigation.navigate} />

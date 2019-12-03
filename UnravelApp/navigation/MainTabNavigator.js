@@ -7,6 +7,10 @@ import HomeScreen from '../screens/HomeScreen';
 import Q1Screen from '../screens/Questions/Q1Screen';
 import Q2Screen from '../screens/Questions/Q2Screen';
 import Q3Screen from '../screens/Questions/Q3Screen';
+import Q4Screen from '../screens/Questions/Q4Screen';
+import Q5Screen from '../screens/Questions/Q5Screen';
+import Q6Screen from '../screens/Questions/Q6Screen';
+import Q7Screen from '../screens/Questions/Q7Screen';
 import LearnScreen from '../screens/LearnScreen';
 import ReviewScreen from '../screens/ReviewScreen';
 
@@ -50,7 +54,11 @@ const LogStack = createStackNavigator(
   {
     Log1: Q1Screen,
     Log2: Q2Screen,
-    Log3: Q3Screen
+    Log3: Q3Screen,
+    Log4: Q4Screen,
+    Log5: Q5Screen,
+    Log6: Q6Screen,
+    Log7: Q7Screen
   },
   config
 );

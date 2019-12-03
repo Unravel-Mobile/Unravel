@@ -1,12 +1,21 @@
 import React, { Component } from "react";
-import { Container, Header, Content, Textarea, Form } from "native-base";
+import { Content, Textarea, Form } from "native-base";
 
-export default class TextArea extends Component {
+import Styles from '../components/Style/Style';
+
+
+export default class InputForm extends Component {
     render() {
         return (
             <Content padder>
                 <Form>
-                    <Textarea rowSpan={5} bordered placeholder="Textarea" />
+                    <Textarea style={Styles.textArea}
+                        name={this.props.name}
+                        rowSpan={5}
+                        bordered
+                        placeholder="Textarea input"
+                        onChangeText={this.props.onChangeText}
+                    />
                 </Form>
             </Content>
         );

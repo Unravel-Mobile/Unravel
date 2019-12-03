@@ -45,14 +45,14 @@ async function loadResourcesAsync() {
         'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf')
       }),
     ]);
-    this.setState({ fontLoaded: true });
+    // this.setState({ fontLoaded: true });
 
   }
   catch (err) {
-    console.log("\n===================")
-    console.log("error loading fonts")
-    console.log(err);
-    console.log("\n===================")
+    // console.log("\n===================")
+    // console.log("error loading fonts")
+    // console.log(err);
+    // console.log("\n===================")
 
   }
 }
@@ -60,7 +60,7 @@ async function loadResourcesAsync() {
 function handleLoadingError(error) {
   // In this case, you might want to report the error to your error reporting
   // service, for example Sentry
-  console.warn(error);
+  // console.warn(error);
 }
 
 function handleFinishLoading(setLoadingComplete) {

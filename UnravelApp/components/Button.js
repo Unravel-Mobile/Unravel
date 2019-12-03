@@ -10,12 +10,9 @@ export default class ButtonRoundedExample extends Component {
                 <Content>
                 
                     <Button rounded light>
-                        <Text>Light</Text>
+                        <Text>Submit</Text>
                     </Button>
                     
-                    <Button rounded>
-                        <Text>Primary</Text>
-                    </Button>
 
                 </Content>
             </Container>

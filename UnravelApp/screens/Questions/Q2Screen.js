@@ -1,11 +1,15 @@
 import React from 'react';
-import { Container } from 'native-base';
+import { Container, Icon } from 'native-base';
+import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area
-import TextArea from '../../components/InputForm';
+import InputForm from '../../components/InputForm';
 // importing the Top navbar
 import Header from '../../components/TopNav';
+
+import Styles from '../../components/Style/Style';
+
 
 export default class Q2Screen extends React.Component {
 
@@ -13,20 +17,51 @@ export default class Q2Screen extends React.Component {
     header: null
   }
 
-  navigate = (screen) => {
-    this.props.navigation.navigate(screen)
+  state = {
+    Q1: this.props.navigation.state.params.q1answers,
+    Q2: ""
   }
 
-  render () {
-  return (
-    <Container>
-      <Header navigate={this.navigate} previous= 'Log1' next='Log3'/>
+  navigate = (screen) => {
+    this.props.navigation.navigate(screen, {
+      q1answers: this.state.Q1,
+      q2answers: this.state.Q2
+    })
+  }
+  onChangeText = event => {
+    // Caputuring the input text
+    let value = event;
 
-      <QuestionHeader qIndex={1} /> 
+    // Using State to store current textarea
+    this.setState({
+      Q2: value
+    });
 
-      <TextArea> Describe the situation </TextArea>
+    this.props.navigation.setParams({q2answers: this.state.Q2});
 
-    </Container>
+    console.log("Q2screen");
+    // prints the object
+    console.log(this.state);
+    // references the answer
+    console.log(this.props.navigation.state.params.q1answers);
+  }
+
+
+  render() {
+    return (
+      <Container>
+        <Header navigate={this.navigate} previous='Log1' next='Log3' />
+
+        <QuestionHeader qIndex={1} />
+
+          <InputForm
+            name="Q2"
+            value={this.state.Q2}
+            onChangeText={this.onChangeText}
+          />
+
+        <Icon style={Styles.microphone} name='mic-off' />
+      </Container>
 
     );
   };

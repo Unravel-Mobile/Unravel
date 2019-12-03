@@ -1,6 +1,12 @@
 import React from 'react';
-import { Container } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Body } from "native-base";
 import QuestionHeader from '../components/Questions/Question';
+import SubmitButton from '../components/SubmitButton';
+import ThougthLog from '../components/ThoughtLog';
+
+import Styles from '../components/Style/Style';
+
+
 
 export default function ReviewScreen() {
   /**
@@ -9,8 +15,30 @@ export default function ReviewScreen() {
    */
   return (
     <Container>
-      <QuestionHeader qIndex={2} /> 
+      <Content padder>
+        <Card>
+          <CardItem style={Styles.headNav}>
+            <Text style={Styles.reviewHead}>Thought List(titles)</Text>
+          </CardItem>
+          <CardItem style={Styles.reviewSubHead}>
+            <Text style={Styles.reviewSubHead}>
+              Review this situation
+                </Text>
+          </CardItem>
+        </Card>
 
+        <Card>
+          <CardItem style={Styles.reviewSubHead} button onPress={() => alert("Will relocate to individual Log")}>
+            <Text style={Styles.reviewSubHead}>
+              {/* LIST OF THE HEADERS FROM THE DB WILL GO HERE */}
+              Title of event
+                </Text>
+          </CardItem>
+        </Card>
+
+        <ThougthLog />
+
+      </Content>
     </Container>
 
   );
