@@ -27,14 +27,14 @@ export default function Submit() {
                 color='red'
 
                 onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts', {
-                    title: 'Sunday 3:05pm',
-                    situation: 'test from PH',
+                    title: 'MONDAY TEST 6:49pm',
+                    situation: 'test 2 after db changes',
                     prerating: 4,
-                    wordSelect1: 'posting from PH',
-                    autoThought: 'should work',
-                    changedThought: 'shows up on heroku logs',
+                    wordSelect1: 'posting from ipad again',
+                    autoThought: 'still a little scary',
+                    changedThought: 'check heroku logs for a new log',
                     postRating: 8,
-                    wordSelect2: 'figuring out the get',
+                    wordSelect2: 'did it show up?',
                 })
                     .then(function (response) {
                         console.log(response.config.data);
@@ -73,5 +73,5 @@ const styles = StyleSheet.create({
     },
 });
 
-console.log('BUTTON PRESENT');
+// console.log('BUTTON PRESENT');
 
