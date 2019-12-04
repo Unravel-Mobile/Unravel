@@ -9,7 +9,7 @@ import Styles from '../Style/Style';
 // import { elementType } from '../../../../../../Library/Caches/typescript/3.6/node_modules/@types/prop-types'
 
 
-export default class WordSelect01 extends Component {
+export default class WordSelect02 extends Component {
     state = {
         Words04,
         Words05,
@@ -49,7 +49,7 @@ export default class WordSelect01 extends Component {
                             key={i}
                             onPress={() => this.selectWord(words04.col4, 'Words04', 'col4')}
                             value={words04.col4}
-                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: words01.isHighlighted ? 'lightblue' : 'transparent' }}
+                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: words04.isHighlighted ? 'lightblue' : 'transparent' }}
                             >
                             <Text
                               key={i+"TEXT"}
@@ -66,7 +66,7 @@ export default class WordSelect01 extends Component {
                         key={i}
                         onPress={() => this.selectWord(words05.col5, 'Words05', 'col5')}
                         value={words05.col5}
-                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words02.isHighlighted ? 'lightblue' : 'transparent' }}
+                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words05.isHighlighted ? 'lightblue' : 'transparent' }}
                     >
                             <Text
                                  key={i+"TEXT"}
@@ -83,7 +83,7 @@ export default class WordSelect01 extends Component {
                         key={i}
                         onPress={() => this.selectWord(words06.col6, 'Words06', 'col6')}
                         value={words06.col6}
-                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words03.isHighlighted ? 'lightblue' : 'transparent' }}
+                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words06.isHighlighted ? 'lightblue' : 'transparent' }}
                     >
                         <Text
                             key={i+"TEXT"}
