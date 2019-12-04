@@ -8,6 +8,7 @@ import QuestionHeader from '../../components/Questions/Question';
 import Header from '../../components/TopNav';
 // importing slider
 import Slider from '../../components/slider';
+import WordSelect02 from '../../components/WordSelect02/WordSelect02';
 
 export default class Q6Screen extends React.Component {
 
@@ -62,7 +63,7 @@ export default class Q6Screen extends React.Component {
         <QuestionHeader qIndex={3} /> 
         {/* Word Select Version 2 */}
         {/* Word Select Version 3 */}
-
+        <WordSelect02 />
     </Container>
 
     );
