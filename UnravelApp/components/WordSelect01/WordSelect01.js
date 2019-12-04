@@ -17,10 +17,30 @@ export default class WordSelect01 extends Component {
     };
     
     //selectWord is a function (made up)
-    selectWord = (word) => {
+    selectWord = (word, selected) => {
+
+        // if not selected push into word Array and apply selected color
+        if (selected === 0) {
         this.state.wordArray.push(word);
-        // return 
-             
+        //not working: the changing of the selected value
+        selected = 1;
+        console.log(this.state.wordArray);
+        }
+        // if selected remove from the Array and remove the selected color effect
+        else if (selected === 1) {
+        this.state.wordArray.splice(this.state.wordArray.indexOf(word), 1); 
+        selected = 0;
+        console.log(this.state.wordArray);
+        }
+        
+        
+
+        // this.state.onPress(Button)
+        // this.state.onPress() = {
+        //     ifPressed = {true()}   
+        // }
+        // return pressed ? info : transparent;
+  
             //press changes color, not pressed is default
             //
         
@@ -29,7 +49,7 @@ export default class WordSelect01 extends Component {
         //press is true or false
         //if true, change color
         //if false, keep transparent
-        console.log(this.state.wordArray);
+        // console.log(this.state.wordArray);
     };
 
     // change color of button when user presses the button
@@ -50,7 +70,7 @@ export default class WordSelect01 extends Component {
                     {Words01.map((words01, i) => (
                         <Button
                             key={i}
-                            onPress={()=>this.selectWord(words01.col1)}
+                            onPress={()=>this.selectWord(words01.col1, words01.selected)}
                             value={words01.col1}
                             //pressed={ false }
                             //info={ pressed ? transparent : blue }
