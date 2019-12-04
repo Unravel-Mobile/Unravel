@@ -14,27 +14,28 @@ export default class WordSelect02 extends Component {
         Words04,
         Words05,
         Words06,
-        wordArray:[]
+        selWordsArr: []
     };
-    
     //selectWord is a function (made up)
     selectWord = (word, wordSet, col) => {
-  
-        
         const updatedArray = this.state[wordSet].map(element => {
             if (element[col] === word ) {
+                if (this.state.selWordsArr.indexOf(word) === -1) {
+                    // add selected word to selWordsArr if it is not already in the array
+                    this.state.selWordsArr.push(word);
+                } else {
+                    // if it's already in the array then remove it
+                    this.state.selWordsArr.splice(this.state.selWordsArr.indexOf(word), 1)
+                }
                 element.isHighlighted = !element.isHighlighted
-                return element
+                return element;
             } else {
-                return element
+                return element;
             }
         })
-
-        console.log(updatedArray)
-
-        
-        this.setState({ [wordSet]: updatedArray })
-        // console.log(this.state.wordArray);
+        console.log(this.state.selWordsArr)
+        // update the Words objects in state to highlighted or not highlighted
+        this.setState({ [wordSet]: updatedArray });
     };
 
 

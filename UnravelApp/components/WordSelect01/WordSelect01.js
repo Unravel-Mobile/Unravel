@@ -14,29 +14,29 @@ export default class WordSelect01 extends Component {
         Words01,
         Words02,
         Words03,
-        wordArray:[]
+        selWordsArr: []
     };
-    
     //selectWord is a function (made up)
     selectWord = (word, wordSet, col) => {
-   //Add API call in the selectWord function
-        
         const updatedArray = this.state[wordSet].map(element => {
             if (element[col] === word ) {
+                if (this.state.selWordsArr.indexOf(word) === -1) {
+                    // add selected word to selWordsArr if it is not already in the array
+                    this.state.selWordsArr.push(word);
+                } else {
+                    // if it's already in the array then remove it
+                    this.state.selWordsArr.splice(this.state.selWordsArr.indexOf(word), 1)
+                }
                 element.isHighlighted = !element.isHighlighted
-                return element
+                return element;
             } else {
-                return element
+                return element;
             }
         })
-
-        console.log(updatedArray)
-
-        
-        this.setState({ [wordSet]: updatedArray })
-        // console.log(this.state.wordArray);
+        console.log(this.state.selWordsArr)
+        // update the Words objects in state to highlighted or not highlighted
+        this.setState({ [wordSet]: updatedArray });
     };
-
 
 
 
@@ -103,10 +103,10 @@ export default class WordSelect01 extends Component {
 
 // console.log(Words01);
 // Words01.map(words01 => {
-//     console.log("========================================")
-//     console.log("SHIT")
+//      console.log("========================================")
+//    console.log("SHIT")
 //     console.log(typeof words01.col1);
-// })
+//  })
 
 
 
