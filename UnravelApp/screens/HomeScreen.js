@@ -7,6 +7,8 @@ import HomePage, { Home } from '../components/Home';
 import axios from 'axios';
 
 
+import { StackNavigator } from 'react-navigation';
+
 var firebaseConfig = {
   apiKey: "AIzaSyCmW0cougaiZYPQ9lXvuJN6MEhxAgoFZKo",
   authDomain: "unravel-43092.firebaseapp.com",
@@ -18,19 +20,18 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+// var userId;
 
 export default class HomeScreen extends Component {
 
-  // state = {
-  //   userId: '',
-  // }
 
-  async componentDidMount() {
-    await this._retrieveData();
+  componentDidMount() {
+    this._retrieveData();
     console.log('retrieving done!');
   }
 
   _storeData = async (userId) => {
+    console.log('_store data - - > ', userId);
     try {
       await AsyncStorage.setItem('_store userId', userId);
       console.log('_store data - - > ', userId);
@@ -38,6 +39,7 @@ export default class HomeScreen extends Component {
     } catch (error) {
       console.log(error);
     }
+    finally{console.log('_store data - - > ', userId)}
   };
 
   _retrieveData = async () => {
@@ -45,10 +47,10 @@ export default class HomeScreen extends Component {
       const userId = await AsyncStorage.getItem('userId');
       console.log('_retrieve - - > ', userId);
 
-      if (userId !== null) {
+      if (userId) {
         console.log('We have data!!');
         //  TODO: set the userId as a param using react-navigation
-        this.props.navigation.setParams('UserId', { uid });
+        // this.props.navigation.setParams('UserId', { uid });
 
       } else {
         await this.login()
@@ -79,11 +81,17 @@ export default class HomeScreen extends Component {
         // TODO: Make an api call and POST the user unique id
         axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
           .then(user => {
-            console.log('inside axios call - - > ', uid);
-            // this._storeData(userId._id);
+
+            var itemWithId = JSON.parse(user.config.data);
+            console.log('inside axios call - - > ', itemWithId.userId);
+            var itemTwo = itemWithId.userId;
+            console.log('itemTwo - - > ', itemTwo);
+
+            this._storeData(itemTwo);
 
             //  TODO: set the userId as a param using react-navigation
-            // this.props.navigation.setParams('UserId', { uid });
+            // this.props.navigation.setParams({ userId: itemTwo });
+
           })
       } else {
         // User is signed out.
