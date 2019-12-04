@@ -6,6 +6,7 @@ import Words01 from "./Words01"
 import Words02 from "./Words02"
 import Words03 from "./Words03"
 import Styles from '../Style/Style';
+// import { elementType } from '../../../../../../Library/Caches/typescript/3.6/node_modules/@types/prop-types'
 
 
 export default class WordSelect01 extends Component {
@@ -17,38 +18,29 @@ export default class WordSelect01 extends Component {
     };
     
     //selectWord is a function (made up)
-    selectWord = (word, selected) => {
-
-        // if not selected push into word Array and apply selected color
-        if (selected === 0) {
-        this.state.wordArray.push(word);
-        //not working: the changing of the selected value
-        selected = 1;
-        console.log(this.state.wordArray);
-        }
-        // if selected remove from the Array and remove the selected color effect
-        else if (selected === 1) {
-        this.state.wordArray.splice(this.state.wordArray.indexOf(word), 1); 
-        selected = 0;
-        console.log(this.state.wordArray);
-        }
-        
-        
-
-        // this.state.onPress(Button)
-        // this.state.onPress() = {
-        //     ifPressed = {true()}   
-        // }
-        // return pressed ? info : transparent;
-  
+    selectWord = (word, wordSet, col) => {
+        // this.state.wordArray.push(word);
+        // return 
+             
             //press changes color, not pressed is default
             //
         
-        
+        const updatedArray = this.state[wordSet].map(element => {
+            if (element[col] === word ) {
+                element.isHighlighted = !element.isHighlighted
+                return element
+            } else {
+                return element
+            }
+        })
         //ternary operator (true/false)
         //press is true or false
         //if true, change color
         //if false, keep transparent
+        console.log(updatedArray)
+
+        
+        this.setState({ [wordSet]: updatedArray })
         // console.log(this.state.wordArray);
     };
 
@@ -70,13 +62,13 @@ export default class WordSelect01 extends Component {
                     {Words01.map((words01, i) => (
                         <Button
                             key={i}
-                            onPress={()=>this.selectWord(words01.col1, words01.selected)}
+                            onPress={() => this.selectWord(words01.col1, 'Words01', 'col1')}
                             value={words01.col1}
                             //pressed={ false }
                             //info={ pressed ? transparent : blue }
-                            transparent
-                            style={Styles.wordButtons}
-                        >
+                            // transparent
+                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: words01.isHighlighted ? 'lightblue' : 'transparent' }}
+                            >
                             <Text
                               key={i+"TEXT"}
                               style={Styles.buttonText}
@@ -90,10 +82,9 @@ export default class WordSelect01 extends Component {
                  {Words02.map((words02, i) => (
                     <Button
                         key={i}
-                        onPress={()=>this.selectWord(words02.col2)}
-                            value={words02.col2}
-                        info
-                        style={Styles.wordButtons}
+                        onPress={() => this.selectWord(words02.col2, 'Words02', 'col2')}
+                        value={words02.col2}
+                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words02.isHighlighted ? 'lightblue' : 'transparent' }}
                     >
                             <Text
                                  key={i+"TEXT"}
@@ -108,30 +99,32 @@ export default class WordSelect01 extends Component {
                 {Words03.map((words03, i) => (
                     <Button
                         key={i}
-                            onPress={()=>this.selectWord(words03.col3)}
-                            value={words03.col3}
-                        info
-                        style={Styles.wordButtons}
+                        onPress={() => this.selectWord(words03.col3, 'Words03', 'col3')}
+                        value={words03.col3}
+                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words03.isHighlighted ? 'lightblue' : 'transparent' }}
                     >
-                            <Text
-                                key={i+"TEXT"}
-                                style={Styles.buttonText}
-                                >
-                                {words03.col3}</Text>
+                        <Text
+                            key={i+"TEXT"}
+                            style={Styles.buttonText}
+                            >
+                            {words03.col3}
+                        </Text>
 
-                        </Button>
+                    </Button>
                     ))}
                 </Col>
             </Grid>
         )
     };
 }
-console.log(Words01);
-Words01.map(words01 => {
-    console.log("========================================")
-    console.log("SHIT")
-    console.log(typeof words01.col1);
-})
+
+
+// console.log(Words01);
+// Words01.map(words01 => {
+//     console.log("========================================")
+//     console.log("SHIT")
+//     console.log(typeof words01.col1);
+// })
 
 
 //  buttonStaysHighlighted = onpress(selectWord);
@@ -139,3 +132,13 @@ Words01.map(words01 => {
 
 
 
+
+
+
+
+
+// {
+//     "blankfield": "" ,
+//     "type": "words",
+//     "isHighlighted": false   
+// }

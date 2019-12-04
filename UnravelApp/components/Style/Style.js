@@ -58,7 +58,8 @@ export default StyleSheet.create({
     },
 
     headNav: {
-        backgroundColor: '#B2EBF2',
+        // backgroundColor: '#B2EBF2',
+        marginTop: 15,
         justifyContent: 'center'
     },
 

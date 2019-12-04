@@ -1,12 +1,13 @@
 import React from 'react';
-import { Header, Left, Right, Button, Icon, Text } from 'native-base';
+import { View } from 'react-native';
+import { Header, Left, Right, Button, Icon, Text, Container } from 'native-base';
 import Styles from '../components/Style/Style';
 
 
 
 export default TopNavBar = (props) =>  {
     return (
-      <Header style={Styles.headNav}>
+        <Header style={Styles.headNav}>
           <Left>
             <Button transparent onPress={() => props.navigate(props.previous)}>
               <Icon style={Styles.arrows} name='arrow-back' />
@@ -22,5 +23,6 @@ export default TopNavBar = (props) =>  {
             </Button>
           </Right>
         </Header>
+      // </View>
     );
 }
