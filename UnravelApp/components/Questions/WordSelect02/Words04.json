@@ -1,0 +1,42 @@
+[   
+    {
+        "col1": "Alienated", 
+        "type": "words1"
+    },
+    {
+        "col1": "Angry",
+        "type": "words2"
+    }, 
+    {
+        "col1": "Ashamed",
+        "type": "words3"
+    }, 
+    {
+        "col1": "Bullied" ,
+        "type": "words4"
+    },
+    {
+        "col1": "Depressed" ,
+        "type": "words5"
+    },
+    {
+        "col1": "Disappointed" ,
+        "type": "words6"
+    },
+    {
+        "col1": "Discouraged" ,
+        "type": "words7"
+    },
+    {
+        "col1": "Disgusted" ,
+        "type": "words8"
+    },
+    {
+        "col1": "Frustrated" ,
+        "type": "words9"
+    },
+    {
+        "col1": "Grumpy" ,
+        "type": "words10"
+    }
+]

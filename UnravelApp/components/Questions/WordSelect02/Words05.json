@@ -1,0 +1,43 @@
+[   
+    {
+        "col2": "Helpless", 
+        "type": "words11"
+    },
+    {
+        "col2": "Hurt",
+        "type": "words12"
+    }, 
+    {
+        "col2": "Impatient",
+        "type": "words13"
+    }, 
+    {
+        "col2": "Insecure" ,
+        "type": "words14"
+    },
+    {
+        "col2": "Insulted" ,
+        "type": "words15"
+    },
+    {
+        "col2": "Irritated" ,
+        "type": "words16"
+    },
+    {
+        "col2": "Jealous" ,
+        "type": "words17"
+    },
+    {
+        "col2": "Judgemental" ,
+        "type": "words18"
+    },
+    {
+        "col2": "Not confident" ,
+        "type": "words19"
+    },
+    {
+        "col2": "Numb" ,
+        "type": "words20"
+    }
+    
+]

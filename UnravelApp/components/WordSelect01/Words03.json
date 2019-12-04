@@ -1,0 +1,39 @@
+[
+    {
+        "col3": "Overwhelmed" ,
+        "type": "words21",
+        "isHighlighted": false
+    },
+    {
+        "col3": "Pessimistic" ,
+        "type": "words22",
+        "isHighlighted": false
+    },
+    {
+        "col3": "Powerless" ,
+        "type": "words23",
+        "isHighlighted": false
+    },
+    {
+        "col3": "Resentful" ,
+        "type": "words24",
+        "isHighlighted": false
+    },
+    {
+        "col3": "Self-critical" ,
+        "type": "words25",
+        "isHighlighted": false
+    },
+    {
+        "col3": "Shaky/Fearful" ,
+        "type": "words26",
+        "isHighlighted": false
+    },
+    {
+        "col3": "Unsettled" ,
+        "type": "words27",
+        "isHighlighted": false
+    }
+
+    
+]

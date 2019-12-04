@@ -1,0 +1,53 @@
+[   
+    {
+        "col2": "Helpless", 
+        "type": "words11",
+        "isHighlighted": false
+    },
+    {
+        "col2": "Hurt",
+        "type": "words12",
+        "isHighlighted": false
+    }, 
+    {
+        "col2": "Impatient",
+        "type": "words13",
+        "isHighlighted": false
+    }, 
+    {
+        "col2": "Insecure" ,
+        "type": "words14",
+        "isHighlighted": false
+    },
+    {
+        "col2": "Insulted" ,
+        "type": "words15",
+        "isHighlighted": false
+    },
+    {
+        "col2": "Irritated" ,
+        "type": "words16",
+        "isHighlighted": false
+    },
+    {
+        "col2": "Jealous" ,
+        "type": "words17",
+        "isHighlighted": false
+    },
+    {
+        "col2": "Judgemental" ,
+        "type": "words18",
+        "isHighlighted": false
+    },
+    {
+        "col2": "Not confident" ,
+        "type": "words19",
+        "isHighlighted": false
+    },
+    {
+        "col2": "Numb" ,
+        "type": "words20",
+        "isHighlighted": false
+    }
+    
+]
