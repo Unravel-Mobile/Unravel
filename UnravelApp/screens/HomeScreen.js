@@ -18,6 +18,8 @@ var firebaseConfig = {
   messagingSenderId: "87922632106",
   appId: "1:87922632106:web:5e30aa2c325380da2d77d3"
 };
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // var userId;
@@ -28,18 +30,17 @@ export default class HomeScreen extends Component {
   componentDidMount() {
     this._retrieveData();
     console.log('retrieving done!');
-  }
+  };
 
   _storeData = async (userId) => {
-    console.log('_store data - - > ', userId);
     try {
       await AsyncStorage.setItem('_store userId', userId);
       console.log('_store data - - > ', userId);
 
+
     } catch (error) {
       console.log(error);
     }
-    finally{console.log('_store data - - > ', userId)}
   };
 
   _retrieveData = async () => {
@@ -50,8 +51,8 @@ export default class HomeScreen extends Component {
       if (userId) {
         console.log('We have data!!');
         //  TODO: set the userId as a param using react-navigation
-        // this.props.navigation.setParams('UserId', { uid });
-
+        // this.props.navigation.setParams({ userId: itemTwo });
+        // console.log('userId in retrieve data -- > ', itemTwo);
       } else {
         await this.login()
       }
@@ -68,7 +69,7 @@ export default class HomeScreen extends Component {
       // console.log(error);
     });
 
-    await firebase.auth().onAuthStateChanged(function (user) {
+    await firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // User is signed in.
         var isAnonymous = user.isAnonymous;
@@ -80,17 +81,15 @@ export default class HomeScreen extends Component {
 
         // TODO: Make an api call and POST the user unique id
         axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
-          .then(user => {
-
+          .then((user) => {
             var itemWithId = JSON.parse(user.config.data);
-            console.log('inside axios call - - > ', itemWithId.userId);
+            // console.log('inside axios call - - > ', itemWithId.userId);
             var itemTwo = itemWithId.userId;
-            console.log('itemTwo - - > ', itemTwo);
-
+            // console.log('itemTwo - - > ', itemTwo);
             this._storeData(itemTwo);
-
             //  TODO: set the userId as a param using react-navigation
             // this.props.navigation.setParams({ userId: itemTwo });
+            // console.log('userId after this props -- > ', itemTwo);
 
           })
       } else {

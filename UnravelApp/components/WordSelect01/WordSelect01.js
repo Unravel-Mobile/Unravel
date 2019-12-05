@@ -16,6 +16,7 @@ export default class WordSelect01 extends Component {
         Words03,
         selWordsArr: []
     };
+
     //selectWord is a function (made up)
     selectWord = (word, wordSet, col) => {
         const updatedArray = this.state[wordSet].map(element => {
@@ -36,6 +37,7 @@ export default class WordSelect01 extends Component {
         console.log(this.state.selWordsArr)
         // update the Words objects in state to highlighted or not highlighted
         this.setState({ [wordSet]: updatedArray });
+
     };
 
 
@@ -99,26 +101,3 @@ export default class WordSelect01 extends Component {
         )
     };
 }
-
-
-// console.log(Words01);
-// Words01.map(words01 => {
-//      console.log("========================================")
-//    console.log("SHIT")
-//     console.log(typeof words01.col1);
-//  })
-
-
-
-
-
-
-
-
-
-
-// {
-//     "blankfield": "" ,
-//     "type": "words",
-//     "isHighlighted": false   
-// }
