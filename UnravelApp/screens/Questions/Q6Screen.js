@@ -89,7 +89,7 @@ export default class Q6Screen extends React.Component {
       <Content>
         <Header navigate={this.navigate} previous= 'Log5' next='Log7'/>
 
-        <QuestionHeader qIndex={2} /> 
+        <QuestionHeader qIndex={6} /> 
 
         <Slider
           // initial value of the slider
@@ -98,7 +98,7 @@ export default class Q6Screen extends React.Component {
           onValueChange={ value => this.onValueChange(value)}
         />
 
-        <QuestionHeader qIndex={3} /> 
+        <QuestionHeader qIndex={7} /> 
 
         <WordSelect02 
           wordsColFour={this.state.Words04} 
