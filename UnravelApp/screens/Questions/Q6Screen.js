@@ -1,12 +1,8 @@
 import React from 'react';
 import { Container, Content } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
-
-// importing the question header
 import QuestionHeader from '../../components/Questions/Question';
-// importing the Top navbar
 import Header from '../../components/TopNav';
-// importing slider
 import Slider from '../../components/slider';
 import WordSelect02 from '../../components/WordSelect02/WordSelect02';
 
@@ -64,7 +60,8 @@ export default class Q6Screen extends React.Component {
         <QuestionHeader qIndex={3} /> 
         {/* Word Select Version 2 */}
         {/* Word Select Version 3 */}
-        <WordSelect02 />
+        <WordSelect02 words={this.state.Words02} selectWord = {this.selectWord}  />
+
       </Content>
     </Container>
 
