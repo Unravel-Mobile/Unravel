@@ -1,30 +1,38 @@
 [   
     {
-        "q": "What do you want to call this log?",
+        "q": "Give a title to start this thought log.",
         "type": "title"
     },
     {
-        "q": "What was the situation or event?",
+        "q": "What happend? Describe the situation.",
         "type": "type1"
     }, 
     {
-        "q": "On a scale of 0 to 10, how distressed were you during the situation or event?" ,
+        "q": "On a scale of 0 to 10, how distressed were you?" ,
         "type": "type2"
     },
     {
-        "q": "Select words that best describe how you were feeling at the time",
+        "q": "Select words that best reflect how you were feeling at the time.",
         "type": "wordSelect"
     },
     {
-        "q": "What was your automatic thought(s) to the situation or event?",
+        "q": "What was your immediate thought to the situation or event?",
         "type": "type3"
     },
     {
-        "q": "How would you approach changing the thought? How did you change it?",
+        "q": "What is an alternative explanation? How would you change the thought?",
         "type": "type 4"
     },
     {
-        "q": "Do you want to add a photo to this entry ?",
+        "q": "On a scale of 0 to 10, how distressed do you feel now after exploring your thought?",
+        "type": "type 5"
+    },
+    {
+        "q": "Select words that best describe how you are feeling now.",
+        "type": "type 6"
+    },
+    {
+        "q": "Awsome, you completed your thought log!",
         "type": "end"
     }
 ]

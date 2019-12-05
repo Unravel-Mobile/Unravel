@@ -27,49 +27,49 @@ export default class WordSelect02 extends Component {
                             onPress={() => this.props.selectWord(word, 'Words01', 'col1')}
                             value={word.col1}
                             style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
-                            >
+                        >
                             <Text
-                              key={i+"TEXT"}
-                              style={Styles.buttonText}
+                                key={i + "TEXT"}
+                                style={Styles.buttonText}
                             >
-                            {word.col1}</Text>
+                                {word.col1}</Text>
                         </Button>
                     ))}
                 </Col>
 
                 <Col>
-                 {this.props.wordsColTwo.map((word, i) => (
-                    <Button
-                        key={i}
-                        onPress={() => this.props.selectWord(word, 'Words02', 'col2')}
-                        value={word.col2}
-                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
-                    >
+                    {this.props.wordsColTwo.map((word, i) => (
+                        <Button
+                            key={i}
+                            onPress={() => this.props.selectWord(word, 'Words02', 'col2')}
+                            value={word.col2}
+                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
+                        >
                             <Text
-                                 key={i+"TEXT"}
-                                 style={Styles.buttonText}
+                                key={i + "TEXT"}
+                                style={Styles.buttonText}
                             >
-                            {word.col2}</Text>
+                                {word.col2}</Text>
                         </Button>
                     ))}
                 </Col>
 
                 <Col>
-                {this.props.wordsColThree.map((word, i) => (
-                    <Button
-                        key={i}
-                        onPress={() => this.props.selectWord(word, 'Words03', 'col3')}
-                        value={word.col3}
-                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
-                    >
-                        <Text
-                            key={i+"TEXT"}
-                            style={Styles.buttonText}
+                    {this.props.wordsColThree.map((word, i) => (
+                        <Button
+                            key={i}
+                            onPress={() => this.props.selectWord(word, 'Words03', 'col3')}
+                            value={word.col3}
+                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
+                        >
+                            <Text
+                                key={i + "TEXT"}
+                                style={Styles.buttonText}
                             >
-                            {word.col3}
-                        </Text>
+                                {word.col3}
+                            </Text>
 
-                    </Button>
+                        </Button>
                     ))}
                 </Col>
             </Grid>

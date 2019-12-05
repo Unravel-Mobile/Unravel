@@ -19,25 +19,25 @@ export default function ReviewScreen() {
       <Content padder>
         <Card>
           <CardItem style={Styles.headNav}>
-            <Text style={Styles.reviewHead}>Thought List(titles)</Text>
+            <Text style={Styles.reviewHead}>Thoughts saved</Text>
           </CardItem>
-          <CardItem style={Styles.reviewSubHead}>
+          {/* <CardItem style={Styles.reviewSubHead}>
             <Text style={Styles.reviewSubHead}>
               Review this situation
                 </Text>
-          </CardItem>
+          </CardItem> */}
         </Card>
 
-        <Card>
+        {/* <Card>
           <CardItem style={Styles.reviewSubHead} button onPress={() => alert("Will relocate to individual Log")}>
             <Text style={Styles.reviewSubHead}>
-              {/* LIST OF THE HEADERS FROM THE DB WILL GO HERE */}
+              LIST OF THE HEADERS FROM THE DB WILL GO HERE
               Title of event
                 </Text>
           </CardItem>
-        </Card>
+        </Card> */}
         <GetCall />
-        <ThougthLog />
+        {/* <ThougthLog /> */}
 
       </Content>
     </Container>

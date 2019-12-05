@@ -34,7 +34,7 @@ export default class Q7Screen extends React.Component {
     <Container>
       <Header navigate={this.navigate} previous= 'Log6' next='Review'/>
 
-      <QuestionHeader qIndex={6} /> 
+      <QuestionHeader qIndex={8} /> 
 
       <SubmitButton 
         logName = {this.state.Q1}

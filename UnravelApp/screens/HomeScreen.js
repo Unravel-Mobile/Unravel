@@ -34,7 +34,7 @@ export default class HomeScreen extends Component {
 
   _storeData = async (userId) => {
     try {
-      await AsyncStorage.setItem('_store userId', userId);
+      await AsyncStorage.setItem('userId', userId);
       console.log('_store data - - > ', userId);
 
 
@@ -82,11 +82,12 @@ export default class HomeScreen extends Component {
         // TODO: Make an api call and POST the user unique id
         axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
           .then((user) => {
-            var itemWithId = JSON.parse(user.config.data);
+            console.log('USER - > ', user.data);
+            // var itemWithId = JSON.parse(user.config.data);
             // console.log('inside axios call - - > ', itemWithId.userId);
-            var itemTwo = itemWithId.userId;
+            // var itemTwo = itemWithId.userId;
             // console.log('itemTwo - - > ', itemTwo);
-            this._storeData(itemTwo);
+            this._storeData(user.data._id);
             //  TODO: set the userId as a param using react-navigation
             // this.props.navigation.setParams({ userId: itemTwo });
             // console.log('userId after this props -- > ', itemTwo);
