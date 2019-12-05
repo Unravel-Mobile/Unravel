@@ -72,7 +72,7 @@ export default StyleSheet.create({
 
     questionTxt: {
         fontSize: RFPercentage(3),
-        fontWeight: 'bold',
+        color: '#475e60',
         padding: '2%',
         marginBottom: '2%',
         flex: 1,
