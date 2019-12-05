@@ -35,6 +35,7 @@ export default function Submit(props) {
                     changedThought : props.changedThought,
                     postRating : props.postRating,
                     wordSelect2 : props.wordSelect2,
+
                 })
                     .then(function (response) {
                         console.log(response.config.data);

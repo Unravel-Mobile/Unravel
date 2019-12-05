@@ -75,4 +75,3 @@ export default class WordSelect02 extends Component {
             </Grid>
         )
     };
-}
