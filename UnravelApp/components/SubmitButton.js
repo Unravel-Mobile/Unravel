@@ -25,7 +25,7 @@ export default function Submit(props) {
             <Separator />
             <Button
                 title='Save Thought'
-                color='red'
+                color= 'black'
 
                 onPress={async () => {
                     const value = await AsyncStorage.getItem("userId").then(data => { return data });
