@@ -7,6 +7,7 @@ import {
     Text,
     Alert,
 } from 'react-native';
+import { AsyncStorage } from 'react-native'
 
 // axios installed 11/24/10am  mc
 
@@ -26,24 +27,28 @@ export default function Submit(props) {
                 title='Save Thought'
                 color='red'
 
-                onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts', {
-                    logName : props.logName,
-                    situation : props.situation,
-                    prerating : props.prerating,
-                    wordSelect1 : props.wordSelect1,
-                    autoThought : props.autoThought,
-                    changedThought : props.changedThought,
-                    postRating : props.postRating,
-                    wordSelect2 : props.wordSelect2,
-
-                })
-                    .then(function (response) {
-                        console.log(response.config.data);
-                        Alert.alert('Thought Saved!')
+                onPress={async () => {
+                    const value = await AsyncStorage.getItem("userId").then(data => { return data });
+                    console.log('value- >, ', value);
+                    axios.post('https://unravel-api.herokuapp.com/thoughts', {
+                        logName: props.logName,
+                        situation: props.situation,
+                        prerating: props.prerating,
+                        wordSelect1: props.wordSelect1,
+                        autoThought: props.autoThought,
+                        changedThought: props.changedThought,
+                        postRating: props.postRating,
+                        wordSelect2: props.wordSelect2,
+                        userId: value
                     })
-                    .catch(function (error) {
-                        console.log('error - - > ', error);
-                    })
+                        .then(function (response) {
+                            console.log(response.config.data);
+                            Alert.alert('Thought Saved!')
+                        })
+                        .catch(function (error) {
+                            console.log('error - - > ', error);
+                        })
+                }
                 }
 
             />
