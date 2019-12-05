@@ -36,14 +36,9 @@ export default class Q2Screen extends React.Component {
     this.setState({
       Q2: value
     });
+    
+    // this.props.navigation.setParams({q2answers: this.state.Q2});
 
-    this.props.navigation.setParams({q2answers: this.state.Q2});
-
-    console.log("Q2screen");
-    // prints the object
-    console.log(this.state);
-    // references the answer
-    console.log(this.props.navigation.state.params.q1answers);
   }
 
 

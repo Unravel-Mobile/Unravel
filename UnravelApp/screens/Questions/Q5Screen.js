@@ -39,8 +39,6 @@ export default class Q5Screen extends React.Component {
       Q5: value
     });
 
-    console.log("Q5screen");
-    console.log(this.state);
   }
 
   render () {

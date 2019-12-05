@@ -5,8 +5,6 @@ import QuestionHeader from '../../components/Questions/Question';
 import Header from '../../components/TopNav';
 import Slider from '../../components/slider';
 import WordSelect01 from '../../components/WordSelect01/WordSelect01';
-import { Text } from 'react-native';
-import { Col, Grid } from "react-native-easy-grid";
 import Words01 from "../../components/WordSelect01/Words01.json";
 import Words02 from "../../components/WordSelect01/Words02.json";
 import Words03 from "../../components/WordSelect01/Words03.json";
