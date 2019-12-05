@@ -65,7 +65,16 @@ export default class Q7Screen extends React.Component {
       {/* Adding picture */}
       
       {/* Submit button */}
-      <SubmitButton />
+      <SubmitButton 
+        title = {this.state.Q1}
+        situation = {this.state.Q2}
+        prerating = {this.state.Q3}
+        wordSelect1 = {this.state.Q4}
+        autoThought = {this.state.Q5}
+        changedThought = {this.state.Q6}
+        postRating = {this.state.Q7}
+        wordSelect2 = {["surprise", "happy"]}
+      />
 
         
 

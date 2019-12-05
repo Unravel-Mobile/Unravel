@@ -27,14 +27,14 @@ export default function Submit() {
                 color='red'
 
                 onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts', {
-                    title: 'MONDAY TEST 6:49pm',
-                    situation: 'test 2 after db changes',
-                    prerating: 4,
-                    wordSelect1: 'posting from ipad again',
-                    autoThought: 'still a little scary',
-                    changedThought: 'check heroku logs for a new log',
-                    postRating: 8,
-                    wordSelect2: 'did it show up?',
+                    title = this.props.title,
+                    situation = this.props.situation,
+                    prerating = this.props.prerating,
+                    wordSelect1 = this.props.wordSelect1,
+                    autoThought = this.props.autoThought,
+                    changedThought = this.props.changedThought,
+                    postRating = this.props.postRating,
+                    wordSelect2 = this.props.wordSelect2,
                 })
                     .then(function (response) {
                         console.log(response.config.data);

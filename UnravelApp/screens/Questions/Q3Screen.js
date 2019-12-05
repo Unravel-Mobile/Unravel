@@ -1,14 +1,19 @@
-import React from 'react';
-import { Container, Content } from 'native-base';
+import React, { Component } from 'react';
+import { Container, Content, Button } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
-
-// importing the question header
 import QuestionHeader from '../../components/Questions/Question';
-// importing the Top navbar
 import Header from '../../components/TopNav';
-// importing slider
 import Slider from '../../components/slider';
-import WordSelect01 from '../../components/WordSelect01/WordSelect01';
+// import WordSelect01 from '../../components/WordSelect01/WordSelect01';
+// Word select imports below
+// import React, { Component } from 'react'
+import { Text } from 'react-native'
+// import { Button } from 'native-base'
+import { Col, Grid } from "react-native-easy-grid"
+import Words01 from "../../components/WordSelect01/Words01.json"
+import Words02 from "../../components/WordSelect01/Words02.json"
+import Words03 from "../../components/WordSelect01/Words03.json"
+import Styles from '../../components/Style/Style';
 
 
 export default class Q3Screen extends React.Component {
@@ -17,7 +22,11 @@ export default class Q3Screen extends React.Component {
     Q1: this.props.navigation.state.params.q1answers,
     Q2: this.props.navigation.state.params.q2answers,
     Q3: 5,
-    Q4: []
+    Q4: [],
+    Words01,
+    Words02,
+    Words03,
+    wordArray:[]
   }
 
   navigate = (screen) => {
@@ -54,7 +63,65 @@ export default class Q3Screen extends React.Component {
         />
         
         <QuestionHeader qIndex={3} />
-        <WordSelect01 />
+        {/* <WordSelect01 /> */}
+        {/* WORD SELECT BELOW */}
+        <Grid style={Styles.threeCols}>
+                <Col>
+                    {Words01.map((words01, i) => (
+                        <Button
+                            key={i}
+                            onPress={()=>this.selectWord(words01.col1)}
+                            value={words01.col1}
+                            transparent
+                            style={Styles.wordButtons}
+                        >
+                            <Text
+                              key={i+"TEXT"}
+                              style={Styles.buttonText}
+                            >
+                            {words01.col1}</Text>
+                        </Button>
+                    ))}
+                </Col>
+
+                <Col>
+                 {Words02.map((words02, i) => (
+                    <Button
+                        key={i}
+                        onPress={()=>this.selectWord(words02.col2)}
+                            value={words02.col2}
+                        transparent
+                        style={Styles.wordButtons}
+                    >
+                            <Text
+                                 key={i+"TEXT"}
+                                 style={Styles.buttonText}
+                            >
+                            {words02.col2}</Text>
+                        </Button>
+                    ))}
+                </Col>
+
+                <Col>
+                {Words03.map((words03, i) => (
+                    <Button
+                        key={i}
+                            onPress={()=>this.selectWord(words03.col3)}
+                            value={words03.col3}
+                        transparent
+                        style={Styles.wordButtons}
+                    >
+                            <Text
+                                key={i+"TEXT"}
+                                style={Styles.buttonText}
+                                >
+                                {words03.col3}</Text>
+
+                        </Button>
+                    ))}
+                </Col>
+            </Grid>
+
 
       </Content>
     </Container>
