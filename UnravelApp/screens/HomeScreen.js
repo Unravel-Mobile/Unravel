@@ -18,11 +18,27 @@ var firebaseConfig = {
   messagingSenderId: "87922632106",
   appId: "1:87922632106:web:5e30aa2c325380da2d77d3"
 };
+
+
+
+// take a look at  https://dev.to/amanhimself/what-is-asyncstorage-in-react-native-4af4
+
+const STORAGE_KEY = '@save_name';
+
+
+
+
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // var userId;
 
 export default class HomeScreen extends Component {
+
+  state = {
+    text: '',
+    name:''
+  }
 
 
   componentDidMount() {
@@ -30,33 +46,36 @@ export default class HomeScreen extends Component {
     console.log('retrieving done!');
   }
 
-  _storeData = async (userId) => {
-    console.log('_store data - - > ', userId);
+  save = async (name) => {
+    console.log('_store data - - > ', name);
     try {
-      await AsyncStorage.setItem('_store userId', userId);
-      console.log('_store data - - > ', userId);
+      await AsyncStorage.setItem(STORAGE_KEY, name);
+      console.log('_store data - - > ', name);
 
     } catch (error) {
-      console.log(error);
+      console.log('error - - > ',error);
     }
     finally{console.log('_store data - - > ', userId)}
   };
 
   _retrieveData = async () => {
     try {
-      const userId = await AsyncStorage.getItem('userId');
-      console.log('_retrieve - - > ', userId);
+      const idFroFb = await AsyncStorage.getItem(STORAGE_KEY);
+      console.log('_retrieve - - > ', STORAGE_KEY);
+      this.save(STORAGE_KEY);
 
-      if (userId) {
-        console.log('We have data!!');
-        //  TODO: set the userId as a param using react-navigation
-        // this.props.navigation.setParams('UserId', { uid });
+      if (idFroFb !== null) {
+        this.setState({ STORAGE_KEY })
+        console.log('name - - > ', STORAGE_KEY);
+        //  TODO: set the idFroFb as a param using react-navigation
+        // this.props.navigation.setParams('idFroFb', { uid });
+        // this.save(itemTwo);
 
       } else {
         await this.login()
       }
     } catch (error) {
-      console.log(error);
+      console.log('error', error);
     }
   };
 
@@ -87,7 +106,7 @@ export default class HomeScreen extends Component {
             var itemTwo = itemWithId.userId;
             console.log('itemTwo - - > ', itemTwo);
 
-            this._storeData(itemTwo);
+            this.save(itemTwo);
 
             //  TODO: set the userId as a param using react-navigation
             // this.props.navigation.setParams({ userId: itemTwo });

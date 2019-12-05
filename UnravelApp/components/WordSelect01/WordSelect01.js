@@ -17,7 +17,7 @@ export default class WordSelect01 extends Component {
     };
     selectWord = (word) => {
         this.state.wordArray.push(word);
-        console.log(this.state.wordArray);
+        // console.log(this.state.wordArray);
     };
 // this is for unselecting a word in the wordSelect
 // unselectWord = 
@@ -84,11 +84,11 @@ export default class WordSelect01 extends Component {
         )
     };
 }
-console.log(Words01);
+// console.log(Words01);
 Words01.map(words01 => {
-    console.log("========================================")
-    console.log("SHIT")
-    console.log(typeof words01.col1);
+    // console.log("========================================")
+    // console.log("SHIT")
+    // console.log(typeof words01.col1);
 })
 
 
