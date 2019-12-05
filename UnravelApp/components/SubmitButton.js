@@ -18,7 +18,7 @@ function Separator() {
     return <View style={styles.separator} />;
 }
 
-export default function Submit() {
+export default function Submit(props) {
     return (
         <SafeAreaView style={styles.container}>
             <Separator />
@@ -26,15 +26,16 @@ export default function Submit() {
                 title='Save Thought'
                 color='red'
 
-                onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts/', {
-                    title: 'WD 8:52 pm',
-                    situation: 'TEST FOR PH',
-                    prerating: 4,
-                    wordSelect1: 'posting to have something',
-                    autoThought: 'Ming is watching',
-                    changedThought: 'check heroku logs for a new log',
-                    postRating: 8,
-                    wordSelect2: 'we shall see',
+                onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts', {
+                    logName : props.logName,
+                    situation : props.situation,
+                    prerating : props.prerating,
+                    wordSelect1 : props.wordSelect1,
+                    autoThought : props.autoThought,
+                    changedThought : props.changedThought,
+                    postRating : props.postRating,
+                    wordSelect2 : props.wordSelect2,
+
                 })
                     .then(function (response) {
                         console.log(response.config.data);
