@@ -10,10 +10,12 @@ export default class QuestionHeader extends Component {
       const index = this.props.qIndex;
     return (
 
-        <Card style={Styles.backOfCard}>
-            <Text style={Styles.questionNo}>Question:</Text>
+<View style={Styles.questionTextWrap}>
+        <Card style={Styles.questionTextWrap}>
+            {/* <Text style={Styles.questionNo}>Question:</Text> */}
             <Text style={Styles.questionTxt}> {questions[index].q} </Text>
-        </Card>
+      </Card>
+      </View>
 
     );
   }

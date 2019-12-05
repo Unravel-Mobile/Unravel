@@ -60,7 +60,7 @@ export default class Q2Screen extends React.Component {
             onChangeText={this.onChangeText}
           />
 
-        <Icon style={Styles.microphone} name='mic-off' />
+        {/* <Icon style={Styles.microphone} name='mic-off' /> */}
       </Container>
 
     );

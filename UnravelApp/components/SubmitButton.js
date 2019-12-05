@@ -24,7 +24,7 @@ export default function Submit(props) {
             <Separator />
             <Button
                 title='Save Thought'
-                color='red'
+                color= 'black'
 
                 onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts', {
                     logName : props.logName,
