@@ -26,15 +26,15 @@ export default function Submit() {
                 title='Save Thought'
                 color='red'
 
-                onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts', {
-                    title: 'MONDAY TEST 6:49pm',
-                    situation: 'test 2 after db changes',
+                onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts/', {
+                    title: 'WD 8:52 pm',
+                    situation: 'TEST FOR PH',
                     prerating: 4,
-                    wordSelect1: 'posting from ipad again',
-                    autoThought: 'still a little scary',
+                    wordSelect1: 'posting to have something',
+                    autoThought: 'Ming is watching',
                     changedThought: 'check heroku logs for a new log',
                     postRating: 8,
-                    wordSelect2: 'did it show up?',
+                    wordSelect2: 'we shall see',
                 })
                     .then(function (response) {
                         console.log(response.config.data);

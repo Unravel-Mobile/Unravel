@@ -20,62 +20,44 @@ var firebaseConfig = {
 };
 
 
-
-// take a look at  https://dev.to/amanhimself/what-is-asyncstorage-in-react-native-4af4
-
-const STORAGE_KEY = '@save_name';
-
-
-
-
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // var userId;
 
 export default class HomeScreen extends Component {
 
-  state = {
-    text: '',
-    name:''
-  }
-
 
   componentDidMount() {
     this._retrieveData();
     console.log('retrieving done!');
-  }
+  };
 
-  save = async (name) => {
-    console.log('_store data - - > ', name);
+  _storeData = async (userId) => {
     try {
-      await AsyncStorage.setItem(STORAGE_KEY, name);
-      console.log('_store data - - > ', name);
+      await AsyncStorage.setItem('_store userId', userId);
+      console.log('_store data - - > ', userId);
+
 
     } catch (error) {
-      console.log('error - - > ',error);
+      console.log(error);
     }
-    finally{console.log('_store data - - > ', userId)}
   };
 
   _retrieveData = async () => {
     try {
-      const idFroFb = await AsyncStorage.getItem(STORAGE_KEY);
-      console.log('_retrieve - - > ', STORAGE_KEY);
-      this.save(STORAGE_KEY);
+      const userId = await AsyncStorage.getItem('userId');
+      console.log('_retrieve - - > ', userId);
 
-      if (idFroFb !== null) {
-        this.setState({ STORAGE_KEY })
-        console.log('name - - > ', STORAGE_KEY);
-        //  TODO: set the idFroFb as a param using react-navigation
-        // this.props.navigation.setParams('idFroFb', { uid });
-        // this.save(itemTwo);
-
+      if (userId) {
+        console.log('We have data!!');
+        //  TODO: set the userId as a param using react-navigation
+        // this.props.navigation.setParams({ userId: itemTwo });
+        // console.log('userId in retrieve data -- > ', itemTwo);
       } else {
         await this.login()
       }
     } catch (error) {
-      console.log('error', error);
+      console.log(error);
     }
   };
 
@@ -87,7 +69,7 @@ export default class HomeScreen extends Component {
       // console.log(error);
     });
 
-    await firebase.auth().onAuthStateChanged(function (user) {
+    await firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // User is signed in.
         var isAnonymous = user.isAnonymous;
@@ -99,17 +81,15 @@ export default class HomeScreen extends Component {
 
         // TODO: Make an api call and POST the user unique id
         axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
-          .then(user => {
-
+          .then((user) => {
             var itemWithId = JSON.parse(user.config.data);
-            console.log('inside axios call - - > ', itemWithId.userId);
+            // console.log('inside axios call - - > ', itemWithId.userId);
             var itemTwo = itemWithId.userId;
-            console.log('itemTwo - - > ', itemTwo);
-
-            this.save(itemTwo);
-
+            // console.log('itemTwo - - > ', itemTwo);
+            this._storeData(itemTwo);
             //  TODO: set the userId as a param using react-navigation
             // this.props.navigation.setParams({ userId: itemTwo });
+            // console.log('userId after this props -- > ', itemTwo);
 
           })
       } else {
