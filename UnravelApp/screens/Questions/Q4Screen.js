@@ -18,8 +18,8 @@ export default class Q4Screen extends React.Component {
     Q1: this.props.navigation.state.params.q1answers,
     Q2: this.props.navigation.state.params.q2answers,
     Q3: this.props.navigation.state.params.q3answers,
-    Q4: this.props.navigation.state.params.q4answers,
-    Q5: ""
+    wordArray1: this.props.navigation.state.params.wordArray1,
+    Q4: ""
   }
 
   navigate = (screen) => {
@@ -27,8 +27,8 @@ export default class Q4Screen extends React.Component {
       q1answers: this.state.Q1,
       q2answers: this.state.Q2,
       q3answers: this.state.Q3,
-      q4answers: this.state.Q4,
-      q5answers: this.state.Q5,
+      wordArray1: this.state.wordArray1,
+      q4answers: this.state.Q4
     })
   }
   onChangeText = event => {
@@ -37,7 +37,7 @@ export default class Q4Screen extends React.Component {
 
     // Using State to store current textarea
     this.setState({
-      Q5: value
+      Q4: value
     });
 
     console.log("Q4screen");
@@ -53,8 +53,8 @@ export default class Q4Screen extends React.Component {
       <QuestionHeader qIndex={4} /> 
 
       <InputForm
-          name="Q5"
-          value={this.state.Q5}
+          name="Q4"
+          value={this.state.Q4}
           onChangeText={this.onChangeText}
       />
       {/* Text2Speech */}
