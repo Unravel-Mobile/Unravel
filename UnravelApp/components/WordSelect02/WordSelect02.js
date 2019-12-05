@@ -2,31 +2,20 @@ import React, { Component } from 'react'
 import { Text, View, Body, Content, Style } from 'react-native'
 import { Button } from 'native-base'
 import { Col, Row, Grid } from "react-native-easy-grid"
-import Words01 from "./Words01"
-import Words02 from "./Words02"
-import Words03 from "./Words03"
+import Words04 from "./Words04"
+import Words05 from "./Words05"
+import Words06 from "./Words06"
 import Styles from '../Style/Style';
 // import { elementType } from '../../../../../../Library/Caches/typescript/3.6/node_modules/@types/prop-types'
 
 
-export default class WordSelect01 extends Component {
+export default class WordSelect02 extends Component {
     state = {
-        Words01,
-        Words02,
-        Words03,
+        Words04,
+        Words05,
+        Words06,
         selWordsArr: []
     };
-<<<<<<< HEAD
-
-    selectWord = (word) => {
-        this.state.wordArray.push(word);
-        console.log(this.state.wordArray);
-    };
-    
-// this is for unselecting a word in the wordSelect
-// unselectWord = 
-// function: change the appearance of the buttons onPress (this might be part of the selectWord function, need more research)
-=======
     //selectWord is a function (made up)
     selectWord = (word, wordSet, col) => {
         const updatedArray = this.state[wordSet].map(element => {
@@ -50,58 +39,58 @@ export default class WordSelect01 extends Component {
     };
 
 
->>>>>>> ce4ef4b5b7cc6849d70ba5e3bdb15bbcedc2ae1c
+
 
     render() {
         return (
             <Grid style={Styles.threeCols}>
                 <Col>
-                    {Words01.map((words01, i) => (
+                    {Words04.map((words04, i) => (
                         <Button
                             key={i}
-                            onPress={() => this.selectWord(words01.col1, 'Words01', 'col1')}
-                            value={words01.col1}
-                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: words01.isHighlighted ? 'lightblue' : 'transparent' }}
+                            onPress={() => this.selectWord(words04.col4, 'Words04', 'col4')}
+                            value={words04.col4}
+                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: words04.isHighlighted ? 'lightblue' : 'transparent' }}
                             >
                             <Text
                               key={i+"TEXT"}
                               style={Styles.buttonText}
                             >
-                            {words01.col1}</Text>
+                            {words04.col4}</Text>
                         </Button>
                     ))}
                 </Col>
 
                 <Col>
-                 {Words02.map((words02, i) => (
+                 {Words05.map((words05, i) => (
                     <Button
                         key={i}
-                        onPress={() => this.selectWord(words02.col2, 'Words02', 'col2')}
-                        value={words02.col2}
-                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words02.isHighlighted ? 'lightblue' : 'transparent' }}
+                        onPress={() => this.selectWord(words05.col5, 'Words05', 'col5')}
+                        value={words05.col5}
+                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words05.isHighlighted ? 'lightblue' : 'transparent' }}
                     >
                             <Text
                                  key={i+"TEXT"}
                                  style={Styles.buttonText}
                             >
-                            {words02.col2}</Text>
+                            {words05.col5}</Text>
                         </Button>
                     ))}
                 </Col>
 
                 <Col>
-                {Words03.map((words03, i) => (
+                {Words06.map((words06, i) => (
                     <Button
                         key={i}
-                        onPress={() => this.selectWord(words03.col3, 'Words03', 'col3')}
-                        value={words03.col3}
-                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words03.isHighlighted ? 'lightblue' : 'transparent' }}
+                        onPress={() => this.selectWord(words06.col6, 'Words06', 'col6')}
+                        value={words06.col6}
+                        style={{ justifyContent: 'center', margin: '1%', backgroundColor: words06.isHighlighted ? 'lightblue' : 'transparent' }}
                     >
                         <Text
                             key={i+"TEXT"}
                             style={Styles.buttonText}
                             >
-                            {words03.col3}
+                            {words06.col6}
                         </Text>
 
                     </Button>
@@ -111,16 +100,14 @@ export default class WordSelect01 extends Component {
         )
     };
 }
-<<<<<<< HEAD
-=======
 
 
 // console.log(Words01);
 // Words01.map(words01 => {
-//      console.log("========================================")
-//    console.log("SHIT")
+//     console.log("========================================")
+//     console.log("SHIT")
 //     console.log(typeof words01.col1);
-//  })
+// })
 
 
 
@@ -136,4 +123,3 @@ export default class WordSelect01 extends Component {
 //     "type": "words",
 //     "isHighlighted": false   
 // }
->>>>>>> ce4ef4b5b7cc6849d70ba5e3bdb15bbcedc2ae1c

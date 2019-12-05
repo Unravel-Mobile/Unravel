@@ -25,7 +25,7 @@ export default class Q7Screen extends React.Component {
     Q4: this.props.navigation.state.params.q4answers,
     Q5: this.props.navigation.state.params.q5answers,
     Q6: this.props.navigation.state.params.q6answers,
-    Q7: ""
+    Q7: this.props.navigation.state.params.q7answers
   }
 
   navigate = (screen) => {
@@ -66,7 +66,7 @@ export default class Q7Screen extends React.Component {
       
       {/* Submit button */}
       <SubmitButton 
-        title = {this.state.Q1}
+        logName = {this.state.Q1}
         situation = {this.state.Q2}
         prerating = {this.state.Q3}
         wordSelect1 = {this.state.Q4}
