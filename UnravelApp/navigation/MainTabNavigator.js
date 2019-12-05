@@ -14,18 +14,15 @@ import Q7Screen from '../screens/Questions/Q7Screen';
 import LearnScreen from '../screens/LearnScreen';
 import ReviewScreen from '../screens/ReviewScreen';
 
-const config = Platform.select({
-  web: { 
+const config =  { 
     headerMode: 'none',
     navigationOptions: {
       headershown: false,
     }
-  },
-  default: {},
-});
+  }
 
 // Home option in the navbar at the bottom
-const HomeStack = createStackNavigator(
+export const HomeStack = createStackNavigator(
   {
     Home: HomeScreen,
   },
@@ -110,7 +107,6 @@ ReviewStack.path = '';
 
 // Contains all the navigation tabs
 const tabNavigator = createBottomTabNavigator({
-  HomeStack,
   LogStack,
   LearnStack,
   ReviewStack

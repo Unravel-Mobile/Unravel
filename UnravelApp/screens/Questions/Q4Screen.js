@@ -18,6 +18,7 @@ export default class Q4Screen extends React.Component {
     Q1: this.props.navigation.state.params.q1answers,
     Q2: this.props.navigation.state.params.q2answers,
     Q3: this.props.navigation.state.params.q3answers,
+    wordArray1: this.props.navigation.state.params.wordArray1,
     Q4: ""
   }
 
@@ -26,6 +27,7 @@ export default class Q4Screen extends React.Component {
       q1answers: this.state.Q1,
       q2answers: this.state.Q2,
       q3answers: this.state.Q3,
+      wordArray1: this.state.wordArray1,
       q4answers: this.state.Q4
     })
   }
@@ -40,8 +42,6 @@ export default class Q4Screen extends React.Component {
 
     console.log("Q4screen");
     console.log(this.state);
-    console.log(this.props.navigation.state.params.q1answers);
-    console.log(this.props.navigation.state.params.q2answers);
 
   }
 

@@ -1,13 +1,7 @@
 import React from 'react';
 import { Container, Button } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
-
-// importing the input text area
-import InputForm from '../../components/InputForm';
-
-// importing the question header
 import QuestionHeader from '../../components/Questions/Question';
-// importing the Top navbar
 import Header from '../../components/TopNav';
 import SubmitButton from '../../components/SubmitButton';
 
@@ -22,38 +16,18 @@ export default class Q7Screen extends React.Component {
     Q1: this.props.navigation.state.params.q1answers,
     Q2: this.props.navigation.state.params.q2answers,
     Q3: this.props.navigation.state.params.q3answers,
+    wordArray1: this.props.navigation.state.params.wordArray1,
     Q4: this.props.navigation.state.params.q4answers,
     Q5: this.props.navigation.state.params.q5answers,
     Q6: this.props.navigation.state.params.q6answers,
-    Q7: ""
+    wordArray2: this.props.navigation.state.params.wordArray2
   }
 
   navigate = (screen) => {
     this.props.navigation.navigate(screen, {
-      q1answers: this.state.Q1,
-      q2answers: this.state.Q2,
-      q3answers: this.state.Q3,
-      q4answers: this.state.Q4,
-      q5answers: this.state.Q5,
-      q6answers: this.state.Q6,
-      q7answers: this.state.Q7
     })
   }
-  
-  onChangeText = event => {
-    // Caputuring the input text
-    let value = event;
 
-    // Using State to store current textarea
-    this.setState({
-      Q7: value
-    });
-
-    console.log("Q7screen");
-    console.log(this.state);
-    console.log(this.props.navigation.state.params.q1answers);
-    console.log(this.props.navigation.state.params.q2answers);
-  }
 
   render () {
   return (
@@ -62,10 +36,16 @@ export default class Q7Screen extends React.Component {
 
       <QuestionHeader qIndex={6} /> 
 
-      {/* Adding picture */}
-      
-      {/* Submit button */}
-      <SubmitButton />
+      <SubmitButton 
+        logName = {this.state.Q1}
+        situation = {this.state.Q2}
+        prerating = {this.state.Q3}
+        wordSelect1 = {this.state.wordArray1}
+        autoThought = {this.state.Q4}
+        changedThought = {this.state.Q5}
+        postRating = {this.state.Q6}
+        wordSelect2 = {this.state.wordArray2}
+      />
 
         
 

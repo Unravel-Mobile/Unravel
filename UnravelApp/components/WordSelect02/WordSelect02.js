@@ -2,18 +2,18 @@ import React, { Component } from 'react'
 import { Text, View, Body, Content, Style } from 'react-native'
 import { Button } from 'native-base'
 import { Col, Row, Grid } from "react-native-easy-grid"
-import Words01 from "./Words01"
-import Words02 from "./Words02"
-import Words03 from "./Words03"
+import Words04 from "./Words04"
+import Words05 from "./Words05"
+import Words06 from "./Words06"
 import Styles from '../Style/Style';
 // import { elementType } from '../../../../../../Library/Caches/typescript/3.6/node_modules/@types/prop-types'
 
 
 export default class WordSelect02 extends Component {
     state = {
-        Words01,
-        Words02,
-        Words03
+        Words04,
+        Words05,
+        Words06
     };
 
 
@@ -21,52 +21,52 @@ export default class WordSelect02 extends Component {
         return (
             <Grid style={Styles.threeCols}>
                 <Col>
-                    {this.props.wordsColOne.map((word, i) => (
+                    {this.props.wordsColFour.map((word, i) => (
                         <Button
                             key={i}
-                            onPress={() => this.props.selectWord(word, 'Words01', 'col1')}
-                            value={word.col1}
+                            onPress={() => this.props.selectWord(word, 'Words04', 'col4')}
+                            value={word.col4}
                             style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
                             >
                             <Text
                               key={i+"TEXT"}
                               style={Styles.buttonText}
                             >
-                            {word.col1}</Text>
+                            {word.col4}</Text>
                         </Button>
                     ))}
                 </Col>
 
                 <Col>
-                 {this.props.wordsColTwo.map((word, i) => (
+                 {this.props.wordsColFive.map((word, i) => (
                     <Button
                         key={i}
-                        onPress={() => this.props.selectWord(word, 'Words02', 'col2')}
-                        value={word.col2}
+                        onPress={() => this.props.selectWord(word, 'Words05', 'col5')}
+                        value={word.col5}
                         style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
                     >
                             <Text
                                  key={i+"TEXT"}
                                  style={Styles.buttonText}
                             >
-                            {word.col2}</Text>
+                            {word.col5}</Text>
                         </Button>
                     ))}
                 </Col>
 
                 <Col>
-                {this.props.wordsColThree.map((word, i) => (
+                {this.props.wordsColSix.map((word, i) => (
                     <Button
                         key={i}
-                        onPress={() => this.props.selectWord(word, 'Words03', 'col3')}
-                        value={word.col3}
+                        onPress={() => this.props.selectWord(word, 'Words06', 'col6')}
+                        value={word.col6}
                         style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
                     >
                         <Text
                             key={i+"TEXT"}
                             style={Styles.buttonText}
                             >
-                            {word.col3}
+                            {word.col6}
                         </Text>
 
                     </Button>
@@ -76,3 +76,4 @@ export default class WordSelect02 extends Component {
         )
     };
 }
+

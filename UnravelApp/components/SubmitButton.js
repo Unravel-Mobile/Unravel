@@ -18,7 +18,7 @@ function Separator() {
     return <View style={styles.separator} />;
 }
 
-export default function Submit() {
+export default function Submit(props) {
     return (
         <SafeAreaView style={styles.container}>
             <Separator />
@@ -27,14 +27,15 @@ export default function Submit() {
                 color='red'
 
                 onPress={() => axios.post('https://unravel-api.herokuapp.com/thoughts', {
-                    title: 'Sunday 3:05pm',
-                    situation: 'test from PH',
-                    prerating: 4,
-                    wordSelect1: 'posting from PH',
-                    autoThought: 'should work',
-                    changedThought: 'shows up on heroku logs',
-                    postRating: 8,
-                    wordSelect2: 'figuring out the get',
+                    logName : props.logName,
+                    situation : props.situation,
+                    prerating : props.prerating,
+                    wordSelect1 : props.wordSelect1,
+                    autoThought : props.autoThought,
+                    changedThought : props.changedThought,
+                    postRating : props.postRating,
+                    wordSelect2 : props.wordSelect2,
+
                 })
                     .then(function (response) {
                         console.log(response.config.data);
@@ -73,5 +74,5 @@ const styles = StyleSheet.create({
     },
 });
 
-console.log('BUTTON PRESENT');
+// console.log('BUTTON PRESENT');
 

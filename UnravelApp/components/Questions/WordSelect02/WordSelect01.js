@@ -73,9 +73,9 @@ export default class WordSelect01 extends Component {
     };
 
 }
-console.log(Words01);
+// console.log(Words01);
 Words01.map(words01 => {
-    console.log("========================================")
-    console.log("SHIT")
-    console.log(typeof words01.col1);
-})
+    //     console.log("========================================")
+    //     console.log("SHIT")
+    //     console.log(typeof words01.col1);
+});
