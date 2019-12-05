@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'native-base';
+import { Container, Content } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 
 // importing the question header
@@ -54,6 +54,7 @@ export default class Q6Screen extends React.Component {
   render () {
   return (
     <Container>
+      <Content>
         <Header navigate={this.navigate} previous= 'Log5' next='Log7'/>
 
         <QuestionHeader qIndex={2} /> 
@@ -64,6 +65,7 @@ export default class Q6Screen extends React.Component {
         {/* Word Select Version 2 */}
         {/* Word Select Version 3 */}
         <WordSelect02 />
+      </Content>
     </Container>
 
     );
