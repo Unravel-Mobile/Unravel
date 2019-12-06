@@ -15,17 +15,14 @@ const axios = require('axios');
 
 import Constants from 'expo-constants';
 
-function Separator() {
-    return <View style={styles.separator} />;
-}
 
 export default function Submit(props) {
     return (
         <SafeAreaView style={styles.container}>
-            <Separator />
             <Button
                 title='Save Thought'
-                color= 'black'
+                color='black'
+                backgroundColor='#DEF5F8'
 
                 onPress={async () => {
                     const value = await AsyncStorage.getItem("userId").then(data => { return data });
@@ -53,7 +50,6 @@ export default function Submit(props) {
 
             />
 
-            <Separator />
         </SafeAreaView>
     );
 }
@@ -72,11 +68,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
-    separator: {
-        marginVertical: 8,
-        borderBottomColor: '#737373',
-        borderBottomWidth: StyleSheet.hairlineWidth,
-    },
+    buttonBack: {
+        backgroundColor: '#DEF5F8',
+    }
 });
 
 // console.log('BUTTON PRESENT');
