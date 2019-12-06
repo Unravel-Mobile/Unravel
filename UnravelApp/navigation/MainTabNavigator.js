@@ -36,8 +36,8 @@ HomeStack.navigationOptions = {
       focused={focused}
       name={
         Platform.OS === 'ios'
-          ? `ios-information-circle${focused ? '' : '-outline'}`
-          : 'md-information-circle'
+          ? `ios-home`
+          : 'md-home'
       }
     />
   ),
@@ -63,7 +63,7 @@ const LogStack = createStackNavigator(
 LogStack.navigationOptions = {
   tabBarLabel: 'Log',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-link' : 'md-link'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-list' : 'md-list'} />
   ),
 };
 
@@ -99,7 +99,7 @@ const ReviewStack = createStackNavigator(
 ReviewStack.navigationOptions = {
   tabBarLabel: 'Review',
   tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'} />
+    <TabBarIcon focused={focused} name={Platform.OS === 'ios' ? 'ios-eye' : 'md-eye'} />
   ),
 };
 
@@ -107,9 +107,10 @@ ReviewStack.path = '';
 
 // Contains all the navigation tabs
 const tabNavigator = createBottomTabNavigator({
+  HomeStack,
   LogStack,
-  LearnStack,
-  ReviewStack
+  ReviewStack,
+  LearnStack
 });
 
 tabNavigator.path = '';
