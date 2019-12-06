@@ -3,9 +3,7 @@ import { View, Text } from 'react-native';
 import axios from 'axios';
 import { Container, Header, Content, Card, CardItem, Body } from 'native-base';
 import Styles from '../components/Style/Style';
-
-
-import { AsyncStorage } from 'react-native'
+import { AsyncStorage } from 'react-native';
 
 
 
@@ -25,6 +23,8 @@ class GetCall extends Component {
         axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${value}`)
             .then(res => this.setState({ thoughts: res.data.thoughts }))
             .catch(err => console.log('err', err));
+
+        console.log('called thoughts : ',thoughts);
     };
 
     render() {
@@ -32,7 +32,7 @@ class GetCall extends Component {
             <View>
                 {/* <Text>{res.data.title}</Text> */}
                 {this.state.thoughts.map(thought => {
-                    console.log(thought)
+                    console.log('rendered thoughts : ', thoughts);
                     return (
                         // TODO: Render thought cards here
                         <Card style={Styles.reviewSubHead}>
@@ -71,7 +71,6 @@ export default GetCall;
 </Card> */}
 
 
-
 // render() {
 //     return (
 //         <View>
@@ -108,13 +107,6 @@ export default GetCall;
 //         </View>
 //     )
 // }
-
-
-
-
-
-
-
 
 
 
