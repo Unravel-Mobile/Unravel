@@ -51,7 +51,7 @@ Shad Lee, Jenn June and Mariño Carranza, many thanks are owed to Arron Linton a
 ## **Support**
 We will do our best to answers any questions you may have about our app, you may contact us at
 sl8305@hotmail.com
-jennjune@
+jennjuneux@gmail.com
 marino.carranza@gmail.com
 
 ## **Project Status**
