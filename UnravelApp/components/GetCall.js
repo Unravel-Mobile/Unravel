@@ -21,7 +21,10 @@ class GetCall extends Component {
         // this.props.navigation.getParam(userId, defaultValue)  
 
         axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${value}`)
-            .then(res => this.setState({ thoughts: res.data.thoughts }))
+            .then(res => {
+                console.log("RES FROM AXIOS GET THOUGHTS:", res)
+                this.setState({ thoughts: res.data.thoughts })
+            })
             .catch(err => console.log('err', err));
 
         console.log('called thoughts : ',thoughts);
@@ -32,7 +35,7 @@ class GetCall extends Component {
             <View>
                 {/* <Text>{res.data.title}</Text> */}
                 {this.state.thoughts.map(thought => {
-                    console.log('rendered thoughts : ', thoughts);
+                    // console.log('rendered thoughts : ', thoughts);
                     return (
                         // TODO: Render thought cards here
                         <Card style={Styles.reviewSubHead}>

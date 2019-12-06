@@ -30,6 +30,7 @@ export default function Submit(props) {
                 onPress={async () => {
                     const value = await AsyncStorage.getItem("userId").then(data => { return data });
                     console.log('value- >, ', value);
+                    valueObjId = ObjectId.fromString(value)
                     axios.post('https://unravel-api.herokuapp.com/thoughts', {
                         logName: props.logName,
                         situation: props.situation,
