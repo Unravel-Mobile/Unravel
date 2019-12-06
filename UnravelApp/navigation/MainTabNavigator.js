@@ -111,6 +111,7 @@ const tabNavigator = createBottomTabNavigator({
   LogStack,
   ReviewStack,
   LearnStack
+
 });
 
 tabNavigator.path = '';
