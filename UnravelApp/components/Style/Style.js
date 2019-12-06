@@ -112,8 +112,9 @@ export default StyleSheet.create({
     // },
     reviewSubHead: {
         fontSize: RFPercentage(4),
+        justifyContent: 'center',
         // fontWeight: 'bold',
-        backgroundColor: '#d3f0f2',
+        // backgroundColor: '#d3f0f2',
     },
     viewComponent: {
         flexDirection: 'row',
@@ -148,7 +149,11 @@ export default StyleSheet.create({
     Text: {
             fontSize: RFPercentage(2),
             paddingHorizontal: '5%'
-        
+    },
+    thoughtsList: {
+        fontSize: RFPercentage(3),
+        color: '#597579',
+        textAlign: 'left'
     }
     
 });
