@@ -47,8 +47,6 @@ export default class Q7Screen extends React.Component {
         wordSelect2 = {this.state.wordArray2}
       />
 
-        
-
     </Container>
 
     );

@@ -1,11 +1,8 @@
 import React from 'react';
 import { Container } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
-// importing the question header
 import QuestionHeader from '../../components/Questions/Question';
-// importing the input text area
 import InputForm from '../../components/InputForm';
-// importing the Top navbar
 import Header from '../../components/TopNav';
 
 export default class Q4Screen extends React.Component {
@@ -39,10 +36,6 @@ export default class Q4Screen extends React.Component {
     this.setState({
       Q4: value
     });
-
-    console.log("Q4screen");
-    console.log(this.state);
-
   }
 
   render () {
@@ -60,7 +53,6 @@ export default class Q4Screen extends React.Component {
       {/* Text2Speech */}
 
     </Container>
-
     );
   };
 };
