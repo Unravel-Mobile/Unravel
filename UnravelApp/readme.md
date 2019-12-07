@@ -13,8 +13,9 @@ Unravel Mobile® is a Cognitive Behavioral Therapy Tool for Patients and Therapi
 Unravel Mobile® offers an alternative to the traditinal method of recording destressing events, which a lot of times by the time the oportunity of putting pen to paper finally arrives the emotions are not the same; Unravel Mobile® offers the user the opportunity to log how they are feeling at the touch of a couple of buttons.
 
 ## **Usage**
-A user may have gone thru an experience that left them in a state of elevated anxiety, for example.
+A user may have gone through an experience that left them in a state of elevated anxiety, for example.
 Said user will have the opportunity to save:
+
 A title: 
     'Uncle Bob does not stop talking'
 A Situation
@@ -44,9 +45,25 @@ Preselected words that may matched how the user is feeling
 
 •  Other needs as they arise
 
+## **Technologies**
+•  mobile environment (React Native)
+•  Node, Express – dev frameworks
+•  Mongo – databaseExpo
+•  User Auth – Google Auth
+•  NativeBaseIO
+•  React
+•  EasyGrid
+
+## **Preview**
+Currently Unravel App® may be previewed on Expo using android devices only following this link https://exp.host/@sl8305/UnravelApp.
+
 ## **Contributors**
 The main contributors to this app are:
-Shad Lee, Jenn June and Mariño Carranza, many thanks are owed to Arron Linton and Catherine Pham to their ceassles collaborartion and guidance in the process
+Shad Lee, Jenn June and Mariño Carranza.
+
+## **Acknowledgments**
+Many thanks are owed to Arron Linton and Catherine Pham for their unwavering guidance collaboration in the long road of development.
+
 
 ## **Support**
 We will do our best to answers any questions you may have about our app, you may contact us at
@@ -55,5 +72,7 @@ jennjuneux@gmail.com
 marino.carranza@gmail.com
 
 ## **Project Status**
-This app is currently in development and we are working towards publish it to the App Store
+This app is currently in development and we are working towards publishing it to the App Store.
+
+
 
