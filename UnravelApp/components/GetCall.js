@@ -32,7 +32,7 @@ class GetCall extends Component {
             <View>
                 {/* <Text>{res.data.title}</Text> */}
                 {this.state.thoughts.map(thought => {
-                    console.log('rendered thoughts : ', thoughts);
+                    // console.log('rendered thoughts : ', thoughts);
                     return (
                         // TODO: Render thought cards here
                         <Card style={Styles.reviewSubHead}>
