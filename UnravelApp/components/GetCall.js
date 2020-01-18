@@ -14,7 +14,7 @@ class GetCall extends Component {
     }
     componentDidMount = async () => {
         const value = await AsyncStorage.getItem("userId").then(data => { return data });
-        console.log('value- >, ', value);
+        console.log('get call line 17 value- >, ', value);
 
         // TODO: Pass the mongo user id into the following API call
         // extrapolate the userId from react-navigation params -> this.props.navigation.state.params
@@ -24,7 +24,7 @@ class GetCall extends Component {
             .then(res => this.setState({ thoughts: res.data.thoughts }))
             .catch(err => console.log('err', err));
 
-        console.log('called thoughts : ',thoughts);
+        // console.log('called thoughts : ', res);
     };
 
     render() {
@@ -46,11 +46,13 @@ class GetCall extends Component {
                                     <Text style= {Styles.thoughtsList}>{thought.autoThought}</Text>
                                     <Text style= {Styles.thoughtsList}>{thought.changedThought}</Text>
                                     <Text style= {Styles.thoughtsList}>{thought.postRating}</Text>
-                                    <Text style= {Styles.thoughtsList}>{thought.wordSelect2}</Text>
+                                    <Text style={Styles.thoughtsList}>{thought.wordSelect2}</Text>
+                                    <Text style= {Styles.thoughtsList}>{thought.created}</Text>
+
                                 </Body>
                             </CardItem>
                             <CardItem footer>
-                                <Text>GeekyAnts</Text>
+                                <Text>Date thought was saved</Text>
                             </CardItem>
                         </Card>
                     )
