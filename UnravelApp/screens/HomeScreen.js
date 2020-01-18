@@ -8,6 +8,7 @@ import axios from 'axios';
 
 
 import { StackNavigator } from 'react-navigation';
+import { DatePicker } from 'native-base';
 
 var firebaseConfig = {
   apiKey: "AIzaSyCmW0cougaiZYPQ9lXvuJN6MEhxAgoFZKo",
@@ -37,7 +38,6 @@ export default class HomeScreen extends Component {
       await AsyncStorage.setItem('userId', userId);
       console.log('_store data - - > ', userId);
 
-
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +46,7 @@ export default class HomeScreen extends Component {
   _retrieveData = async () => {
     try {
       const userId = await AsyncStorage.getItem('userId');
-      console.log('_retrieve - - > ', userId);
+      console.log('homescreen _retrieve - - > ', userId);
 
       if (userId) {
         console.log('We have data!!');
@@ -76,7 +76,7 @@ export default class HomeScreen extends Component {
         var uid = user.uid;
         // ...
         // console.log('HomeScreen user line36 ', user)
-        console.log('uid - > ', uid);
+        console.log('homescreen line 79 uid - > ', uid);
 
 
         // TODO: Make an api call and POST the user unique id
@@ -112,7 +112,3 @@ export default class HomeScreen extends Component {
     );
   }
 };
-
-// ipad user  LBHdf9aMZKYh4JnyTlQruygu93M2
-
-// iphone user  KqoOHsn0anZTS0qchetnLHSnFsh1
