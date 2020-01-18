@@ -10,7 +10,7 @@ Unravel Mobile® is a Cognitive Behavioral Therapy Tool for Patients and Therapi
 
 •  Approach: Leverage mobile to engage patients to completing the ATR
 
-Unravel Mobile® offers an alternative to the traditinal method of recording destressing events, which a lot of times by the time the oportunity of putting pen to paper finally arrives the emotions are not the same; Unravel Mobile® offers the user the opportunity to log how they are feeling at the touch of a couple of buttons.
+Unravel Mobile® offers an alternative to the traditional method of recording destressing events, which a lot of times by the time the oportunity of putting pen to paper finally arrives the emotions are not the same; Unravel Mobile® offers the user the opportunity to log how they are feeling at the touch of a couple of buttons.
 
 ## **Usage**
 A user may have gone through an experience that left them in a state of elevated anxiety, for example.
