@@ -29,9 +29,9 @@ export default function Submit(props) {
                     const value = await AsyncStorage.getItem("userId").then(data => { return data });
                     console.log('submiont button line 30 value- >, ', value);
                     axios.post('https://unravel-api.herokuapp.com/thoughts', {
-                        logName: props.logName,
+                        title: props.logName,
                         situation: props.situation,
-                        prerating: props.prerating,
+                        preRating: props.prerating,
                         wordSelect1: props.wordSelect1.toString(),
                         autoThought: props.autoThought,
                         changedThought: props.changedThought,
