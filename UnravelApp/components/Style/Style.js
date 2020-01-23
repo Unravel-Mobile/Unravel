@@ -1,13 +1,14 @@
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { StyleSheet } from 'react-native'
 import { Content } from "native-base";
+import { AuthSession } from "expo";
 export default StyleSheet.create({
     mainBody: {
         backgroundColor: '#DEF5F8',
     },
 
     logo: {
-        marginTop: '7.5%',
+        marginTop: '5%',
         flex: 1,
         width: '85%',
         alignSelf: 'center'
@@ -27,18 +28,17 @@ export default StyleSheet.create({
         fontSize: RFValue(20),
         // fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: '5%',
+        marginBottom: '10%',
     },
-    buttons: {
-        width: '100%',
-        marginBottom: '5%',
-        alignItems: 'center'
-    },
+    // buttons: {
+    //     width: '100%',
+    //     paddingLeft: 10,
+    //     paddingRight: 10,
+    //     // marginBottom: '5%',
+    //     // alignItems: 'center'
+    // },
     text: {
-        // fontWeight: 'bold',
-        fontSize: RFValue(20),
-        textAlign: 'center',
-        marginBottom: '1%'
+        fontSize: RFValue(20)
     },
     headNav: {
         marginTop: '4%',
