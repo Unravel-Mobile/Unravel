@@ -1,3 +1,5 @@
+// npm install moment --save  1/24/20 
+
 import React from 'react';
 import {
     StyleSheet,
@@ -8,7 +10,15 @@ import {
     Alert,
 } from 'react-native';
 
-import { AsyncStorage } from 'react-native'
+import moment from 'moment';
+
+// var now = moment().format();
+
+var savedDate = moment().format("MMMM Do YYYY, h:mm a");
+
+console.log('date - - > ', savedDate);
+
+import { AsyncStorage } from 'react-native';
 
 // axios installed 11/24/10am  mc
 
@@ -18,8 +28,10 @@ import Constants from 'expo-constants';
 
 
 export default function Submit(props) {
+    
     return (
         <SafeAreaView style={styles.container}>
+            
             <Button
                 title='Save Thought'
                 color='#475e60'
@@ -27,7 +39,7 @@ export default function Submit(props) {
 
                 onPress={async () => {
                     const value = await AsyncStorage.getItem("userId").then(data => { return data });
-                    console.log('submiont button line 30 value- >, ', value);
+                    console.log('submit button line 30 value- >, ', value);
                     axios.post('https://unravel-api.herokuapp.com/thoughts', {
                         title: props.logName,
                         situation: props.situation,
@@ -37,6 +49,7 @@ export default function Submit(props) {
                         changedThought: props.changedThought,
                         postRating: props.postRating,
                         wordSelect2: props.wordSelect2.toString(),
+                        created: savedDate,
                         userId: value,
                     })
                         .then(function (response) {

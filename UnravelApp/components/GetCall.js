@@ -47,12 +47,12 @@ class GetCall extends Component {
                                     <Text style= {Styles.thoughtsList}>{thought.changedThought}</Text>
                                     <Text style= {Styles.thoughtsList}>{thought.postRating}</Text>
                                     <Text style={Styles.thoughtsList}>{thought.wordSelect2}</Text>
-                                    <Text style= {Styles.thoughtsList}>{thought.created}</Text>
+                                    {/* <Text style= {Styles.thoughtsList}>{thought.created}</Text> */}
 
                                 </Body>
                             </CardItem>
                             <CardItem footer>
-                                <Text>Date thought was saved</Text>
+                                <Text>{thought.created}</Text>
                             </CardItem>
                         </Card>
                     )
