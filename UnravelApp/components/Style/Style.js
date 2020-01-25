@@ -19,27 +19,17 @@ export default StyleSheet.create({
         resizeMode: 'contain'
     },
     headerOne: {
-        // fontFamily: 'Arial',
         fontSize: RFValue(60),
         textAlign: 'center',
         marginBottom: 10
     },
     headerTwo: {
         fontSize: RFValue(20),
-        // fontWeight: 'bold',
         textAlign: 'center',
         marginBottom: '10%',
     },
-    // buttons: {
-    //     width: '100%',
-    //     paddingLeft: 10,
-    //     paddingRight: 10,
-    //     // marginBottom: '5%',
-    //     // alignItems: 'center'
-    // },
-    text: {
-        fontSize: RFValue(20)
-    },
+
+
     headNav: {
         marginTop: '4%',
         backgroundColor: 'transparent',
@@ -142,6 +132,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#475e60',
+        paddingBottom: "5%",
     },
 
     h2: {
@@ -151,10 +142,14 @@ export default StyleSheet.create({
 
     },
 
+    // learn page
     Text: {
         fontSize: RFPercentage(2),
-        paddingHorizontal: '5%'
+        paddingHorizontal: '5%',
+        paddingBottom: '10%',
     },
+
+
     thoughtsList: {
         fontSize: RFPercentage(3),
         color: '#597579',
