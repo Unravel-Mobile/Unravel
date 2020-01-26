@@ -1,57 +1,57 @@
 [   
     {
-        "col4": "Accepting", 
+        "col4": " Accepting", 
         "type": "words28",
         "isHighlighted": false
     },
     {
-        "col4": "Angry",
+        "col4": " Angry",
         "type": "words29",
         "isHighlighted": false
     }, 
     {
-        "col4": "Appreciative",
+        "col4": " Appreciative",
         "type": "words30",
         "isHighlighted": false    
     }, 
     {
-        "col4": "Ashamed" ,
+        "col4": " Ashamed" ,
         "type": "words31",
         "isHighlighted": false    
     },
     {
-        "col4": "Balanced" ,
+        "col4": " Balanced" ,
         "type": "words32",
         "isHighlighted": false    
         
     },
     {
-        "col4": "Content" ,
+        "col4": " Content" ,
         "type": "words33",
         "isHighlighted": false    
     },
     {
-        "col4": "Curious" ,
+        "col4": " Curious" ,
         "type": "words34",
         "isHighlighted": false    
     },
     {
-        "col4": "Depressed" ,
+        "col4": " Depressed" ,
         "type": "words35",
         "isHighlighted": false    
     },
     {
-        "col4": "Discouraged" ,
+        "col4": " Discouraged" ,
         "type": "words36",
         "isHighlighted": false    
     },
     {
-        "col4": "Encouraged" ,
+        "col4": " Encouraged" ,
         "type": "words37",
         "isHighlighted": false
     },
     {
-        "col4": "Excited" ,
+        "col4": " Excited" ,
         "type": "words38",
         "isHighlighted": false
     }

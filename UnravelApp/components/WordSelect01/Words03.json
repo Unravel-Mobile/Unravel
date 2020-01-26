@@ -1,39 +1,55 @@
 [
     {
-        "col3": "Overwhelmed" ,
+        "col3": " Overwhelmed" ,
         "type": "words21",
         "isHighlighted": false
     },
     {
-        "col3": "Pessimistic" ,
+        "col3": " Pessimistic" ,
         "type": "words22",
         "isHighlighted": false
     },
     {
-        "col3": "Powerless" ,
+        "col3": " Powerless" ,
         "type": "words23",
         "isHighlighted": false
     },
     {
-        "col3": "Resentful" ,
+        "col3": " Resentful" ,
         "type": "words24",
         "isHighlighted": false
     },
     {
-        "col3": "Self-critical" ,
+        "col3": " Self-critical" ,
         "type": "words25",
         "isHighlighted": false
     },
     {
-        "col3": "Shaky/Fearful" ,
+        "col3": " Shaky/Fearful" ,
         "type": "words26",
         "isHighlighted": false
     },
     {
-        "col3": "Unsettled" ,
+        "col3": " Unsettled" ,
         "type": "words27",
         "isHighlighted": false
-    }
+    },
+    {
+        "col3": " Purposeless" ,
+        "type": "words28",
+        "isHighlighted": false
+    },
+    {
+        "col3": " Demoralized" ,
+        "type": "words29",
+        "isHighlighted": false
+    },
+    {
+        "col3": " Rejected" ,
+        "type": "words30",
+        "isHighlighted": false
+    },
+    
 
     
 ]
