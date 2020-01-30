@@ -31,8 +31,11 @@ export default StyleSheet.create({
 
 
     headNav: {
-        marginTop: '4%',
+        fontSize: RFPercentage(3),
         backgroundColor: 'transparent',
+        textAlign: 'center',
+        marginTop: '4%',
+        marginBottom: '4%'
     },
 
     headTitle: {
@@ -42,7 +45,6 @@ export default StyleSheet.create({
         marginTop: '2.5%',
         fontSize: RFPercentage(3),
         color: '#475e60',
-        // fontWeight: 'bold',
     },
     arrows: {
         // alignItems: 'center',
@@ -105,11 +107,15 @@ export default StyleSheet.create({
     //     textAlign: 'center',
     //     color: 'red'
     // },
+    reviewButton: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        backgroundColor: '#DEF5F8',
+    },
     reviewSubHead: {
-        fontSize: RFPercentage(4),
-        justifyContent: 'center',
-        // fontWeight: 'bold',
-        // backgroundColor: '#d3f0f2',
+        fontSize: RFPercentage(3),
+        color: '#475e60',
     },
     viewComponent: {
         flexDirection: 'row',
@@ -154,5 +160,17 @@ export default StyleSheet.create({
         fontSize: RFPercentage(3),
         color: '#597579',
         textAlign: 'left'
+    },
+
+    date: {
+        fontSize: RFPercentage(2),
+        color: '#597579',
+        justifyContent: 'center'
+    },
+    reviewList: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
 });

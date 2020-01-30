@@ -16,16 +16,16 @@ export default function ReviewScreen() {
   return (
     <Container>
       <Content padder>
-        <Card>
-          <CardItem style={Styles.headNav}>
-            <Text style={Styles.reviewHead}>Thoughts saved</Text>
-          </CardItem>
+        {/* <Card style={Styles.headNav}> */}
+          {/* <CardItem> */}
+            <Text style={Styles.headNav}>Thoughts saved</Text>
+          {/* </CardItem> */}
           {/* <CardItem style={Styles.reviewSubHead}>
             <Text style={Styles.reviewSubHead}>
               Review this situation
                 </Text>
           </CardItem> */}
-        </Card>
+        {/* </Card> */}
 
         {/* <Card>
           <CardItem style={Styles.reviewSubHead} button onPress={() => alert("Will relocate to individual Log")}>
@@ -38,7 +38,7 @@ export default function ReviewScreen() {
         <GetCall />
         {/* <ThougthLog /> */}
 
-      </Content>
+        </Content>
     </Container>
 
   );
