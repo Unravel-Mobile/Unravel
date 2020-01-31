@@ -44,11 +44,11 @@ export default function Submit(props) {
                         title: props.logName,
                         situation: props.situation,
                         preRating: props.prerating,
-                        wordSelect1: props.wordSelect1.toString(),
+                        wordSelect1: props.wordSelect1,
                         autoThought: props.autoThought,
                         changedThought: props.changedThought,
                         postRating: props.postRating,
-                        wordSelect2: props.wordSelect2.toString(),
+                        wordSelect2: props.wordSelect2,
                         created: savedDate,
                         userId: value,
                     })
