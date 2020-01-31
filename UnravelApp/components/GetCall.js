@@ -4,11 +4,14 @@ import { Container, Header, Content, List, ListItem, Thumbnail, Text, Left, Body
 import Styles from '../components/Style/Style';
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
+import { NavigationInjectedProps, withNavigation } from 'react-navigation';
+
 
 export default class GetCall extends Component {
     state = {
         thoughts: []
     }
+
     componentDidMount = async () => {
         const value = await AsyncStorage.getItem("userId").then(data => { return data });
         console.log('get call line 17 value- >, ', value);
@@ -27,28 +30,34 @@ export default class GetCall extends Component {
             <View>
                 {this.state.thoughts.map((thought, i) => {
                     return (
-                        // <Text key={i}>{thought.title}</Text>
                         <List key={i}>
                             <ListItem thumbnail>
                                 {/* <Left> */}
-                                    {/* <Thumbnail square source={{ uri: 'Image URL' }} /> */}
-                                    {/* <Thumbnail square source={require('../assets/images/robot-dev.png')} />
+                                {/* <Thumbnail square source={{ uri: 'Image URL' }} /> */}
+                                {/* <Thumbnail square source={require('../assets/images/robot-dev.png')} />
                                 </Left> */}
-                                </ListItem>
-                                <Button style={Styles.reviewButton} transparent onPress={() => Alert.alert(`${thought.wordSelect1}`)}>
+                            </ListItem>
+                            <Button style={Styles.reviewButton} transparent onPress={() => Alert.alert(`${thought.wordSelect1}`)}>
                                 <Thumbnail square source={require('../assets/images/robot-dev.png')} />
                                 <Text style={Styles.reviewSubHead}>{thought.title}</Text>
-                                </Button>
-                                <ListItem style={Styles.date}>
+                            </Button>
+                            <ListItem style={Styles.date}>
                                 <Text>{thought.created}</Text>
-                                </ListItem>
+                            </ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>SITUATION:{'\n'}{thought.situation}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>DISTRESS LEVEL:{'\n'}{thought.preRating}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>HOW I FELT: {'\n'}{thought.wordSelect1}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>AUTOTHOUGHT:{'\n'}{thought.autoThought}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>ALTERNATIVE EXPLANATION: {'\n'}{thought.changedThought}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>DISTRESS LEVEL AFTER:{'\n'}{thought.postRating}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>HOW I FEEL AFTER: {'\n'}{thought.wordSelect2}</Text></ListItem>
                         </List>
-                            );
-                        })
-                        }
-            </View>
-                    )
+                    );
+                })
                 }
+            </View>
+        )
+    }
 }
 
 
