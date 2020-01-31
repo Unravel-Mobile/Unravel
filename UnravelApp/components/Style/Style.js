@@ -155,6 +155,10 @@ export default StyleSheet.create({
         paddingBottom: '10%',
     },
 
+    text: {
+        fontWeight: 'bold',
+        fontSize: RFPercentage(3)
+    },
 
     thoughtsList: {
         fontSize: RFPercentage(3),
