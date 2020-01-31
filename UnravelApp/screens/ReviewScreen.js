@@ -9,19 +9,22 @@ import Styles from '../components/Style/Style';
 
 
 export default function ReviewScreen() {
-  /**
-   * Go ahead and delete ExpoConfigView and replace it with your content;
-   * we just wanted to give you a quick view of your config.
-   */
+
   return (
     <Container>
       <Content padder>
+<<<<<<< HEAD
 
         <Text style={Styles.headNav}>Thoughts saved</Text>
   
         <GetCall />
 
       </Content>
+=======
+            <Text style={Styles.headNav}>Thoughts saved</Text>
+        <GetCall />
+        </Content>
+>>>>>>> 21f31429af9fb56d5fcbfca36b93d27dc3a05ca1
     </Container>
 
   );
