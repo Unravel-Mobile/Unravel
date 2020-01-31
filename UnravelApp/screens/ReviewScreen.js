@@ -16,29 +16,12 @@ export default function ReviewScreen() {
   return (
     <Container>
       <Content padder>
-        {/* <Card style={Styles.headNav}> */}
-          {/* <CardItem> */}
-            <Text style={Styles.headNav}>Thoughts saved</Text>
-          {/* </CardItem> */}
-          {/* <CardItem style={Styles.reviewSubHead}>
-            <Text style={Styles.reviewSubHead}>
-              Review this situation
-                </Text>
-          </CardItem> */}
-        {/* </Card> */}
 
-        {/* <Card>
-          <CardItem style={Styles.reviewSubHead} button onPress={() => alert("Will relocate to individual Log")}>
-            <Text style={Styles.reviewSubHead}>
-              LIST OF THE HEADERS FROM THE DB WILL GO HERE
-              Title of event
-                </Text>
-          </CardItem>
-        </Card> */}
+        <Text style={Styles.headNav}>Thoughts saved</Text>
+  
         <GetCall />
-        {/* <ThougthLog /> */}
 
-        </Content>
+      </Content>
     </Container>
 
   );
