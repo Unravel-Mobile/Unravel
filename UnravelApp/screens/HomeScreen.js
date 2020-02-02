@@ -1,14 +1,14 @@
 import * as WebBrowser from 'expo-web-browser';
-import React, { Component, Container, Body, Content } from 'react';
+import React, { Component, } from 'react';
 import { AsyncStorage } from 'react-native'
 import * as firebase from 'firebase';
-import { MonoText } from '../components/StyledText';
-import HomePage, { Home } from '../components/Home';
+// import { MonoText } from '../components/StyledText';
+import HomePage, { Home } from '../components/HomeFolder/Home';
 import axios from 'axios';
 
 
 import { StackNavigator } from 'react-navigation';
-import { DatePicker } from 'native-base';
+// import { DatePicker } from 'native-base';
 
 var firebaseConfig = {
   apiKey: "AIzaSyCmW0cougaiZYPQ9lXvuJN6MEhxAgoFZKo",
@@ -50,9 +50,6 @@ export default class HomeScreen extends Component {
 
       if (userId) {
         console.log('We have data!!');
-        //  TODO: set the userId as a param using react-navigation
-        // this.props.navigation.setParams({ userId: itemTwo });
-        // console.log('userId in retrieve data -- > ', itemTwo);
       } else {
         await this.login()
       }
@@ -83,15 +80,10 @@ export default class HomeScreen extends Component {
         axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
           .then((user) => {
             console.log('USER - > ', user.data);
-            // var itemWithId = JSON.parse(user.config.data);
-            // console.log('inside axios call - - > ', itemWithId.userId);
-            // var itemTwo = itemWithId.userId;
-            // console.log('itemTwo - - > ', itemTwo);
             this._storeData(user.data._id);
             //  TODO: set the userId as a param using react-navigation
             // this.props.navigation.setParams({ userId: itemTwo });
             // console.log('userId after this props -- > ', itemTwo);
-
           })
       } else {
         // User is signed out.

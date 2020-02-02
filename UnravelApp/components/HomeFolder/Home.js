@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Dimensions, } from 'react-native';
+import { Image, Dimensions, } from 'react-native';
 import { Container, Text, Button, View } from 'native-base';
-import Styles from './Style/Style';
+import Styles from '../HomeFolder/HomeStyle';
 
 var { width } = Dimensions.get("window");
 var imageWidth = width;
@@ -13,7 +13,7 @@ export default HomePage = (props) => {
 
                 {/* Opening Logo for Unravel  */}
                 <View style={Styles.logo}>
-                    <Image source={require('../assets/images/unravel01.png')} style={Styles.logoImg} />
+                    <Image source={require('../../assets/images/unravel01.png')} style={Styles.logoImg} />
                     
                     {/* Title */}
                     <Text style={Styles.headerOne}>

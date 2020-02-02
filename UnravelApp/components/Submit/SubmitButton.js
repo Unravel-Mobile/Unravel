@@ -1,18 +1,17 @@
-// npm install moment --save  1/24/20 
+// npm install moment --save  1/24/20
+// axios installed 11/24/10am  mc
 
 import React from 'react';
 import {
     StyleSheet,
     Button,
-    View,
     SafeAreaView,
-    Text,
     Alert,
 } from 'react-native';
 
 import moment from 'moment';
 
-// var now = moment().format();
+var now = moment().format();
 
 var savedDate = moment().format("MMMM Do YYYY, h:mm a");
 
@@ -20,12 +19,9 @@ console.log('date - - > ', savedDate);
 
 import { AsyncStorage } from 'react-native';
 
-// axios installed 11/24/10am  mc
-
 const axios = require('axios');
 
 import Constants from 'expo-constants';
-
 
 export default function Submit(props) {
     
@@ -35,7 +31,6 @@ export default function Submit(props) {
             <Button
                 title='Save Thought'
                 color='#475e60'
-                // backgroundColor='#DEF5F8'
 
                 onPress={async () => {
                     const value = await AsyncStorage.getItem("userId").then(data => { return data });

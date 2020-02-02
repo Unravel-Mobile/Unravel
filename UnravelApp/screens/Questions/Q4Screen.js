@@ -2,8 +2,8 @@ import React from 'react';
 import { Container } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 import QuestionHeader from '../../components/Questions/Question';
-import InputForm from '../../components/InputForm';
-import Header from '../../components/TopNav';
+import InputForm from '../../components/InputForm/InputForm';
+import Header from '../../components/TopNavFolder/TopNav';
 
 export default class Q4Screen extends React.Component {
 

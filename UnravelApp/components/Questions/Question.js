@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container, Header, Content, Card, CardItem, Text, Body, View } from 'native-base';
 import questions from "./questions.json";
 
-import Styles from '../Style/Style';
+import Styles from '../Questions/QuestionsStyle';
 
 
 export default class QuestionHeader extends Component {
