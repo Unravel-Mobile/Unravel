@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Content, Textarea, Form } from "native-base";
 
-import Styles from '../components/Style/Style';
+import Styles from '../InputForm/InputFormStyle';
 
 
 export default class InputForm extends Component {
