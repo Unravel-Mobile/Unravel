@@ -49,7 +49,7 @@ export default class HomeScreen extends Component {
       console.log('homescreen _retrieve - - > ', userId);
 
       if (userId) {
-        console.log('We have data!!');
+        console.log('We have data!! HomeScreen line 52 userId = ', userId);
       } else {
         await this.login()
       }
@@ -63,7 +63,9 @@ export default class HomeScreen extends Component {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
-      // console.log(error);
+      console.log('HomeScreen errorCode -> ', errorCode);
+      console.log('HomeScreen errorMessage -> ', errorMessage);
+
     });
 
     await firebase.auth().onAuthStateChanged((user) => {
@@ -72,9 +74,7 @@ export default class HomeScreen extends Component {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         // ...
-        // console.log('HomeScreen user line36 ', user)
         console.log('homescreen line 79 uid - > ', uid);
-
 
         // TODO: Make an api call and POST the user unique id
         axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })

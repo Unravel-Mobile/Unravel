@@ -12,7 +12,7 @@ export default class GetCall extends Component {
 
     componentDidMount = async () => {
         const value = await AsyncStorage.getItem("userId").then(data => { return data });
-        console.log('get call line 17 value- >, ', value);
+        console.log('get call line 15 value- >, ', value);
 
         // TODO: Pass the mongo user id into the following API call
         // extrapolate the userId from react-navigation params -> this.props.navigation.state.params
@@ -32,7 +32,7 @@ export default class GetCall extends Component {
                                 {/* <Thumbnail square source={{ uri: 'Image URL' }} /> */}
                             </ListItem>
                             <Button style={Styles.reviewButton} transparent onPress={() => Alert.alert(`${thought.wordSelect1}`)}>
-                                <Thumbnail square source={require('../assets/images/unravel01.png')} />
+                                <Thumbnail square source={require('../../assets/images/unravel01.png')} />
                                 <Text style={Styles.reviewSubHead}>{thought.title}</Text>
                             </Button>
                             <ListItem style={Styles.date}>
