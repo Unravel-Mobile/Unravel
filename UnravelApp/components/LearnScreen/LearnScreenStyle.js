@@ -16,12 +16,22 @@ export default StyleSheet.create({
         fontSize: RFPercentage(3),
         color: '#597579',
         textAlign: 'left',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        color: '#475e60',
     },
 
     learnImg: {
         width: '100%',
         height: '20%',
-        marginBottom: '1%'
+        marginBottom: '3%',
+        // resizeMode: 'contain',
+    },
+
+    filling: {
+        color: '#475e60',
+        paddingLeft: '5%',
+        paddingRight: '5%',
     },
 
 });
