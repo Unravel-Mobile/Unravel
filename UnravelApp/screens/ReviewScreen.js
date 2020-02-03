@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Header, Content, Card, CardItem, Text, Body } from "native-base";
-import GetCall from '../components/GetCall';
+
+import GetCall from '../components/GetCall/GetCall';
 
 import Styles from '../components/Style/Style';
 

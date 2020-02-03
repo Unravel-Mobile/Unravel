@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
-import { Text, View, Body, Content, Style } from 'react-native'
+import React,  { Component } from 'react'
+import { Text,} from 'react-native'
 import { Button } from 'native-base'
-import { Col, Row, Grid } from "react-native-easy-grid"
+import { Col, Grid } from "react-native-easy-grid"
 import Words01 from "./Words01"
 import Words02 from "./Words02"
 import Words03 from "./Words03"
-import Styles from '../Style/Style';
-// import { elementType } from '../../../../../../Library/Caches/typescript/3.6/node_modules/@types/prop-types'
-
+import Styles from '../WordSelect01/WordSelect01Style';
 
 export default class WordSelect02 extends Component {
     state = {
@@ -19,14 +17,16 @@ export default class WordSelect02 extends Component {
 
     render() {
         return (
-            <Grid style={Styles.threeCols}>
+            <Grid>
                 <Col>
                     {this.props.wordsColOne.map((word, i) => (
                         <Button
                             key={i}
                             onPress={() => this.props.selectWord(word, 'Words01', 'col1')}
                             value={word.col1}
-                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
+                            style={{
+                                justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent'
+                            }}
                         >
                             <Text
                                 key={i + "TEXT"}
@@ -43,7 +43,10 @@ export default class WordSelect02 extends Component {
                             key={i}
                             onPress={() => this.props.selectWord(word, 'Words02', 'col2')}
                             value={word.col2}
-                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
+                            style={{
+                                justifyContent: 'center',
+                                margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent'
+                            }}
                         >
                             <Text
                                 key={i + "TEXT"}
@@ -60,7 +63,10 @@ export default class WordSelect02 extends Component {
                             key={i}
                             onPress={() => this.props.selectWord(word, 'Words03', 'col3')}
                             value={word.col3}
-                            style={{ justifyContent: 'center', margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent' }}
+                            style={{
+                                justifyContent: 'center',
+                                margin: '1%', backgroundColor: word.isHighlighted ? 'lightblue' : 'transparent'
+                            }}
                         >
                             <Text
                                 key={i + "TEXT"}

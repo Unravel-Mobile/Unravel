@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Button } from 'native-base';
+import { Container } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 import QuestionHeader from '../../components/Questions/Question';
-import Header from '../../components/TopNav';
-import SubmitButton from '../../components/SubmitButton';
+import Header from '../../components/TopNavFolder/TopNav';
+import SubmitButton from '../../components/Submit/SubmitButton';
 
 
 export default class Q7Screen extends React.Component {

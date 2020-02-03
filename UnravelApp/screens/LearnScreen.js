@@ -3,7 +3,7 @@ import {Image} from 'react-native';
 import { Container, Content, Body, Text, H1, H2 } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 // importing the Top navbar
-import Header from '../components/TopNav';
+import Header from '../components/TopNavFolder/TopNav';
 
 import LearnScreenComp from '../components/LearnScreen/LearnScreen';
 

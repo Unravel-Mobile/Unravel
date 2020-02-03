@@ -1,9 +1,7 @@
 import React from 'react';
-import { View, HeaderBackButton } from 'react-native';
-import { Body, Container, Header, Left, Right, Button, Icon, Text, Title, Content } from 'native-base';
-import Styles from '../components/Style/Style';
-
-
+import { View } from 'react-native';
+import { Header, Left, Right, Button, Icon, Text, Title, } from 'native-base';
+import Styles from '../TopNavFolder/TopNavStyle';
 
 export default TopNavBar = (props) => {
   return (
@@ -17,7 +15,7 @@ export default TopNavBar = (props) => {
 
       <View style={Styles.headNav}>
 
-        <Title style={Styles.headTitle}>Add Entry</Title>
+        <Title style={Styles.headTitle}>Add an Entry</Title>
 
       </View>
 

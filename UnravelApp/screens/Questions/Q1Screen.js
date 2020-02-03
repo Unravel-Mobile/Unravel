@@ -4,9 +4,9 @@ import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area
-import InputForm from '../../components/InputForm';
+import InputForm from '../../components/InputForm/InputForm';
 // importing the Top navbar
-import Header from '../../components/TopNav';
+import Header from '../../components/TopNavFolder/TopNav';
 
 export default class Q1Screen extends React.Component {
   static navigationOptions = {
