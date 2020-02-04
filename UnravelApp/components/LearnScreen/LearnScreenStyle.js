@@ -25,7 +25,7 @@ export default StyleSheet.create({
         width: '100%',
         height: '20%',
         marginBottom: '3%',
-        // resizeMode: 'contain',
+        resizeMode: 'stretch',
     },
 
     filling: {
@@ -34,4 +34,8 @@ export default StyleSheet.create({
         paddingRight: '5%',
     },
 
+    contentContainer: {
+        height: '230%',
+        flexGrow: 1,
+    },
 });

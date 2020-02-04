@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Container, Content, Body, Text, H1 } from 'native-base';
-import {Image} from 'react-native';
+import { Container, Content, Body, Text } from 'native-base';
+import { Image, ScrollView } from 'react-native';
 
 import Styles from '../LearnScreen/LearnScreenStyle';
 
@@ -8,14 +8,12 @@ import Styles from '../LearnScreen/LearnScreenStyle';
 export default class LearnScreenComp extends Component {
     render() {
         return (
-            <Container>
-                <Image source={require('../../assets/images/UnravelSun.png')} style={Styles.learnImg} />
-            
-            <Content padder>
-                
-                {/* <Image source={require('../../assets/images/UnravelSun.png')} style={Styles.learnImg}/> */}
+            // scrollview is given static height that is larger than the content in order to fit everythin on the screen - previously only parts of the content were visiable (especially on androids)
 
-                <Text style={Styles.title}>Unravelling Thoughts{"\n"}{"\n"}</Text>
+            <ScrollView contentContainerStyle={Styles.contentContainer}>
+                <Image source={require('../../assets/images/UnravelSun.png')} style={Styles.learnImg} /> 
+            
+                <Text style={Styles.title}>Unravelling Thoughts{"\n"}</Text>
             
                     <Text style={Styles.topic}>What is Unravel really about?{"\n"}</Text>
                     <Text style={Styles.filling}>We all have Thinking (cognitive) and Feeling (emotional) reactions to the things that happen in our world. Often, the path towards developing an emotional response happens so quickly, we don’t have a chance to sort through the cognitive channels that got us there. When that happens, we can find ourselves going from the experience, directly to an interpretation of the events; and it’s often one that feels right because it can have a lot of intensity. However, slowing down the process and looking at *how* we are arriving at our interpretation of an event, can lead to more balance. That is the purpose behind Unravel. {"\n"}{"\n"}</Text>
@@ -32,10 +30,7 @@ export default class LearnScreenComp extends Component {
                     <Text style={Styles.filling}>As you capture your thought logs over time, you start to recognize changes in your Thinking and Feeling patterns. As you progress on your journey, Unravel can help you recall events where you overcame a situation and/or things that still troubled you. With your thoughts logs in your backpocket you can bring it to your therapy sessions to discuss and work through situations in more detail.{"\n"}{"\n"}</Text>
                 
                 <Text style={Styles.title}>Unravel. Explore. Grow. {"\n"}{"\n"}</Text>
-
-
-            </Content>
-            </Container>
+            </ScrollView>
         );
     };
 };

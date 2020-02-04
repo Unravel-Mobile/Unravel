@@ -20,7 +20,7 @@ export default class GetCall extends Component {
 
         axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${value}`)
             .then(res => this.setState({ thoughts: res.data.thoughts }))
-            .catch(err => console.log('err', err));
+            .catch(err => console.log('err line 23', err));
     };
     render() {
         return (
