@@ -33,10 +33,10 @@ export default class HomeScreen extends Component {
     console.log('retrieving done!');
   };
 
-  _storeData = async (userId) => {
+  _storeData = async (_id) => {
     try {
-      await AsyncStorage.setItem('userId', userId);
-      console.log('_store data - - > ', userId);
+      await AsyncStorage.setItem('_id', _id);
+      console.log('_store data - - > ', _id);
 
     } catch (error) {
       console.log(error);
