@@ -35,7 +35,7 @@ export default StyleSheet.create({
     },
 
     contentContainer: {
-        height: '230%',
+        height: '300%',
         flexGrow: 1,
     },
 });
