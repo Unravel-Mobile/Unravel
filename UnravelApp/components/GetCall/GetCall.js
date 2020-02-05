@@ -18,7 +18,7 @@ export default class GetCall extends Component {
         // extrapolate the userId from react-navigation params -> this.props.navigation.state.params
         // this.props.navigation.getParam(userId, defaultValue)  
 
-        axios.get(`https://unravel-api.herokuapp.com/user/${value}/thoughts/`)
+        axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${value}`)
             .then(res => this.setState({ thoughts: res.data.thoughts }))
             .catch(err => console.log('err line 23 - - >', err));
     };
