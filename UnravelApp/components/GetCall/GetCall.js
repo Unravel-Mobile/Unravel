@@ -11,17 +11,18 @@ export default class GetCall extends Component {
     }
 
     componentDidMount = async () => {
-        const value = await AsyncStorage.getItem("userId").then(data => { return data });
+        const value = await AsyncStorage.getItem("_id").then(data => { return data });
         console.log('get call line 17 value- >, ', value);
 
         // TODO: Pass the mongo user id into the following API call
         // extrapolate the userId from react-navigation params -> this.props.navigation.state.params
         // this.props.navigation.getParam(userId, defaultValue)  
 
-        axios.get(`https://unravel-api.herokuapp.com/user/5e3a37c975eeed0017a56610/thoughts/`)
+        axios.get(`https://unravel-api.herokuapp.com/user/${value}/thoughts/`)
             .then(res => this.setState({ thoughts: res.data.thoughts }))
-            .catch(err => console.log('err line 23', err ));
+            .catch(err => console.log('err line 23 - - >', err));
     };
+
     render() {
         return (
             <View>
