@@ -29,7 +29,7 @@ var firebase = Utilities.firebase;
 export default class HomeScreen extends Component {
 
   componentDidMount() {
-    // this._retrieveData();'
+    // this._retrieveData();
     this.login();
     console.log('Logged in!');
   };
@@ -44,27 +44,29 @@ export default class HomeScreen extends Component {
     }
   };
 
-  _retrieveData = async () => {
-    try {
-      // Get userId from storage with key 'userId'
-      const userId = await AsyncStorage.getItem('userId');
-      // const userId is always null because no key is 'userId'
-      console.log('homescreen _retrieve - - > ', userId);
+  // _retrieveData = async () => {
+  //   try {
+  //     // Get userId from storage with key 'userId'
+  //     const userId = await AsyncStorage.getItem('userId');
+  //     // const userId is always null because no key is 'userId'
+  //     console.log('homescreen _retrieve - - > ', userId);
 
-      // this if never goes in because userId is always null
-      if (userId) {
-        // ideally login the user because user exists
-        console.log('We have data!!');
-      } else {
-        // ideally create a new user becase user doesn't exist
-        // instead, we are logging in the user that doesn't exist
-        await this.login()
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  //     // this if never goes in because userId is always null
+  //     if (userId) {
+  //       // ideally login the user because user exists
+  //       console.log('We have data!!');
+  //     } else {
+  //       // ideally create a new user becase user doesn't exist
+  //       // instead, we are logging in the user that doesn't exist
+  //       await this.login()
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
+  // method to check if user exists in async storage
+  // async storage schema: {key => deviceId, value => fireBaseId}
   _userExistsInDataBase = async(uid) => {
     try {
       var user = await AsyncStorage.getItem(uid);
@@ -89,12 +91,9 @@ export default class HomeScreen extends Component {
         // User is signed in.
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
-        // ...
-        // console.log('HomeScreen user line36 ', user)
-        console.log('homescreen line 79 uid - > ', uid);
+        console.log('homescreen line 94 uid - > ', uid);
 
         this._userExistsInDataBase(uid).then((userExistsInDataBase) => {
-          // TODO: Make an api call and POST the user unique id
           if(!userExistsInDataBase) {
             axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
               .then((user) => {

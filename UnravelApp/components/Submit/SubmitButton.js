@@ -4,8 +4,8 @@
 import React from 'react';
 import { AsyncStorage, StyleSheet, Button, SafeAreaView, Alert} from 'react-native';
 import moment from 'moment';
-import Constants from 'expo-constants';
 import Utilities from '../../constants/Utilities';
+import Styles from '../Submit/SubmitStyle';
 
 var user = null;
 var now = moment().format();
@@ -14,7 +14,7 @@ var savedDate = moment().format("MMMM Do YYYY, h:mm a");
 console.log('date - - > ', savedDate);
 const axios = require('axios');
 
-function postLog (props, value) {
+function saveThought (props, value) {
     axios.post('https://unravel-api.herokuapp.com/thoughts', {
         title: props.logName,
         situation: props.situation,
@@ -30,9 +30,10 @@ function postLog (props, value) {
         console.log('***************THOUGHT**************');
         console.log(response.config.data);
         console.log('***************THOUGHT**************');
-        Alert.alert('Thought Saved!')
+        Alert.alert('Thought Saved!');
     }).catch(function (error) {
         console.log('error - - > ', error);
+        Alert.alert('Something went wrong...', error);
     });
 }
 
@@ -40,7 +41,7 @@ export default function Submit(props) {
     var firebase = Utilities.firebase;
     user = Utilities.getCurrentUser();
     return (
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={Styles.container}>
             
             <Button
                 title='Save Thought'
@@ -48,11 +49,8 @@ export default function Submit(props) {
 
                 onPress={async () => {
                     const userId = user.uid;
-                    var value = await AsyncStorage.getItem(userId);     console.log("HAHA2", value);
-                    if(value) {
-                        console.log('submit button line 30 value- >, ', value);
-                        postLog(props, value);
-                    }
+                    console.log('submit button line 53 value- >, ', userId);
+                    saveThought(props, userId);
                     //const value = await AsyncStorage.getItem("userId").then(data => { return data });
                     // const value = AsyncStorage.getItem(userId);
                     // var test = null;
@@ -72,14 +70,3 @@ export default function Submit(props) {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: Constants.statusBarHeight,
-        marginHorizontal: 16,
-    },
-    title: {
-        textAlign: 'center',
-        marginVertical: 8,
-    }
-});
