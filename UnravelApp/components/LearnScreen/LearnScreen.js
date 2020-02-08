@@ -10,7 +10,7 @@ export default class LearnScreenComp extends Component {
         return (
             // scrollview is given static height that is larger than the content in order to fit everythin on the screen - previously only parts of the content were visiable (especially on androids)
 
-            <ScrollView contentContainerStyle={Styles.contentContainer}>
+            <ScrollView scrollToOverflowEnabled={ true } contentContainerStyle={Styles.contentContainer}>
                 <Image source={require('../../assets/images/UnravelSun.png')} style={Styles.learnImg} /> 
             
                 <Text style={Styles.title}>Unravelling Thoughts{"\n"}</Text>

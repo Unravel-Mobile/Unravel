@@ -4,6 +4,9 @@ import { List, ListItem, Thumbnail, Text, Button, View, } from 'native-base';
 import Styles from '../GetCall/GetCallStyle';
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
+import Utilities from '../../constants/Utilities';
+
+var user = null;
 
 export default class GetCall extends Component {
     state = {
@@ -11,22 +14,31 @@ export default class GetCall extends Component {
     }
 
     componentDidMount = async () => {
-        const value = await AsyncStorage.getItem("userId").then(data => { return data });
-        console.log('get call line 17 value- >, ', value);
+        var firebase = Utilities.firebase;
+        user = Utilities.getCurrentUser();
+        const userId = user.uid;
+
+        // const value = await AsyncStorage.getItem(userId).then(data => { return data });
+        // console.log("data? -> ", data);
+        console.log('get call line 25 value- >, ', userId);
 
         // TODO: Pass the mongo user id into the following API call
         // extrapolate the userId from react-navigation params -> this.props.navigation.state.params
         // this.props.navigation.getParam(userId, defaultValue)  
 
-        axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${value}`)
-            .then(res => this.setState({ thoughts: res.data.thoughts }))
+        axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${userId}`)
+            .then(res => this.setState({ thoughts: res.data }))
             .catch(err => console.log('err line 23 - - >', err));
     };
 
     render() {
+        var userThoughts =[];
+        if(Array.isArray(this.state.thoughts) && this.state.thoughts.length){
+            userThoughts = this.state.thoughts;
+        }
         return (
             <View>
-                {this.state.thoughts.map((thought, i) => {
+                {userThoughts.map((thought, i) => {
                     return (
                         <List key={i}>
                             <ListItem thumbnail>

@@ -22,7 +22,7 @@ export default class LearnScreen extends React.Component {
         return(
             <Container>
                 <Header navigate={this.navigate}
-                previous= 'Home' />
+                previous= 'Home' next= 'Log1' />
 
                 {/* Learn More component */}
                 <LearnScreenComp/>
