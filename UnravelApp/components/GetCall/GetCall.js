@@ -52,15 +52,12 @@ export default class GetCall extends Component {
                                 <Text>{thought.created}</Text>
                             </ListItem>
                             <ListItem><Text style={Styles.thoughtsList}>Situation:{'\n'}{thought.situation}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Feelings at the time:{'\n'}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>Feelings at the time:{'\n'}{thought.autoThought}</Text></ListItem>
                             <ListItem><Text style={Styles.thoughtsList}>Rating:{'\n'}{thought.preRating}</Text></ListItem>
                             <ListItem><Text style={Styles.thoughtsList}>Words: {'\n'}{thought.wordSelect1}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Automatic Thoughts: {'\n'}{thought.autoThought}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Feelings afterwards:{'\n'}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}>Feelings afterwards:{'\n'}{thought.changedThought}</Text></ListItem>
                             <ListItem><Text style={Styles.thoughtsList}>Rating:{'\n'}{thought.postRating}</Text></ListItem>
                             <ListItem><Text style={Styles.thoughtsList}>Words: {'\n'}{thought.wordSelect2}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Changed Thoughts: {'\n'}{thought.changedThought}</Text></ListItem>
-
                         </List>
                     );
                 })
