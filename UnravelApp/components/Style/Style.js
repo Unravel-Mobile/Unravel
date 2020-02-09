@@ -1,17 +1,10 @@
-// package installed to work with responsive sizes 11/27/1:25pm  mc
-
-// npm install react-native-responsive-fontsize --save   
-
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
-
-
 import { StyleSheet } from 'react-native'
 import { Content } from "native-base";
-
+import { AuthSession } from "expo";
 export default StyleSheet.create({
-
     mainBody: {
-        backgroundColor: '#B2EBF2',
+        backgroundColor: '#DEF5F8',
     },
 
     logo: {
@@ -20,132 +13,117 @@ export default StyleSheet.create({
         width: '85%',
         alignSelf: 'center'
     },
-
     logoImg: {
         width: '100%',
         height: '50%',
         resizeMode: 'contain'
     },
-
     headerOne: {
-        // color: 'red',
-        fontFamily: 'Arial',
         fontSize: RFValue(60),
         textAlign: 'center',
         marginBottom: 10
     },
-
     headerTwo: {
-        // color: 'blue',
         fontSize: RFValue(20),
-        fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: '5%',
+        marginBottom: '10%',
     },
 
-    buttons: {
-        width: '100%',
-        marginBottom: '5%',
-        alignItems: 'center'
-    },
-
-    text: {
-        fontWeight: 'bold',
-        fontSize: RFPercentage(3),
-        // fontSize: RFValue(20),
-        textAlign: 'center',
-        marginBottom: '1%'
-    },
 
     headNav: {
-        // backgroundColor: '#B2EBF2',
-        marginTop: 15,
-        justifyContent: 'center'
+        fontSize: RFPercentage(3),
+        backgroundColor: 'transparent',
+        textAlign: 'center',
+        marginTop: '4%',
+        marginBottom: '4%'
     },
 
     headTitle: {
+        flex: 1,
+        // flexDirection: 'row',
+        // justifyContent: 'center',
+        marginTop: '2.5%',
         fontSize: RFPercentage(3),
-        fontWeight: 'bold',
+        color: '#475e60',
     },
-
     arrows: {
-        alignItems: 'center',
+        // alignItems: 'center',
         fontSize: RFValue(15),
         color: 'black',
-        fontWeight: 'bold'
+        // fontWeight: 'bold'
     },
 
     backOfCard: {
         backgroundColor: '#d3f0f2',
-        padding: '2%'
+        padding: '2%',
+        marginBottom: '5%',
+        width: '99.5%',
+        flex: 1,
+        flexWrap: 'wrap'
     },
 
     questionNo: {
         fontSize: RFPercentage(4),
-        fontWeight: 'bold'
+        // fontWeight: 'bold'
     },
 
     questionTxt: {
         fontSize: RFPercentage(3),
-        fontWeight: 'bold'
+        color: '#475e60',
+        padding: '2%',
+        marginBottom: '2%',
+        flex: 1,
+        flexWrap: 'wrap',
+    },
+
+    questionTextWrap: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        width: '99.5%',
     },
 
     textArea: {
-        borderColor: '#B2EBF2',
+        borderColor: '#475e60',
         borderRadius: 10,
         borderWidth: 4,
         padding: '10%'
     },
-
     threeCols: {
         marginTop: '5%',
         flex: 1,
         width: '95%',
         alignSelf: 'center'
     },
-
     wordButtons: {
         justifyContent: 'center',
         margin: '1%',
     },
-
     buttonText: {
         fontSize: RFPercentage(2.5),
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
     },
-
-    microphone: {
-        fontSize: RFPercentage(8),
-        textAlign: 'center',
-        color: 'red'
-    },
-
-    thoughtImg: {
-        margin: '2%',
+    // microphone: {
+    //     fontSize: RFPercentage(8),
+    //     textAlign: 'center',
+    //     color: 'red'
+    // },
+    reviewButton: {
         flex: 1,
-        alignSelf: 'center',
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        backgroundColor: '#DEF5F8',
     },
-
-    reviewHead: {
-        backgroundColor: '#B2EBF2',
-        fontSize: RFPercentage(4),
-        fontWeight: 'bold',
-        // color:'red'
-    },
-
     reviewSubHead: {
-        justifyContent: 'center',
         fontSize: RFPercentage(3),
-        fontWeight: 'bold',
-        backgroundColor: '#d3f0f2',
-        // color: 'blue'
+        color: '#475e60',
+    },
+    viewComponent: {
+        flexDirection: 'row',
+        flex: 1,
+        flexWrap: 'wrap',
+        width: '99%'
     },
 
-    thoughtTxt: {
-        fontSize: RFPercentage(3),
-    },
-
-    
     //The Start of the Learn page (static text). 
     learnImg: {
         width: '100%',
@@ -160,19 +138,43 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#475e60',
-        },
+        paddingBottom: "5%",
+    },
 
     h2: {
-            fontSize: RFPercentage(3),
-            color: '#597579',
-            textAlign: 'left',
-    
-        },
-        
+        fontSize: RFPercentage(3),
+        color: '#597579',
+        textAlign: 'left',
+
+    },
+
+    // learn page
     Text: {
-            fontSize: RFPercentage(2),
-            paddingHorizontal: '5%'
-        
-    }
-    
+        fontSize: RFPercentage(2),
+        paddingHorizontal: '5%',
+        paddingBottom: '10%',
+    },
+
+    text: {
+        fontWeight: 'bold',
+        fontSize: RFPercentage(3)
+    },
+
+    thoughtsList: {
+        fontSize: RFPercentage(3),
+        color: '#597579',
+        textAlign: 'left'
+    },
+
+    date: {
+        fontSize: RFPercentage(2),
+        color: '#597579',
+        justifyContent: 'center'
+    },
+    reviewList: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
 });

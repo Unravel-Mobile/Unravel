@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Content, Textarea, Form } from "native-base";
 
-import Styles from '../components/Style/Style';
+import Styles from '../InputForm/InputFormStyle';
 
 
 export default class InputForm extends Component {
@@ -9,9 +9,10 @@ export default class InputForm extends Component {
         return (
             <Content padder>
                 <Form>
+                    {/* Text area passes the text via props and has a 10 rows of space */}
                     <Textarea style={Styles.textArea}
                         name={this.props.name}
-                        rowSpan={5}
+                        rowSpan={10}
                         bordered
                         placeholder="Textarea input"
                         onChangeText={this.props.onChangeText}

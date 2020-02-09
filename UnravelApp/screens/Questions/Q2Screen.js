@@ -4,12 +4,9 @@ import { NavigationInjectedProps, withNavigation} from 'react-navigation';
 // importing the question header
 import QuestionHeader from '../../components/Questions/Question';
 // importing the input text area
-import InputForm from '../../components/InputForm';
+import InputForm from '../../components/InputForm/InputForm';
 // importing the Top navbar
-import Header from '../../components/TopNav';
-
-import Styles from '../../components/Style/Style';
-
+import Header from '../../components/TopNavFolder/TopNav';
 
 export default class Q2Screen extends React.Component {
 
@@ -36,14 +33,9 @@ export default class Q2Screen extends React.Component {
     this.setState({
       Q2: value
     });
+    
+    // this.props.navigation.setParams({q2answers: this.state.Q2});
 
-    this.props.navigation.setParams({q2answers: this.state.Q2});
-
-    console.log("Q2screen");
-    // prints the object
-    console.log(this.state);
-    // references the answer
-    console.log(this.props.navigation.state.params.q1answers);
   }
 
 
@@ -60,7 +52,7 @@ export default class Q2Screen extends React.Component {
             onChangeText={this.onChangeText}
           />
 
-        <Icon style={Styles.microphone} name='mic-off' />
+        {/* <Icon style={Styles.microphone} name='mic-off' /> */}
       </Container>
 
     );

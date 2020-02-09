@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Card, CardItem, Text, Body } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Body, View } from 'native-base';
 import questions from "./questions.json";
 
-import Styles from '../Style/Style';
+import Styles from '../Questions/QuestionsStyle';
 
 
 export default class QuestionHeader extends Component {
@@ -10,10 +10,12 @@ export default class QuestionHeader extends Component {
       const index = this.props.qIndex;
     return (
 
-        <Card style={Styles.backOfCard}>
-            <Text style={Styles.questionNo}>Question:</Text>
+<View style={Styles.questionTextWrap}>
+        <Card style={Styles.questionTextWrap}>
+            {/* <Text style={Styles.questionNo}>Question:</Text> */}
             <Text style={Styles.questionTxt}> {questions[index].q} </Text>
-        </Card>
+      </Card>
+      </View>
 
     );
   }
