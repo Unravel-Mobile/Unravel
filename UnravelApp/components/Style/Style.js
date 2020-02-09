@@ -1,10 +1,12 @@
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import { StyleSheet } from 'react-native'
 import { Content } from "native-base";
+import { AuthSession } from "expo";
 export default StyleSheet.create({
     mainBody: {
-        backgroundColor: '#DEF5F8'
+        backgroundColor: '#DEF5F8',
     },
+
     logo: {
         marginTop: '5%',
         flex: 1,
@@ -17,40 +19,35 @@ export default StyleSheet.create({
         resizeMode: 'contain'
     },
     headerOne: {
-        // color: 'red',
-        fontFamily: 'Arial',
         fontSize: RFValue(60),
         textAlign: 'center',
         marginBottom: 10
     },
     headerTwo: {
-        // color: 'blue',
-        fontSize: RFValue(20),
-        // fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: '5%',
-    },
-    buttons: {
-        width: '100%',
-        marginBottom: '5%',
-        alignItems: 'center'
-    },
-    text: {
-        // fontWeight: 'bold',
         fontSize: RFValue(20),
         textAlign: 'center',
-        marginBottom: '1%'
+        marginBottom: '10%',
     },
-    // headNav: {
-    //     backgroundColor: '#B2EBF2'
-    // },
+
+
+    headNav: {
+        fontSize: RFPercentage(3),
+        backgroundColor: 'transparent',
+        textAlign: 'center',
+        marginTop: '4%',
+        marginBottom: '4%'
+    },
+
     headTitle: {
+        flex: 1,
+        // flexDirection: 'row',
+        // justifyContent: 'center',
+        marginTop: '2.5%',
         fontSize: RFPercentage(3),
         color: '#475e60',
-        // fontWeight: 'bold',
     },
     arrows: {
-        alignItems: 'center',
+        // alignItems: 'center',
         fontSize: RFValue(15),
         color: 'black',
         // fontWeight: 'bold'
@@ -64,7 +61,7 @@ export default StyleSheet.create({
         flex: 1,
         flexWrap: 'wrap'
     },
-    
+
     questionNo: {
         fontSize: RFPercentage(4),
         // fontWeight: 'bold'
@@ -110,10 +107,15 @@ export default StyleSheet.create({
     //     textAlign: 'center',
     //     color: 'red'
     // },
+    reviewButton: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        backgroundColor: '#DEF5F8',
+    },
     reviewSubHead: {
-        fontSize: RFPercentage(4),
-        // fontWeight: 'bold',
-        backgroundColor: '#d3f0f2',
+        fontSize: RFPercentage(3),
+        color: '#475e60',
     },
     viewComponent: {
         flexDirection: 'row',
@@ -136,19 +138,43 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#475e60',
-        },
+        paddingBottom: "5%",
+    },
 
     h2: {
-            fontSize: RFPercentage(3),
-            color: '#597579',
-            textAlign: 'left',
-    
-        },
-        
+        fontSize: RFPercentage(3),
+        color: '#597579',
+        textAlign: 'left',
+
+    },
+
+    // learn page
     Text: {
-            fontSize: RFPercentage(2),
-            paddingHorizontal: '5%'
-        
-    }
-    
+        fontSize: RFPercentage(2),
+        paddingHorizontal: '5%',
+        paddingBottom: '10%',
+    },
+
+    text: {
+        fontWeight: 'bold',
+        fontSize: RFPercentage(3)
+    },
+
+    thoughtsList: {
+        fontSize: RFPercentage(3),
+        color: '#597579',
+        textAlign: 'left'
+    },
+
+    date: {
+        fontSize: RFPercentage(2),
+        color: '#597579',
+        justifyContent: 'center'
+    },
+    reviewList: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
 });

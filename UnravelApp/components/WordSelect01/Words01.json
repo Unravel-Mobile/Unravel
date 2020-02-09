@@ -1,52 +1,52 @@
 [   
     {
-        "col1": "Alienated", 
+        "col1": " Alienated", 
         "type": "words1",
         "isHighlighted": false
     },
     {
-        "col1": "Angry",
+        "col1": " Angry",
         "type": "words2",
         "isHighlighted": false
     }, 
     {
-        "col1": "Ashamed",
+        "col1": " Ashamed",
         "type": "words3",
         "isHighlighted": false    
     }, 
     {
-        "col1": "Bullied" ,
+        "col1": " Bullied" ,
         "type": "words4",
         "isHighlighted": false    
     },
     {
-        "col1": "Depressed" ,
+        "col1": " Depressed" ,
         "type": "words5",
         "isHighlighted": false    
         
     },
     {
-        "col1": "Disappointed" ,
+        "col1": " Disappointed" ,
         "type": "words6",
         "isHighlighted": false    
     },
     {
-        "col1": "Discouraged" ,
+        "col1": " Discouraged" ,
         "type": "words7",
         "isHighlighted": false    
     },
     {
-        "col1": "Disgusted" ,
+        "col1": " Disgusted" ,
         "type": "words8",
         "isHighlighted": false    
     },
     {
-        "col1": "Frustrated" ,
+        "col1": " Frustrated" ,
         "type": "words9",
         "isHighlighted": false    
     },
     {
-        "col1": "Grumpy" ,
+        "col1": " Grumpy" ,
         "type": "words10",
         "isHighlighted": false
     }
