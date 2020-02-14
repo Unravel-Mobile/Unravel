@@ -52,6 +52,7 @@ export default class GetCall extends Component {
                             <ListItem style={Styles.date}>
                                 <Text>{thought.created}</Text>
                             </ListItem>
+
                             <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Situation:</Text>{'\n'}{thought.situation}</Text></ListItem>
                             <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Feelings at the time:</Text>{'\n'}{thought.autoThought}</Text></ListItem>
                             <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Rating:</Text>{'\n'}{thought.preRating}</Text></ListItem>
@@ -59,6 +60,7 @@ export default class GetCall extends Component {
                             <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Feelings afterwards:</Text>{'\n'}{thought.changedThought}</Text></ListItem>
                             <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Rating:</Text>{'\n'}{thought.postRating}</Text></ListItem>
                             <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Words:</Text>{'\n'}{thought.wordSelect2}</Text></ListItem>
+
                         </List>
                     );
                 })
