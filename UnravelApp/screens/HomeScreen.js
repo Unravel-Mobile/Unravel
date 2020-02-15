@@ -4,16 +4,14 @@ import { AsyncStorage } from 'react-native'
 import HomePage, { Home } from '../components/HomeFolder/Home';
 import axios from 'axios';
 import { StackNavigator } from 'react-navigation';
-
 // firebase information imported from constants folder
 import Utilities from '../constants/Utilities';
-
 var firebase = Utilities.firebase;
+
 
 export default class HomeScreen extends Component {
 
   componentDidMount() {
-    // this._retrieveData();
     this.login();
     console.log('Logged in!');
   };
@@ -36,8 +34,8 @@ export default class HomeScreen extends Component {
       var user = await AsyncStorage.getItem(uid);
       if (user) return true;
       return false;
-    } catch (e) {
-      console.log(e);
+    } catch (error) {
+      console.log(error);
       return false;
     }
   }
@@ -55,20 +53,20 @@ export default class HomeScreen extends Component {
         // User is signed in.
         var isAnonymous = user.isAnonymous;
         var uid = user.uid; // device id
-        console.log('homescreen line 95 uid - > ', uid);
+        console.log('homescreen uid - > ', uid);
 
+        // checks if the user is in firebase using the uid, then checks if that user is in the mongodb.
+        // if not, creates a new user, signs them in and associates it with the uid.
         this._userExistsInDataBase(uid).then((userExistsInDataBase) => {
           if(!userExistsInDataBase) {
             axios.post('https://unravel-api.herokuapp.com/signin', { userId: uid })
               .then((user) => {
                 console.log('USER - > ', user.data);
                 this._storeData(user.data._id, uid);
-                // TODO: set the userId as a param using react-navigation
-                // this.props.navigation.setParams({ userId: itemTwo });
-                // console.log('userId after this props -- > ', itemTwo);
               })
           }
         })
+        // sets the current user with firebase in order to retrieve current user later
         Utilities.setCurrentUser(firebase.auth().currentUser);
       } else {
         // User is not signed in.
@@ -79,7 +77,7 @@ export default class HomeScreen extends Component {
 
   render() {
     return (
-      // Links here ties with Links key in MainTabNavitor.js line 50
+      // Links here ties with Links key in MainTabNavitor.js
       <HomePage
         log='Log1'
         learn='Learn'
