@@ -1,11 +1,9 @@
 import React from 'react';
 import { Container } from 'native-base';
+// navigation needs to be called even if not directly called
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
-// importing the question header
 import QuestionHeader from '../../components/Questions/Question';
-// importing the input text area
 import InputForm from '../../components/InputForm/InputForm';
-// importing the Top navbar
 import Header from '../../components/TopNavFolder/TopNav';
 
 export default class Q1Screen extends React.Component {
@@ -13,6 +11,7 @@ export default class Q1Screen extends React.Component {
     header: null
   }
 
+  // passing input values between screens using state
   navigate = (screen) => {
     this.props.navigation.navigate(screen, {
       q1answers: this.state.Q1 })

@@ -17,22 +17,18 @@ export default class GetCall extends Component {
         var firebase = Utilities.firebase;
         user = Utilities.getCurrentUser();
         const userId = user.uid;
+        console.log('GetCall userId value- >, ', userId);
 
-        // const value = await AsyncStorage.getItem(userId).then(data => { return data });
-        // console.log("data? -> ", data);
-        console.log('get call line 25 value- >, ', userId);
-
-        // TODO: Pass the mongo user id into the following API call
-        // extrapolate the userId from react-navigation params -> this.props.navigation.state.params
-        // this.props.navigation.getParam(userId, defaultValue)  
+        // TODO: Have a refeshing function so the user can see the logs w.o having to reopen the app
 
         axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${userId}`)
             .then(res => this.setState({ thoughts: res.data }))
-            .catch(err => console.log('err line 23 - - >', err));
+            .catch(err => console.log('err GetCall thoughts of users -- >', err));
     };
 
     render() {
         var userThoughts = [];
+        // filling the userThoughts with the user's thoughts if they exist
         if (Array.isArray(this.state.thoughts) && this.state.thoughts.length) {
             userThoughts = this.state.thoughts;
         }

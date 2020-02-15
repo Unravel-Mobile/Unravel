@@ -54,7 +54,7 @@ export default class Q6Screen extends React.Component {
   selectWord = (word, wordSet, col) => {
     const updatedArray = this.state[wordSet].map(element => {
     const currentWord = word[col]
-     
+    
         if (element[col] === currentWord ) {
             if (this.state.selWordsArr.indexOf(currentWord) === -1) {
                 // add selected word to selWordsArr if it is not already in the array

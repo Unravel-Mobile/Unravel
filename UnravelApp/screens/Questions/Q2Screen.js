@@ -1,11 +1,8 @@
 import React from 'react';
 import { Container, Icon } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
-// importing the question header
 import QuestionHeader from '../../components/Questions/Question';
-// importing the input text area
 import InputForm from '../../components/InputForm/InputForm';
-// importing the Top navbar
 import Header from '../../components/TopNavFolder/TopNav';
 
 export default class Q2Screen extends React.Component {
