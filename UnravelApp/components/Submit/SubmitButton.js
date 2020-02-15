@@ -14,6 +14,7 @@ var savedDate = moment().format("MMMM Do YYYY, h:mm a");
 console.log('date - - > ', savedDate);
 const axios = require('axios');
 
+// function that posts the thought to the mongo database by passing in the inputs via props
 function saveThought (props, value) {
     axios.post('https://unravel-api.herokuapp.com/thoughts', {
         title: props.logName,
@@ -38,6 +39,8 @@ function saveThought (props, value) {
 }
 
 export default function Submit(props) {
+
+    // gets the current user to associate the thought with
     var firebase = Utilities.firebase;
     user = Utilities.getCurrentUser();
     return (
@@ -49,21 +52,8 @@ export default function Submit(props) {
 
                 onPress={async () => {
                     const userId = user.uid;
-                    console.log('submit button line 53 value- >, ', userId);
+                    console.log('submit button userId associated with - >, ', userId);
                     saveThought(props, userId);
-                    //const value = await AsyncStorage.getItem("userId").then(data => { return data });
-                    // const value = AsyncStorage.getItem(userId);
-                    // var test = null;
-                    // var allKeys = await AsyncStorage.getAllKeys();
-                    // allKeys.forEach(async function(key){
-                    //     await AsyncStorage.getItem(key).then(function(value) { 
-                    //         if (userId === value) {
-                    //             console.log("HAHAHAHA", key, ":", value);
-                    //     //             // console.log('submit button line 30 value- >, ', value);
-                    //     //             postLog(props, value);
-                    //         }
-                    //     });
-                    // });
                 }}
             />
         </SafeAreaView>
