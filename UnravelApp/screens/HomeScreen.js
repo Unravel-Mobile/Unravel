@@ -1,30 +1,14 @@
 import * as WebBrowser from 'expo-web-browser';
 import React, { Component, } from 'react';
 import { AsyncStorage } from 'react-native'
-// import * as firebase from 'firebase';
-// import { MonoText } from '../components/StyledText';
 import HomePage, { Home } from '../components/HomeFolder/Home';
 import axios from 'axios';
 import { StackNavigator } from 'react-navigation';
-// import { DatePicker } from 'native-base';
+
+// firebase information imported from constants folder
 import Utilities from '../constants/Utilities';
 
 var firebase = Utilities.firebase;
-
-// var firebaseConfig = {
-//   apiKey: "AIzaSyCmW0cougaiZYPQ9lXvuJN6MEhxAgoFZKo",
-//   authDomain: "unravel-43092.firebaseapp.com",
-//   databaseURL: "https://unravel-43092.firebaseio.com",
-//   projectId: "unravel-43092",
-//   storageBucket: "unravel-43092.appspot.com",
-//   messagingSenderId: "87922632106",
-//   appId: "1:87922632106:web:5e30aa2c325380da2d77d3"
-// };
-
-
-// Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// var userId;
 
 export default class HomeScreen extends Component {
 
@@ -44,27 +28,6 @@ export default class HomeScreen extends Component {
       console.log(error);
     }
   };
-
-  // _retrieveData = async () => {
-  //   try {
-  //     // Get userId from storage with key 'userId'
-  //     const userId = await AsyncStorage.getItem('userId');
-  //     // const userId is always null because no key is 'userId'
-  //     console.log('homescreen _retrieve - - > ', userId);
-
-  //     // this if never goes in because userId is always null
-  //     if (userId) {
-  //       // ideally login the user because user exists
-  //       console.log('We have data!!');
-  //     } else {
-  //       // ideally create a new user becase user doesn't exist
-  //       // instead, we are logging in the user that doesn't exist
-  //       await this.login()
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   // method to check if user exists in async storage
   // async storage schema: {key => deviceId, value => dbId}
