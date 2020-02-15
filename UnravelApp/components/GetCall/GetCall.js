@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert } from 'react-native';
-import { List, ListItem, Thumbnail, Text, Button, View, } from 'native-base';
+import { List, ListItem, Thumbnail, Text, Button, View, Header } from 'native-base';
 import Styles from '../GetCall/GetCallStyle';
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
@@ -17,23 +17,19 @@ export default class GetCall extends Component {
         var firebase = Utilities.firebase;
         user = Utilities.getCurrentUser();
         const userId = user.uid;
+        console.log('GetCall userId value- >, ', userId);
 
-        // const value = await AsyncStorage.getItem(userId).then(data => { return data });
-        // console.log("data? -> ", data);
-        console.log('get call line 25 value- >, ', userId);
-
-        // TODO: Pass the mongo user id into the following API call
-        // extrapolate the userId from react-navigation params -> this.props.navigation.state.params
-        // this.props.navigation.getParam(userId, defaultValue)  
+        // TODO: Have a refeshing function so the user can see the logs w.o having to reopen the app
 
         axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${userId}`)
             .then(res => this.setState({ thoughts: res.data }))
-            .catch(err => console.log('err line 23 - - >', err));
+            .catch(err => console.log('err GetCall thoughts of users -- >', err));
     };
 
     render() {
-        var userThoughts =[];
-        if(Array.isArray(this.state.thoughts) && this.state.thoughts.length){
+        var userThoughts = [];
+        // filling the userThoughts with the user's thoughts if they exist
+        if (Array.isArray(this.state.thoughts) && this.state.thoughts.length) {
             userThoughts = this.state.thoughts;
         }
         return (
@@ -41,25 +37,25 @@ export default class GetCall extends Component {
                 {userThoughts.map((thought, i) => {
                     return (
                         <List key={i}>
-                            <ListItem thumbnail>
-                                {/* <Thumbnail square source={{ uri: 'Image URL' }} /> */}
+                            <ListItem avatar>
+                                {/* <Thumbnail square source={require('../../assets/images/unravel01.png')} /> */}
+                                <Button style={Styles.reviewButton} transparent onPress={() => Alert.alert(`${'picture and thoughts on different screen coming soon'}`)}>
+                                    {/* <Thumbnail square source={require('../../assets/images/unravel01.png')} /> */}
+                                    <Text style={Styles.reviewSubHead}>{thought.title}</Text>
+                                </Button>
                             </ListItem>
-                            <Button style={Styles.reviewButton} transparent onPress={() => Alert.alert(`${thought.wordSelect1}`)}>
-                                <Thumbnail square source={require('../../assets/images/unravel01.png')} />
-                                <Text style={Styles.reviewSubHead}>{thought.title}</Text>
-                            </Button>
+
                             <ListItem style={Styles.date}>
                                 <Text>{thought.created}</Text>
                             </ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Situation:{'\n'}{thought.situation}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Feelings at the time:{'\n'}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Rating:{'\n'}{thought.preRating}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Words: {'\n'}{thought.wordSelect1}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Automatic Thoughts: {'\n'}{thought.autoThought}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Feelings afterwards:{'\n'}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Rating:{'\n'}{thought.postRating}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Words: {'\n'}{thought.wordSelect2}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Changed Thoughts: {'\n'}{thought.changedThought}</Text></ListItem>
+
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Situation:</Text>{'\n'}{thought.situation}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Feelings at the time:</Text>{'\n'}{thought.autoThought}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Rating:</Text>{'\n'}{thought.preRating}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Words:</Text>{'\n'}{thought.wordSelect1}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Feelings afterwards:</Text>{'\n'}{thought.changedThought}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Rating:</Text>{'\n'}{thought.postRating}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Words:</Text>{'\n'}{thought.wordSelect2}</Text></ListItem>
 
                         </List>
                     );

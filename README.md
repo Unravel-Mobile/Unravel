@@ -64,10 +64,6 @@ Shad Lee, Jenn June and Mariño Carranza.
 ## **Acknowledgments**
 Many thanks are owed to Arron Linton and Catherine Pham for their unwavering guidance collaboration in the long road of development.
 
-<<<<<<< HEAD
-=======
-
->>>>>>> development
 ## **Support**
 We will do our best to answers any questions you may have about our app, you may contact us at
 sl8305@hotmail.com
@@ -75,11 +71,9 @@ jennjuneux@gmail.com
 marino.carranza@gmail.com
 
 ## **Project Status**
-<<<<<<< HEAD
-We are currently working towards submitting it to the "Coding For Good Challenge"
-=======
->>>>>>> development
-This app is currently in development and we are working towards publishing it to the App Store.
+We submitted to the "Coding For Good Challenge"
+
+This app is currently in development and we are working towards publishing it to the Expo Store.
 
 
 
