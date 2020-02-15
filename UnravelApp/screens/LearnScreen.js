@@ -1,10 +1,7 @@
 import React from 'react';
-import {Image} from 'react-native';
-import { Container, Content, Body, Text, H1, H2 } from 'native-base';
+import { Container, Content } from 'native-base';
 import { NavigationInjectedProps, withNavigation} from 'react-navigation';
-// importing the Top navbar
 import Header from '../components/TopNavFolder/TopNav';
-
 import LearnScreenComp from '../components/LearnScreen/LearnScreen';
 
 export default class LearnScreen extends React.Component {
@@ -24,7 +21,7 @@ export default class LearnScreen extends React.Component {
                 <Header navigate={this.navigate}
                 previous= 'Home' next= 'Log1' />
 
-                {/* Learn More component */}
+                {/* Learn More component : Static information  */}
                 <LearnScreenComp/>
 
             </Container>
@@ -32,7 +29,6 @@ export default class LearnScreen extends React.Component {
         );
     };
 };
-
 
 LearnScreen.navigationOptions = {
     title: 'Learn',
