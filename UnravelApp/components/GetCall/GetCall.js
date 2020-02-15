@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert } from 'react-native';
-import { List, ListItem, Thumbnail, Text, Button, View, } from 'native-base';
+import { List, ListItem, Thumbnail, Text, Button, View, Header } from 'native-base';
 import Styles from '../GetCall/GetCallStyle';
 import { AsyncStorage } from 'react-native';
 import axios from 'axios';
@@ -32,8 +32,8 @@ export default class GetCall extends Component {
     };
 
     render() {
-        var userThoughts =[];
-        if(Array.isArray(this.state.thoughts) && this.state.thoughts.length){
+        var userThoughts = [];
+        if (Array.isArray(this.state.thoughts) && this.state.thoughts.length) {
             userThoughts = this.state.thoughts;
         }
         return (
@@ -41,23 +41,26 @@ export default class GetCall extends Component {
                 {userThoughts.map((thought, i) => {
                     return (
                         <List key={i}>
-                            <ListItem thumbnail>
-                                {/* <Thumbnail square source={{ uri: 'Image URL' }} /> */}
+                            <ListItem avatar>
+                                {/* <Thumbnail square source={require('../../assets/images/unravel01.png')} /> */}
+                                <Button style={Styles.reviewButton} transparent onPress={() => Alert.alert(`${'picture and thoughts on different screen coming soon'}`)}>
+                                    {/* <Thumbnail square source={require('../../assets/images/unravel01.png')} /> */}
+                                    <Text style={Styles.reviewSubHead}>{thought.title}</Text>
+                                </Button>
                             </ListItem>
-                            <Button style={Styles.reviewButton} transparent onPress={() => Alert.alert(`${thought.wordSelect1}`)}>
-                                <Thumbnail square source={require('../../assets/images/unravel01.png')} />
-                                <Text style={Styles.reviewSubHead}>{thought.title}</Text>
-                            </Button>
+
                             <ListItem style={Styles.date}>
                                 <Text>{thought.created}</Text>
                             </ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Situation:{'\n'}{thought.situation}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Feelings at the time:{'\n'}{thought.autoThought}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Rating:{'\n'}{thought.preRating}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Words: {'\n'}{thought.wordSelect1}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Feelings afterwards:{'\n'}{thought.changedThought}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Rating:{'\n'}{thought.postRating}</Text></ListItem>
-                            <ListItem><Text style={Styles.thoughtsList}>Words: {'\n'}{thought.wordSelect2}</Text></ListItem>
+
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Situation:</Text>{'\n'}{thought.situation}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Feelings at the time:</Text>{'\n'}{thought.autoThought}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Rating:</Text>{'\n'}{thought.preRating}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Words:</Text>{'\n'}{thought.wordSelect1}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Feelings afterwards:</Text>{'\n'}{thought.changedThought}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Rating:</Text>{'\n'}{thought.postRating}</Text></ListItem>
+                            <ListItem><Text style={Styles.thoughtsList}><Text style={Styles.description}>Words:</Text>{'\n'}{thought.wordSelect2}</Text></ListItem>
+
                         </List>
                     );
                 })
