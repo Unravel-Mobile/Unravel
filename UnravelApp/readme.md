@@ -10,7 +10,7 @@ Unravel Mobile® is a Cognitive Behavioral Therapy Tool for Patients and Therapi
 
 •  Approach: Leverage mobile to engage patients to completing the ATR
 
-Unravel Mobile® offers an alternative to the traditional method of recording destressing events, which a lot of times by the time the oportunity of putting pen to paper finally arrives the emotions are not the same; Unravel Mobile® offers the user the opportunity to log how they are feeling at the touch of a couple of buttons.
+Unravel Mobile® offers an alternative to the traditional method of recording stressing events, which a lot of times by the time the oportunity of putting pen to paper finally arrives the emotions are not the same; Unravel Mobile® offers the user the opportunity to log how they are feeling at the touch of a couple of buttons.
 
 ## **Usage**
 A user may have gone through an experience that left them in a state of elevated anxiety, for example.
@@ -25,13 +25,18 @@ A zero to 10 rating to said situation (in the form of a slider)
 Preselected words that may matched how the user is feeling
     angry, overwhelmed, unsafe, etc.
 A text area to log how the user is feeling in the moment 
-    'I feel uncle Bob is not listening to what I need'
+    'I feel uncle Bob is not listening to what I am saying'
 A text area to log how the user is feeling after the fact
     'thank goodness Billy showed up to get me away'
 A zero to ten rating to assign a value to how the user feels after the situation has passed
     postRating: 4,
 Preselected words that may matched how the user is feeling
     Relieved, tired, hopeful, thankful
+
+## **Visual**
+See how it works!
+
+<img src="./assets/images/unravel.gif" width="200px">
 
 ## **Road Map**
 
