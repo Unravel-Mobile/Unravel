@@ -94,7 +94,6 @@ export default class Q3Screen extends React.Component {
             selectWord={this.selectWord}
           />
 
-
         </Content>
       </Container>
 

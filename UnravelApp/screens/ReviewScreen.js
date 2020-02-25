@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Content, Text  } from "native-base";
+import { NavigationInjectedProps, withNavigation} from 'react-navigation';
+
 import GetCall from '../components/GetCall/GetCall';
 
 export default function ReviewScreen() {
@@ -8,7 +10,7 @@ export default function ReviewScreen() {
     <Container>
       <Content padder>
         <Text></Text>
-        <GetCall />
+        <GetCall/>
       </Content>
     </Container>
 

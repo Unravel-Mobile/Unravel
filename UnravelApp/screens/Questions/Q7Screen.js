@@ -20,11 +20,14 @@ export default class Q7Screen extends React.Component {
     Q4: this.props.navigation.state.params.q4answers,
     Q5: this.props.navigation.state.params.q5answers,
     Q6: this.props.navigation.state.params.q6answers,
-    wordArray2: this.props.navigation.state.params.wordArray2
+    wordArray2: this.props.navigation.state.params.wordArray2,
+    newThought: true,
   }
 
   navigate = (screen) => {
     this.props.navigation.navigate(screen, {
+      // boolean switch
+      isNewThought: this.state.newThought,
     })
   }
 
@@ -45,6 +48,7 @@ export default class Q7Screen extends React.Component {
         changedThought = {this.state.Q5}
         postRating = {this.state.Q6}
         wordSelect2 = {this.state.wordArray2}
+        thought = {this.state.newThought}
       />
 
     </Container>

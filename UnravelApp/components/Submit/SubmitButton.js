@@ -6,6 +6,7 @@ import { AsyncStorage, StyleSheet, Button, SafeAreaView, Alert} from 'react-nati
 import moment from 'moment';
 import Utilities from '../../constants/Utilities';
 import Styles from '../Submit/SubmitStyle';
+import CallToDb from '../CallToDbFolder/CallToDb';
 
 var user = null;
 var now = moment().format();
@@ -38,6 +39,7 @@ function saveThought (props, value) {
     });
 }
 
+
 export default function Submit(props) {
 
     // gets the current user to associate the thought with
@@ -54,8 +56,10 @@ export default function Submit(props) {
                     const userId = user.uid;
                     console.log('submit button userId associated with - >, ', userId);
                     saveThought(props, userId);
+                    console.log("new thought : ", props.thought);
                 }}
             />
+        <CallToDb />
         </SafeAreaView>
     );
 }

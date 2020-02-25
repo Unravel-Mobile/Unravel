@@ -8,6 +8,7 @@ import Utilities from '../../constants/Utilities';
 
 var user = null;
 
+
 export default class GetCall extends Component {
     state = {
         thoughts: []
@@ -19,14 +20,13 @@ export default class GetCall extends Component {
         const userId = user.uid;
         console.log('GetCall userId value- >, ', userId);
 
-        // TODO: Have a refeshing function so the user can see the logs w.o having to reopen the app
-
         axios.get(`https://unravel-api.herokuapp.com/user/thoughts/${userId}`)
             .then(res => this.setState({ thoughts: res.data }))
             .catch(err => console.log('err GetCall thoughts of users -- >', err));
     };
 
     render() {
+
         var userThoughts = [];
         // filling the userThoughts with the user's thoughts if they exist
         if (Array.isArray(this.state.thoughts) && this.state.thoughts.length) {
